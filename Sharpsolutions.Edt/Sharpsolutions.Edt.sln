@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Web", "Sharpsolutions.Edt.Web\Sharpsolutions.Edt.Web.csproj", "{0E15E272-09DC-4BFF-8C07-3F4B73B00051}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Web.Tests", "Sharpsolutions.Edt.Web.Tests\Sharpsolutions.Edt.Web.Tests.csproj", "{14671CC5-945C-43BA-BD98-67C3690A8D76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E15E272-09DC-4BFF-8C07-3F4B73B00051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E15E272-09DC-4BFF-8C07-3F4B73B00051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E15E272-09DC-4BFF-8C07-3F4B73B00051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E15E272-09DC-4BFF-8C07-3F4B73B00051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14671CC5-945C-43BA-BD98-67C3690A8D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14671CC5-945C-43BA-BD98-67C3690A8D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14671CC5-945C-43BA-BD98-67C3690A8D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14671CC5-945C-43BA-BD98-67C3690A8D76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
