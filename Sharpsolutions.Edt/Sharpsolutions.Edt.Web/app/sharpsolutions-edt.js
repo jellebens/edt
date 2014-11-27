@@ -11,12 +11,12 @@ var config = function ($routeProvider, $locationProvider) {
 
     $routeProvider.when("/login", {
         controller: "loginController",
-        templateUrl: "/app/views/login.html"
+        templateUrl: "app/views/account/login.html"
     });
 
     $routeProvider.when("/signup", {
         controller: "signupController",
-        templateUrl: "/app/views/signup.html"
+        templateUrl: "app/views/account/signup.html"
     });
 };
 
@@ -25,13 +25,23 @@ var config = function ($routeProvider, $locationProvider) {
 config.$inject = ['$routeProvider', '$locationProvider']
 app.config(config);
 
+app.config(function (localStorageServiceProvider) {
+    localStorageServiceProvider
+      .setPrefix('EdtApp');
+});
+
 app.config(function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptorService');
 });
 
+navBarController.$inject = ['$scope', '$location', 'authService'];
+app.controller('navBarController', navBarController);
 
-homeController.$inject = ['$scope'];
+homeController.$inject = ['$scope', '$location', 'authService'];
 app.controller('homeController', homeController);
+
+loginController.$inject = ['$scope', '$location', 'authService']
+app.controller('loginController', loginController);
 
 signupController.$inject = ['$scope', '$location', '$timeout', 'authService'];
 app.controller('signupController', signupController);

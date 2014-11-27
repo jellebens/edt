@@ -8,13 +8,12 @@ using System.Web.Mvc;
 namespace Sharpsolutions.Edt.Web {
     public static class RouteConfig {
         internal static void RegisterRoutes(RouteCollection routes) {
-
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                            name: "CatchAll",
+                            url: "{*url}",
+                            defaults: new { controller = "Home", action = "Index" });
         }
     }
 }

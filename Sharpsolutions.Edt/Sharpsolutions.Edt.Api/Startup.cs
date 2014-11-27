@@ -5,6 +5,7 @@ using Owin;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Sharpsolutions.Edt.Api.Security;
+using Microsoft.Owin.Cors;
 
 [assembly: OwinStartup(typeof(Sharpsolutions.Edt.Api.Startup))]
 
@@ -15,7 +16,7 @@ namespace Sharpsolutions.Edt.Api {
 
             HttpConfiguration config = new HttpConfiguration();
             WebApiConfig.Register(config);
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            app.UseCors(CorsOptions.AllowAll);
             app.UseWebApi(config);
         }
 

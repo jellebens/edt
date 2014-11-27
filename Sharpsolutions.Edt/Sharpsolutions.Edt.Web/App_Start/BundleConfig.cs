@@ -42,7 +42,8 @@ namespace Sharpsolutions.Edt.Web {
                                                     );
 
             bundles.Add(new StyleBundle(Bundles.Styles.Bootstrap)
-                                                    .Include("~/Content/bootstrap.css"));
+                                                    .Include("~/Content/bootstrap.css")
+                                                    .Include("~/Content/bootstrap-overides.css"));
         }
     }
 }

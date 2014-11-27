@@ -90,7 +90,9 @@
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
+    <Reference Include="System.Web">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -103,12 +105,14 @@
   <ItemGroup>
     <Content Include="app\controllers\HomeController.js" />
     <Content Include="app\controllers\LoginController.js" />
+    <Content Include="app\controllers\NavbarController.js" />
     <Content Include="app\controllers\SignupController.js" />
     <Content Include="app\services\AuthInterceptorService.js" />
     <Content Include="app\services\AuthService.js" />
     <Content Include="app\views\account\login.html" />
     <Content Include="app\views\account\signup.html" />
     <Content Include="app\views\home.html" />
+    <Content Include="Content\bootstrap-overides.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -125,7 +129,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
-    <Content Include="Scripts\angular-local-storage.js" />
+    <Content Include="Scripts\angular-local-storage.min.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
@@ -136,6 +140,7 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\edt.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
@@ -144,7 +149,7 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="app\sharpsolutions-edt.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
-    <None Include="Views\Web.config" />
+    <Content Include="Views\Web.config" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

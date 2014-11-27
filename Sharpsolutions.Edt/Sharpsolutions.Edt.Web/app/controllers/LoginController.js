@@ -1,5 +1,4 @@
-﻿
-'use strict';
+﻿'use strict';
 var loginController = function ($scope, $location, authService) {
 
     $scope.loginData = {
@@ -12,9 +11,7 @@ var loginController = function ($scope, $location, authService) {
     $scope.login = function () {
 
         authService.login($scope.loginData).then(function (response) {
-
-            $location.path('/orders');
-
+            $location.path('/');
         },
          function (err) {
              $scope.message = err.error_description;
