@@ -30,8 +30,6 @@ app.config(function ($httpProvider) {
 });
 
 
-
-
 homeController.$inject = ['$scope'];
 app.controller('homeController', homeController);
 
