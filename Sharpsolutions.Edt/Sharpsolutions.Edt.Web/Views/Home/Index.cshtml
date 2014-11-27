@@ -1,0 +1,46 @@
+﻿@using Sharpsolutions.Edt.Web.Core
+<!DOCTYPE html>
+<html ng-app="EdtApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render(Bundles.Styles.Bootstrap)
+    <meta name="description" content="Elite: Dangerous Trading assistent" />
+    <base href="@Url.Content("~")" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Elite: Dangourous - Trading", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
+                    <li data-ng-hide="!authentication.isAuth"><a href="#/orders">My Orders</a></li>
+                    <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="container">
+            <div data-ng-view>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render(Bundles.Scripts.JQuery)
+    @Scripts.Render(Bundles.Scripts.Bootstrap)
+    @Scripts.Render(Bundles.Scripts.AngularJs)
+    @Scripts.Render(Bundles.Scripts.EdtApp)
+</body>
+</html>
