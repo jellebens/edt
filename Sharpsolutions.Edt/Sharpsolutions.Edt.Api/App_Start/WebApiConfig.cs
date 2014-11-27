@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Sharpsolutions.Edt.Web
+namespace Sharpsolutions.Edt.Api
 {
     public static class WebApiConfig
     {
