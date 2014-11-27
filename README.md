@@ -1,2 +1,2 @@
-AngularJSpet project
+AngularJS pet project
 ===
