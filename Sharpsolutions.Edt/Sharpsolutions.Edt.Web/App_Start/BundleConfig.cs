@@ -45,6 +45,7 @@ namespace Sharpsolutions.Edt.Web {
                                                     .Include("~/Content/bootstrap.css")
                                                     .Include("~/Content/animate.css")
                                                     .Include("~/Content/style.css")
+                                                    .IncludeDirectory("~/Content/font-awesome/css", "*.css")
                                                     .Include("~/Content/bootstrap-overides.css"));
 
         }
