@@ -12,6 +12,10 @@ namespace Sharpsolutions.Edt.Web.Core {
             public const string AppInsights = "~/bundles/appinsights";
             public const string EdtApp = "~/bundles/app";
             public const string JQuery = "~/bundles/jquery";
+            public const string SlimScroll = "~/bundles/slimscroll";
+            public const string Pace = "~/bundles/pace";
+            public const string MetisMenu = "~/bundles/metisMenu";
+            
         }
 
         public static class Styles {

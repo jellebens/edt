@@ -28,6 +28,20 @@ namespace Sharpsolutions.Edt.Web {
                                                     .Include("~/Scripts/loading-bar.js")
                                                     );
 
+            bundles.Add(new ScriptBundle(Bundles.Scripts.MetisMenu)
+                                    .IncludeDirectory("~/Scripts/plugins/metisMenu", "*.js"));
+            bundles.Add(new ScriptBundle(Bundles.Scripts.Pace)
+                                    .IncludeDirectory("~/Scripts/plugins/pace", "*.js"));
+            bundles.Add(new ScriptBundle(Bundles.Scripts.SlimScroll)
+                                    .IncludeDirectory("~/Scripts/plugins/slimscroll", "*.js"));
+
+            bundles.Add(new ScriptBundle(Bundles.Scripts.EdtApp)
+                .Include("~/app/app.js")
+                .IncludeDirectory("~/app/services/", "*.js")
+                 .IncludeDirectory("~/app/controllers/", "*.js")
+                 .Include("~/app/services.js")
+                 .Include("~/app/config.js"));
+
             bundles.Add(new ScriptBundle(Bundles.Scripts.EdtApp)
                 .Include("~/app/app.js") 
                 .IncludeDirectory("~/app/services/", "*.js")
