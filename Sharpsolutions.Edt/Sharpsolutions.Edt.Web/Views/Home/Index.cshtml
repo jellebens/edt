@@ -5,40 +5,42 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Elite: Dangerous - Trading App</title>
-    @Styles.Render(Bundles.Styles.Bootstrap)
+    @Styles.Render(Bundles.Styles.Inspinia)
     <meta name="description" content="Elite: Dangerous Trading assistent" />
     <base href="@Url.Content("~")" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" ng-controller="navBarController">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Elite: Dangourous - Trading App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li data-ng-hide="!authentication.isAuth" ng-cloak><a href="#">Welcome {{authentication.userName}}</a></li>
-                    <li data-ng-hide="!authentication.isAuth" ng-cloak><a href="" data-ng-click="logOut()">Logout</a></li>
-                    <li data-ng-hide="authentication.isAuth" ng-cloak> <a href="login">Login</a></li>
-                    <li data-ng-hide="authentication.isAuth" ng-cloak> <a href="signup">Sign Up</a></li>
-                </ul>
-            </div>
+    <!-- Wrapper-->
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <div ng-include="'app/views/common/navigation.html'"></div>
+
+        <!-- Page wraper -->
+        <!-- ng-class with current state name give you the ability to extended customization your view -->
+        <div id="page-wrapper" class="gray-bg {{$state.current.name}}">
+
+            <!-- Page wrapper -->
+            <div ng-include="app/views/common/topnavbar.html"></div>
+
+            <!-- Main view  -->
+            <div ui-view></div>
+
+            <!-- Footer -->
+            <div ng-include="'app/views/common/footer.html'"></div>
+
         </div>
+        <!-- End page wrapper-->
+
     </div>
-    <div class="container body-content">
-        <div data-ng-view>
-        </div>
-    </div>
+
+
 
     @Scripts.Render(Bundles.Scripts.JQuery)
     @Scripts.Render(Bundles.Scripts.Bootstrap)
     @Scripts.Render(Bundles.Scripts.AngularJs)
     <script src="scripts/angular-local-storage.min.js"></script>
+    <script src="scripts/ui-bootstrap-tpls-0.11.0.min.js"></script>
     @Scripts.Render(Bundles.Scripts.EdtApp)
 </body>
 </html>

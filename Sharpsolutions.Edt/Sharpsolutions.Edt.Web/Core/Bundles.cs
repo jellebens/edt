@@ -16,7 +16,7 @@ namespace Sharpsolutions.Edt.Web.Core {
 
         public static class Styles {
             public const string Common = "~/css/common";
-            public const string Bootstrap = "~/css/boostrap";
+            public const string Inspinia = "~/css/Inspinia";
 
         }
     }

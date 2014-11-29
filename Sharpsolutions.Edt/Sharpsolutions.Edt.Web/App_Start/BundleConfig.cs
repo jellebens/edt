@@ -29,11 +29,11 @@ namespace Sharpsolutions.Edt.Web {
                                                     );
 
             bundles.Add(new ScriptBundle(Bundles.Scripts.EdtApp)
-                 .IncludeDirectory("~/app/services/", "*.js")
+                .Include("~/app/app.js") 
+                .IncludeDirectory("~/app/services/", "*.js")
                  .IncludeDirectory("~/app/controllers/", "*.js")
-                 .Include("~/app/sharpsolutions-edt.js"));
-
-
+                 .Include("~/app/services.js")
+                 .Include("~/app/config.js"));
         }
 
         private static void AddStyles(BundleCollection bundles) {
@@ -41,9 +41,12 @@ namespace Sharpsolutions.Edt.Web {
                                                     .Include("~/Content/site.css")
                                                     );
 
-            bundles.Add(new StyleBundle(Bundles.Styles.Bootstrap)
+            bundles.Add(new StyleBundle(Bundles.Styles.Inspinia)
                                                     .Include("~/Content/bootstrap.css")
+                                                    .Include("~/Content/animate.css")
+                                                    .Include("~/Content/style.css")
                                                     .Include("~/Content/bootstrap-overides.css"));
+
         }
     }
 }
