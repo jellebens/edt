@@ -1,4 +1,8 @@
-﻿var app = angular.module('EdtApp', ['ngRoute', 'LocalStorageModule', 'angular-loading-bar']);
+﻿var app = angular.module('EdtApp', ['ui.router'
+                                    , 'ui.bootstrap'
+                                    , 'LocalStorageModule'
+                                    , 'angular-loading-bar']);
+
 
 
 app.run(['authService', function (authService) {

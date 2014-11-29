@@ -1,5 +1,5 @@
 ﻿//Configure routing
-var config = function ($routeProvider, $locationProvider) {
+var config = function ($locationProvider) {
     $locationProvider.hashPrefix('!').html5Mode(true);
 
 
@@ -8,7 +8,7 @@ var config = function ($routeProvider, $locationProvider) {
 
 
 //Better like this otherwise might break during minification
-config.$inject = ['$routeProvider', '$locationProvider']
+config.$inject = ['$locationProvider']
 app.config(config);
 
 app.config(function (localStorageServiceProvider) {
