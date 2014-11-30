@@ -53,8 +53,8 @@ namespace Sharpsolutions.Edt.Web {
 
         private static void AddStyles(BundleCollection bundles) {
             bundles.Add(new StyleBundle(Bundles.Styles.Common)
-                                                    .Include("~/Content/site.css")
-                                                    );
+                                                        .Include("~/Content/footer.css")                                    
+                                                        .Include("~/Content/site.css"));
 
             bundles.Add(new StyleBundle(Bundles.Styles.Inspinia)
                                                     .Include("~/Content/bootstrap.css")
