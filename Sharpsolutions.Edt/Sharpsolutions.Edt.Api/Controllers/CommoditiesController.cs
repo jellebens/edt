@@ -11,7 +11,7 @@ namespace Sharpsolutions.Edt.Api.Controllers {
     public class CommoditiesController : ApiController {
         [Route("")]
         public IHttpActionResult Commodities() {
-
+            
             var x = new[] {
                         new { Category= "Machinery", Name= "Mineral Extractors" },
                         new { Category= "Metals", Name= "Gallium" }
