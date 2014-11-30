@@ -1,21 +1,16 @@
-﻿//Configure routing
-var config = function ($locationProvider) {
-    $locationProvider.hashPrefix('!').html5Mode(true);
+﻿function config($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise("/");
 
+    $stateProvider.state('home', {
+        url: "/",
+        templateUrl: "app/views/home.html"
+    });
 
-    
-};
+}
 
-
-//Better like this otherwise might break during minification
-config.$inject = ['$locationProvider']
-app.config(config);
-
-app.config(function (localStorageServiceProvider) {
-    localStorageServiceProvider
-      .setPrefix('EdtApp');
-});
-
-app.config(function ($httpProvider) {
-    $httpProvider.interceptors.push('authInterceptorService');
-});
+angular
+    .module('EdtApp')
+    .config(config)
+    .run(function ($rootScope, $state) {
+        $rootScope.$state = $state;
+    });

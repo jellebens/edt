@@ -37,10 +37,11 @@ namespace Sharpsolutions.Edt.Web {
 
             bundles.Add(new ScriptBundle(Bundles.Scripts.EdtApp)
                 .Include("~/app/app.js")
+                .Include("~/app/config.js")
                 .IncludeDirectory("~/app/services/", "*.js")
                  .IncludeDirectory("~/app/controllers/", "*.js")
                  .Include("~/app/services.js")
-                 .Include("~/app/config.js"));
+                 );
 
             bundles.Add(new ScriptBundle(Bundles.Scripts.EdtApp)
                 .Include("~/app/app.js") 
