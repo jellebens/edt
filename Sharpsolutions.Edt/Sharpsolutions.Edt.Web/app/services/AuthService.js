@@ -1,7 +1,8 @@
 ﻿'use strict';
 var authService = function ($http, $q, localStorageService) {
 
-    var serviceBase = 'https://edt-api.azurewebsites.net/';
+    var serviceBase = Settings.ServiceBase;
+
     var authServiceFactory = {};
 
     var _authentication = {

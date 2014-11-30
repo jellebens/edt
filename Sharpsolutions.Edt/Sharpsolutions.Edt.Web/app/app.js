@@ -18,3 +18,7 @@ app.config(function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptorService');
 });
 
+var Settings = {
+    //ServiceBase : 'https://edt-api.azurewebsites.net/'
+    ServiceBase: 'https://edt-api.azurewebsites.net/'
+};
