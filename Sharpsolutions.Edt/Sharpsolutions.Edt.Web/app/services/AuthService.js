@@ -31,7 +31,6 @@ var authService = function ($http, $q, localStorageService) {
 
             _authentication.isAuth = true;
             _authentication.userName = loginData.userName;
-
             deferred.resolve(response);
 
         }).error(function (err, status) {

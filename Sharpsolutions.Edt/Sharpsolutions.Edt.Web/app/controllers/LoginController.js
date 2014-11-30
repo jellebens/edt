@@ -1,11 +1,12 @@
 ﻿'use strict';
-var loginController = function ($scope, $location, authService) {
+angular.module('EdtApp').controller('loginController',['$scope', '$location', 'authService', function ($scope, $location, authService) {
 
     $scope.loginData = {
-        userName: "",
-        password: ""
+        userName: "admin",
+        password: "admin2711"
     };
 
+    
     $scope.message = "";
 
     $scope.login = function () {
@@ -18,4 +19,4 @@ var loginController = function ($scope, $location, authService) {
          });
     };
 
-}
+}]);

@@ -4,6 +4,6 @@ angular.module('EdtApp').controller('navBarController', ['$scope', '$location', 
         authService.logOut();
         $location.path('/');
     }
-    
+    console.log(authService.authentication);
     $scope.authentication = authService.authentication;
 }]);

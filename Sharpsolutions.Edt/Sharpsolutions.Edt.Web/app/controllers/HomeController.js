@@ -4,5 +4,7 @@ var homeController = function ($scope, $location, authService) {
         authService.logOut();
         $location.path('/');
     }
+    console.log(authService.authentication);
+
     $scope.authentication = authService.authentication;
 }
