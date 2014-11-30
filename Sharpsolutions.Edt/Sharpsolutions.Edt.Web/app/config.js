@@ -13,6 +13,10 @@
         url: "/account/login",
         templateUrl: "app/views/account/login.html",
         controller: "loginController"
+    }).state('account.loggedin', {
+        url: "/account/loggedin",
+        templateUrl: "app/views/account/loggedin.html",
+        controller: "loginController"
     });
 
 }
