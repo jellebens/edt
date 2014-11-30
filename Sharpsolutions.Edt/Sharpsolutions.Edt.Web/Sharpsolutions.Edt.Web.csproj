@@ -181,6 +181,7 @@
     <Content Include="Content\style.min.css" />
     <Content Include="Global.asax" />
     <Content Include="img\logo_grey_24.png" />
+    <Content Include="img\logo_grey_64.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
