@@ -1,9 +1,9 @@
 ﻿var app = angular.module('EdtApp', [  'ui.router'
                                     , 'ui.bootstrap'
                                     , 'LocalStorageModule'
-                                    , 'angular-loading-bar']);
-
-
+                                    , 'angular-loading-bar'
+                                    , 'ngSanitize'
+                                   ]);
 
 app.run(['authService', function (authService) {
     authService.fillAuthData();

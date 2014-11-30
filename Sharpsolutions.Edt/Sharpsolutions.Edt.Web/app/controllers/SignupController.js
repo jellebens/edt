@@ -1,5 +1,5 @@
 ﻿'use strict';
-var signupController = function ($scope, $location, $timeout, authService) {
+angular.module('EdtApp').controller('signupController', ['$scope', '$state', '$timeout', 'authService', function ($scope, $state, $timeout, authService) {
 
     $scope.savedSuccessfully = false;
     $scope.message = "";
@@ -10,7 +10,8 @@ var signupController = function ($scope, $location, $timeout, authService) {
         confirmPassword: ""
     };
 
-    $scope.signUp = function () {
+
+    $scope.signup = function () {
 
         authService.saveRegistration($scope.registration).then(function (response) {
 
@@ -20,21 +21,29 @@ var signupController = function ($scope, $location, $timeout, authService) {
 
         },
          function (response) {
-             var errors = [];
+             $scope.message = "Failed to register user due to:";
+             $scope.message += "<ul>";
+
              for (var key in response.data.modelState) {
                  for (var i = 0; i < response.data.modelState[key].length; i++) {
-                     errors.push(response.data.modelState[key][i]);
+                     var msg = response.data.modelState[key][i];
+                     console.log(msg);
+
+                     if (msg != "") {
+                         $scope.message += "<li>" + msg + "</li>";
+                     }
+                     
+                     
                  }
              }
-             $scope.message = "Failed to register user due to:" + errors.join(' ');
          });
     };
 
     var startTimer = function () {
         var timer = $timeout(function () {
             $timeout.cancel(timer);
-            $location.path('/login');
+            $state.go('account.login');
         }, 2000);
     }
 
-}
+}]);

@@ -17,6 +17,10 @@
         url: "/account/loggedin",
         templateUrl: "app/views/account/loggedin.html",
         controller: "loginController"
+    }).state('account.signup', {
+        url: "/account/signup",
+        templateUrl: "app/views/account/signup.html",
+        controller: "signupController"
     });
 
 }

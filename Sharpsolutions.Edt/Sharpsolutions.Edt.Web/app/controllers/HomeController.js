@@ -1,10 +1,6 @@
 ﻿'use strict';
-var homeController = function ($scope, $location, authService) {
-    $scope.logOut = function () {
-        authService.logOut();
-        $location.path('/');
-    }
-    console.log(authService.authentication);
+angular.module('EdtApp').controller('homeController', ['$scope', '$state', 'authService',function ($scope, $state, authService) {
 
-    $scope.authentication = authService.authentication;
-}
+    
+
+}]);
