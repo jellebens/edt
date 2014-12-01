@@ -10,6 +10,7 @@ namespace Sharpsolutions.Edt.System.Logging {
         public static class Commanding { 
             private const string  Command = Base + "Commading.";
             public const string Producer = Command + "Producer";
+            public const string Worker = Command + "Worker";
         }
     }
 }

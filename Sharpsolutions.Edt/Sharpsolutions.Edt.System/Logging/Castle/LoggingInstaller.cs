@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Sharpsolutions.Edt.Api.App.Installers {
+namespace Sharpsolutions.Edt.System.Logging.Castle {
     public class LoggingInstaller : IWindsorInstaller {
         public void Install(IWindsorContainer container, IConfigurationStore store) {
             container.AddFacility<LoggingFacility>(f => f.UseLog4Net()

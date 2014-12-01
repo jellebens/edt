@@ -146,7 +146,6 @@
     <Compile Include="App\Client\Bus.cs" />
     <Compile Include="App\Installers\ApiInstaller.cs" />
     <Compile Include="App\Installers\BusInstaller.cs" />
-    <Compile Include="App\Installers\LoggingInstaller.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\WindsorConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Sharpsolutions.Edt.Services" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2014-06.2.4">
+  <Role name="Sharpsolutions.Edt.Worker.Command">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Edt.ServiceBus.ConnectionString" value="Endpoint=sb://edt-bus.servicebus.windows.net/;SharedAccessKeyName=DefaultPolicy;SharedAccessKey=HNffOK4x8ZvBdECUpxYhYHvFbsOOcxEJvfTfs5xNIH4=" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 namespace Sharpsolutions.Edt.System.Serialization.Json {
     public class JsonSerializerFactory {
         public static DataContractJsonSerializer Create<TCommand>(TCommand command) {
+            return Create<TCommand>();
+        }
+
+        public static DataContractJsonSerializer Create<TCommand>() {
             IEnumerable<Type> knownTypes = typeof(TCommand).Assembly.GetTypes().Where(t => typeof(CommandBase).IsAssignableFrom(t));
 
             return new DataContractJsonSerializer(typeof(CommandBase), knownTypes);

@@ -9,25 +9,26 @@ using System.Web;
 namespace Sharpsolutions.Edt.Api.Security {
     public class EdtAuthorizationServerProvider : OAuthAuthorizationServerProvider {
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context) {
-            context.Validated();
+            await Task.Run(() => context.Validated());
         }
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context) {
-
-            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-
-
-            if (!(context.UserName == "admin" && context.Password == "admin2711")) {
-                context.SetError("invalid_grant", "The user name or password is incorrect.");
-                return;
-            }
+            await Task.Run(() => {
+                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
 
-            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-            identity.AddClaim(new Claim("sub", context.UserName));
-            identity.AddClaim(new Claim("role", "user"));
+                if (!(context.UserName == "admin" && context.Password == "admin2711")) {
+                    context.SetError("invalid_grant", "The user name or password is incorrect.");
+                    return;
+                }
 
-            context.Validated(identity);
+
+                var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                identity.AddClaim(new Claim("sub", context.UserName));
+                identity.AddClaim(new Claim("role", "user"));
+
+                context.Validated(identity);
+            });
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Sharpsolutions.Edt.Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            RegisterUserCommand cmd = RegisterUserCommand.New(model.UserName, model.Password);
+            RegisterUser cmd = RegisterUser.New(model.UserName, model.Password);
             
             _Bus.Publish(cmd);
 

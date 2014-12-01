@@ -2,13 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Contracts.Command.Account {
-    public class RegisterUserCommand : CommandBase {
-        public static RegisterUserCommand New(string username, string password) {
-            RegisterUserCommand cmd = new RegisterUserCommand();
+    [DataContract]
+    public class RegisterUser : CommandBase {
+        public static RegisterUser New(string username, string password) {
+            RegisterUser cmd = new RegisterUser();
             cmd.Id = Guid.NewGuid();
             cmd.Username = username;
             cmd.Password = password;
@@ -16,8 +18,9 @@ namespace Sharpsolutions.Edt.Contracts.Command.Account {
             return cmd;
         }
 
+        [DataMember]
         public string Username { get; protected set; }
-
+        [DataMember]
         public string Password { get; protected set; }
     }
 }
