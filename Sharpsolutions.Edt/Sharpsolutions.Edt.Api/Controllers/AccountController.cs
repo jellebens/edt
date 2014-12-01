@@ -28,7 +28,7 @@ namespace Sharpsolutions.Edt.Api.Controllers
             }
 
             RegisterUserCommand cmd = RegisterUserCommand.New(model.UserName, model.Password);
-
+            
             _Bus.Publish(cmd);
 
             return Ok();

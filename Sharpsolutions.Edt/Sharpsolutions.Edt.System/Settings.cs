@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.System {
-    public class Constants {
+    public class Settings {
         public static class Bus {
             public const string ConfigName = "Edt.ServiceBus.ConnectionString";
             public static class Queue {
