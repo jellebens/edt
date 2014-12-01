@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sharpsolutions.Edt.Worker.Command.Installers {
+namespace Sharpsolutions.Edt.Handler.Command.Castle.Installer {
     public class CommandInstaller : IWindsorInstaller {
         public void Install(IWindsorContainer container, IConfigurationStore store) {
             

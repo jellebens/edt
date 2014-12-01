@@ -30,8 +30,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.core">
+      <HintPath>..\packages\NUnitTestAdapter.1.2\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\packages\NUnitTestAdapter.1.2\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\packages\NUnitTestAdapter.1.2\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter">
+      <HintPath>..\packages\NUnitTestAdapter.1.2\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,6 +60,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\Json\JsonSerializerTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sharpsolutions.Edt.Contracts\Sharpsolutions.Edt.Contracts.csproj">
+      <Project>{6be8e39d-18c7-49ac-84bc-0f8e66a7c9fa}</Project>
+      <Name>Sharpsolutions.Edt.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sharpsolutions.Edt.Handler.Command\Sharpsolutions.Edt.Handler.Command.csproj">
+      <Project>{683601fc-9dfb-47d9-9d45-258255c242f6}</Project>
+      <Name>Sharpsolutions.Edt.Handler.Command</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sharpsolutions.Edt.System\Sharpsolutions.Edt.System.csproj">
+      <Project>{36b606df-ad7b-4f76-ad1a-b803c7f500c9}</Project>
+      <Name>Sharpsolutions.Edt.System</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Castle\Installer\CommandInstaller.cs" />
     <Compile Include="Castle\Installer\TypedFactoryInstaller.cs" />
     <Compile Include="Account\RegisterUserHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +56,14 @@
     <ProjectReference Include="..\Sharpsolutions.Edt.Contracts\Sharpsolutions.Edt.Contracts.csproj">
       <Project>{6be8e39d-18c7-49ac-84bc-0f8e66a7c9fa}</Project>
       <Name>Sharpsolutions.Edt.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sharpsolutions.Edt.Data\Sharpsolutions.Edt.Data.csproj">
+      <Project>{3dae64af-32f0-4bf4-8281-4a5a9bad6ca5}</Project>
+      <Name>Sharpsolutions.Edt.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sharpsolutions.Edt.Domain\Sharpsolutions.Edt.Domain.csproj">
+      <Project>{49e863b6-99b3-4e83-97dc-35241dc1b924}</Project>
+      <Name>Sharpsolutions.Edt.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sharpsolutions.Edt.System\Sharpsolutions.Edt.System.csproj">
       <Project>{36b606df-ad7b-4f76-ad1a-b803c7f500c9}</Project>

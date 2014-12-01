@@ -19,6 +19,7 @@ using Sharpsolutions.Edt.System.Serialization.Json;
 using Sharpsolutions.Edt.Contracts.Command.Account;
 using Sharpsolutions.Edt.Handler.Command.Castle.Installer;
 using System.Runtime.Serialization;
+using Sharpsolutions.Edt.Data.Castle.Installers;
 
 namespace Sharpsolutions.Edt.Worker.Command {
     //TODO: refactor this *crap* to SOLID
@@ -47,7 +48,7 @@ namespace Sharpsolutions.Edt.Worker.Command {
                 _Logger.InfoFormat("Processing message: {0}. DeliveryCount: {1}", receivedMessage.MessageId, receivedMessage.DeliveryCount);
 
                 DataContractJsonSerializer serializer = JsonSerializerFactory.Create<RegisterUser>();
-                dynamic command = receivedMessage.GetBody<CommandBase>(serializer);
+                dynamic command = receivedMessage.GetBody<RegisterUser>(serializer);
                 Execute(command);
                 _Logger.InfoFormat("Handled message {0}", receivedMessage.MessageId);
                 receivedMessage.Complete();
@@ -81,7 +82,8 @@ namespace Sharpsolutions.Edt.Worker.Command {
             _Container = new WindsorContainer();
             _Container.Install(FromAssembly.This());
             _Container.Install(FromAssembly.Containing<Settings>());
-            _Container.Install(FromAssembly.Containing<TypedFactoryInstaller>());
+            _Container.Install(FromAssembly.Containing<CommandInstaller>());
+            _Container.Install(FromAssembly.Containing<DataInstaller>());
 
             ILoggerFactory factory = _Container.Resolve<ILoggerFactory>();
             _Logger = factory.Create(Loggers.Commanding.Worker);
