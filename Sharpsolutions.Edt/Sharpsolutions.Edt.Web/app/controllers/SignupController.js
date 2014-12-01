@@ -11,6 +11,12 @@ angular.module('EdtApp').controller('signupController', ['$scope', '$state', '$t
     };
 
 
+    $scope.authentication = authService.authentication;
+
+    if (authService.authentication.isAuth) {
+        $state.go("account.loggedin");
+    }
+
     $scope.signup = function () {
 
         authService.saveRegistration($scope.registration).then(function (response) {

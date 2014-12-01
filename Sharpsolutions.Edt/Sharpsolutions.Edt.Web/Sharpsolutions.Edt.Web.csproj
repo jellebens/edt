@@ -240,9 +240,10 @@
     <Content Include="Content\font-awesome\scss\_spinning.scss" />
     <Content Include="Content\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\font-awesome\scss\_variables.scss" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
     <None Include="Properties\PublishProfiles\edt - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\edt - Web Deploy.pubxml" />
-    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <None Include="Properties\PublishProfiles\edt.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
