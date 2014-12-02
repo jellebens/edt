@@ -19,8 +19,7 @@ namespace Sharpsolutions.Edt.Domain.Account {
             u.UserName = userName;
             u.Id = userName;
 
-            byte[] hash = SHA256Managed.Create().ComputeHash(ASCIIEncoding.ASCII.GetBytes(pwd));
-            u.PwdHash = ASCIIEncoding.ASCII.GetString(hash);
+            
 
             return u;
         }

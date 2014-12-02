@@ -21,7 +21,7 @@ namespace Sharpsolutions.Edt.Api.App.Client {
         }
 
         public void Publish<TCommand>(TCommand command) where TCommand : ICommand {
-            string connectionString = CloudConfigurationManager.GetSetting(Settings.Bus.ConfigName);
+            string connectionString = CloudConfigurationManager.GetSetting(Settings.Bus.ConfigKey);
 
             NamespaceManager namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
             if (!namespaceManager.QueueExists(Settings.Bus.Queue.SendCommand)) {

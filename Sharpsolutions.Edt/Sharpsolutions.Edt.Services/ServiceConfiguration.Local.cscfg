@@ -3,7 +3,8 @@
   <Role name="Sharpsolutions.Edt.Worker.Command">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Edt.ServiceBus.ConnectionString" value="Endpoint=sb://edt-bus.servicebus.windows.net/;SharedAccessKeyName=DefaultPolicy;SharedAccessKey=HNffOK4x8ZvBdECUpxYhYHvFbsOOcxEJvfTfs5xNIH4=" />
+      <Setting name="Edt.ServiceBus.ConnectionString" value="Endpoint=sb://sharpsolutions.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=KW+vgQ4U/xtTOcm20xH5hG0bxGctJTU/9kKRr0U5I3w=" />
+      <Setting name="Edt.Storage.TableStore" value="UseDevelopmentStorage=True;DevelopmentStorageProxyUri=https://127.0.0.1" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>

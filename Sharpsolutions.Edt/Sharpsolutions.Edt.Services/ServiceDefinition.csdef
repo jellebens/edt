@@ -3,6 +3,7 @@
   <WorkerRole name="Sharpsolutions.Edt.Worker.Command" vmsize="ExtraSmall">
     <ConfigurationSettings>
       <Setting name="Edt.ServiceBus.ConnectionString" />
+      <Setting name="Edt.Storage.TableStore" />
     </ConfigurationSettings>
   </WorkerRole>
 </ServiceDefinition>

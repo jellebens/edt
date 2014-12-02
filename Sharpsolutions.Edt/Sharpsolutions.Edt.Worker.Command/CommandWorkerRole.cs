@@ -95,7 +95,7 @@ namespace Sharpsolutions.Edt.Worker.Command {
             // Set the maximum number of concurrent connections 
             ServicePointManager.DefaultConnectionLimit = 12;
             // Create the queue if it does not exist already
-            string connectionString = CloudConfigurationManager.GetSetting(Settings.Bus.ConfigName);
+            string connectionString = CloudConfigurationManager.GetSetting(Settings.Bus.ConfigKey);
             var namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
             if (!namespaceManager.QueueExists(QueueName)) {
                 namespaceManager.CreateQueue(QueueName);

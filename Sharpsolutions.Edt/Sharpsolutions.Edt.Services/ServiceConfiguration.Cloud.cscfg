@@ -4,6 +4,7 @@
     <Instances count="1" />
     <ConfigurationSettings>
       <Setting name="Edt.ServiceBus.ConnectionString" value="Endpoint=sb://edt-bus.servicebus.windows.net/;SharedAccessKeyName=DefaultPolicy;SharedAccessKey=HNffOK4x8ZvBdECUpxYhYHvFbsOOcxEJvfTfs5xNIH4=" />
+      <Setting name="Edt.Storage.TableStore" value="DefaultEndpointsProtocol=https;AccountName=edt;AccountKey=V1qNo5S5doVE78FJtIYlH6fUfFd5t69fJFdb5ybsTfJWRvA7uMnVivkz+dONktxWBJckzg0POqD44j/FKsVy1A==" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>
