@@ -12,9 +12,40 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Azure {
-    public class UserTableStoreRepository: IRepository<User, string> {
+    public class UserTableStoreRepository : IRepository<User, string> {
         public void Add(User user) {
-            
+
+            CloudTable table = Build();
+
+
+            UserEntity ent = new UserEntity(user);
+
+            TableOperation insertOperation = TableOperation.Insert(ent);
+
+            table.Execute(insertOperation);
+        }
+
+         public User Get(string id) {
+           
+            CloudTable table = Build();
+
+            TableOperation RetrieveOperation = TableOperation.Retrieve<UserEntity>(id, id);
+
+            TableResult retrievedResult = table.Execute(RetrieveOperation);
+
+
+
+            UserEntity result = (UserEntity)retrievedResult.Result;
+
+            if (result == null) {
+                return result.AsDomain();
+            }
+
+            return null;
+             
+        }
+
+        private static CloudTable Build() {
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
             CloudConfigurationManager.GetSetting(Settings.Storage.Table.ConfigKey));
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
@@ -22,13 +53,9 @@ namespace Sharpsolutions.Edt.Data.Azure {
             CloudTable table = tableClient.GetTableReference("users");
 
             table.CreateIfNotExists();
-            
-
-            UserEntity ent = new UserEntity(user);
-
-            TableOperation insertOperation = TableOperation.Insert(ent);
-            
-            table.Execute(insertOperation);
+            return table;
         }
+
+       
     }
 }

@@ -12,5 +12,7 @@ namespace Sharpsolutions.Edt.System.Data {
     public interface IRepository<TEntity, TId> where TEntity: IEntity<TId>
     {
         void Add(TEntity entity);
+
+        TEntity Get(TId id);
     }
 }
