@@ -20,9 +20,7 @@ namespace Sharpsolutions.Edt.Data.Azure.Mappers {
                     PwdHash = ent.PwdHash,
                     UserName = ent.UserName
                 };
-
                 return result;
-
             }
         }
 
