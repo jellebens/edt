@@ -49,6 +49,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Data.Tests", "Sharpsolutions.Edt.Data.Tests\Sharpsolutions.Edt.Data.Tests.csproj", "{31E0FCF0-98AF-44C7-A42C-7597130EB26F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Domain.Tests", "Sharpsolutions.Edt.Domain.Tests\Sharpsolutions.Edt.Domain.Tests.csproj", "{903C9A2E-7641-4665-8F79-545271C0A0D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{31E0FCF0-98AF-44C7-A42C-7597130EB26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31E0FCF0-98AF-44C7-A42C-7597130EB26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31E0FCF0-98AF-44C7-A42C-7597130EB26F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{903C9A2E-7641-4665-8F79-545271C0A0D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{903C9A2E-7641-4665-8F79-545271C0A0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{903C9A2E-7641-4665-8F79-545271C0A0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{903C9A2E-7641-4665-8F79-545271C0A0D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,5 +126,6 @@ Global
 		{3DAE64AF-32F0-4BF4-8281-4A5A9BAD6CA5} = {647A3D64-91D1-499C-9C3D-BAE07C5C7941}
 		{49E863B6-99B3-4E83-97DC-35241DC1B924} = {9B2F1CB4-D886-4159-BC79-3BA970C59B5E}
 		{31E0FCF0-98AF-44C7-A42C-7597130EB26F} = {647A3D64-91D1-499C-9C3D-BAE07C5C7941}
+		{903C9A2E-7641-4665-8F79-545271C0A0D9} = {9B2F1CB4-D886-4159-BC79-3BA970C59B5E}
 	EndGlobalSection
 EndGlobal
