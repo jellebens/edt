@@ -16,7 +16,7 @@ namespace Sharpsolutions.Edt.Domain.Account {
         public bool Verify(string password) {
             string hash = CreateHash(password);
 
-            return hash == this.PwdHash;
+            return string.Equals(hash, this.PwdHash);
         }
 
         public static User Create(string userName, string pwd) {
@@ -32,7 +32,7 @@ namespace Sharpsolutions.Edt.Domain.Account {
         private string CreateHash(string pwd) {
             string hash;
             ASCIIEncoding encoding = new ASCIIEncoding();
-            string secret = this.GetType().Name;
+            string secret = typeof(User).Name;
 
             byte[] keyByte = encoding.GetBytes(secret);
             byte[] messageBytes = encoding.GetBytes(pwd);

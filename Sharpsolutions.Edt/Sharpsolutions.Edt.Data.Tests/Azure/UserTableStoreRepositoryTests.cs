@@ -18,16 +18,18 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
         public void AddHAvingAUserShouldNotThrow(){
             UserTableStoreRepository repository = new UserTableStoreRepository();
 
-            User u = User.Create("Admin", "P@ssw0rd");
-
+            User u = User.Create(Guid.NewGuid().ToString(), "P@ssw0rd");
+            Console.WriteLine(u.PwdHash);
             repository.Add(u);
         }
 
         [Test]
         public void RetrievingUserShouldNotThrow() {
             UserTableStoreRepository repository = new UserTableStoreRepository();
-            User x =  repository.Get("Admin");
-
+            User x =  repository.Get("admin");
+            Console.WriteLine(x.PwdHash);
+            
+            Assert.IsTrue(x.Verify("P@ssw0rd"));
             Assert.NotNull(x);
         }
     }

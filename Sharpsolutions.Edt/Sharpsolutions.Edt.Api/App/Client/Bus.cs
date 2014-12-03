@@ -22,7 +22,7 @@ namespace Sharpsolutions.Edt.Api.App.Client {
 
         public void Publish<TCommand>(TCommand command) where TCommand : ICommand {
             string connectionString = CloudConfigurationManager.GetSetting(Settings.Bus.ConfigKey);
-
+            
             NamespaceManager namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
             if (!namespaceManager.QueueExists(Settings.Bus.Queue.SendCommand)) {
                 _Logger.InfoFormat("Queue does not exist creating queue {0}", Settings.Bus.Queue.SendCommand);
@@ -31,11 +31,12 @@ namespace Sharpsolutions.Edt.Api.App.Client {
 
             QueueClient Client = QueueClient.CreateFromConnectionString(connectionString, Settings.Bus.Queue.SendCommand);
 
-
             DataContractJsonSerializer serializer = JsonSerializerFactory.Create(command);
 
             BrokeredMessage message = new BrokeredMessage(command, serializer);
             message.MessageId = command.Id.ToString();
+
+            _Logger.DebugFormat("Dispatching message with id {0}", message.MessageId);
 
             Client.SendAsync(message);
         }
