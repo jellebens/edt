@@ -4,7 +4,7 @@
     <Instances count="1" />
     <ConfigurationSettings>
       <Setting name="Edt.ServiceBus.ConnectionString" value="Endpoint=sb://edt-bus.servicebus.windows.net/;SharedAccessKeyName=DefaultPolicy;SharedAccessKey=HNffOK4x8ZvBdECUpxYhYHvFbsOOcxEJvfTfs5xNIH4=" />
-      <Setting name="Edt.Storage.TableStore" value="DefaultEndpointsProtocol=https;AccountName=edt;AccountKey=V1qNo5S5doVE78FJtIYlH6fUfFd5t69fJFdb5ybsTfJWRvA7uMnVivkz+dONktxWBJckzg0POqD44j/FKsVy1A==" />
+      <Setting name="Edt.Storage.TableStore" value="DefaultEndpointsProtocol=https;AccountName=edt;AccountKey=Q2ULd52viZ9Jdr0bv4Y2LMmrdnb3jZKwaI4KFMGck8ThjlU3rzN6DpaCw6+WEHasHs/tgRWZk0n2YWUBXyJ4cA==" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="admin" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEB1M5qQ9niq7T3r0ehk3bCEwDQYJKoZIhvcNAQEBBQAEggEAI1YdhMu9sCtJK9nMEA/HHlQd6/nocmjLhqjmmQBjDGHnw9hp86+BDauubbUZvgxN/cqxzc1rP6ZFrkh/quyq6JFFzkU6Q8MuDFNmXfKyMwM9ocl+DDZiC3DECyTlyDSLA0Hcr0L8qLkcK1ADZ9AM47tyPbkHovH77UE73rpU7VBhx3zDE1fCuhtvAr+MQPXh65/HfAp/R4rTxdgs+IqqgXXzgFXcpJx5829WX9/HIkx8ebh+vSb6dOQhWEk+XtPfgZcvB7X4fv9uFCu0dOlZ2nwO6iTBP0VjE0Ai12YMOjkiNmKFeBjBCV+wqouz8wuUawDXzEeKdV2agM6yfPDouDAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECCb9N+ulwaJzgBBZ9S1leCOWeJkkancGy+13" />
