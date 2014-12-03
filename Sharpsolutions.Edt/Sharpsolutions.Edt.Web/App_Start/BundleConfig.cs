@@ -43,12 +43,7 @@ namespace Sharpsolutions.Edt.Web {
                  .Include("~/app/services.js")
                  );
 
-            bundles.Add(new ScriptBundle(Bundles.Scripts.EdtApp)
-                .Include("~/app/app.js") 
-                .IncludeDirectory("~/app/services/", "*.js")
-                 .IncludeDirectory("~/app/controllers/", "*.js")
-                 .Include("~/app/services.js")
-                 .Include("~/app/config.js"));
+            bundles.Add(new ScriptBundle(Bundles.Scripts.AppInsights).Include("~/Scripts/edt-appinsights.js"));
         }
 
         private static void AddStyles(BundleCollection bundles) {
