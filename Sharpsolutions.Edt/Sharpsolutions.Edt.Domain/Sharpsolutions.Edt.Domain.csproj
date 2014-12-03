@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\Password.cs" />
     <Compile Include="Account\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

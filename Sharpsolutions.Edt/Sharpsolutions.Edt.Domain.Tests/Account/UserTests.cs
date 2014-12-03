@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+﻿    using NUnit.Framework;
 using Sharpsolutions.Edt.Domain.Account;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Account {
             string pass = "P@ssw0rd";
             User u = User.Create("John doe", pass);
 
-            Console.WriteLine(u.PwdHash);
+            Console.WriteLine(u.Password);
 
             bool isValid = u.Verify(pass);
             Assert.IsTrue(isValid);
@@ -25,7 +25,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Account {
             string pass = "P@ssw0rd";
             User u = User.Create("John doe", pass);
 
-            Console.WriteLine(u.PwdHash);
+            
 
             bool isValid = u.Verify("HEllo");
             Assert.IsFalse(isValid);

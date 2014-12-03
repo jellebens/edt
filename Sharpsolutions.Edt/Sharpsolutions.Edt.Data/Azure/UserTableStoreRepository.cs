@@ -1,7 +1,6 @@
 ﻿using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
-using Sharpsolutions.Edt.Data.Azure.Mappers;
 using Sharpsolutions.Edt.Domain.Account;
 using Sharpsolutions.Edt.System;
 using Sharpsolutions.Edt.System.Data;
@@ -18,31 +17,43 @@ namespace Sharpsolutions.Edt.Data.Azure {
             CloudTable table = Build();
 
 
-            UserEntity ent = new UserEntity(user);
+            DynamicTableEntity entity = new DynamicTableEntity();
 
-            TableOperation insertOperation = TableOperation.Insert(ent);
+            entity.PartitionKey = user.Name;
+            entity.RowKey = user.Name;
+            entity.Properties.Add("Name", new EntityProperty(user.Name));
+            entity.Properties.Add("Password", new EntityProperty(user.Password.ToString()));
+
+
+            TableOperation insertOperation = TableOperation.Insert(entity);
 
             table.Execute(insertOperation);
         }
 
-         public User Get(string id) {
-           
+        public User Get(string id) {
+
             CloudTable table = Build();
 
-            TableOperation RetrieveOperation = TableOperation.Retrieve<UserEntity>(id, id);
+            DynamicTableEntity entity = new DynamicTableEntity();
+            Dictionary<string, EntityProperty> props = new Dictionary<string, EntityProperty>();
+            TableOperation retrieveOperation = TableOperation.Retrieve(id, id);
 
-            TableResult retrievedResult = table.Execute(RetrieveOperation);
 
 
 
-            UserEntity result = (UserEntity)retrievedResult.Result;
+            TableResult retrievedResult = table.Execute(retrieveOperation);
 
-            if (result != null) {
-                return result.AsDomain();
+            DynamicTableEntity x = retrievedResult.Result as DynamicTableEntity;
+
+            if (x == null) {
+                return null;
             }
 
-            return null;
-             
+            Password p = new Password(x.Properties["Password"].StringValue);
+            User u = new User(x.Properties["Name"].StringValue, p);
+
+            return u;
+
         }
 
         private static CloudTable Build() {
@@ -56,6 +67,6 @@ namespace Sharpsolutions.Edt.Data.Azure {
             return table;
         }
 
-       
+
     }
 }

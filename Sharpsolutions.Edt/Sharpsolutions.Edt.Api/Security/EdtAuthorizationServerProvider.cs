@@ -37,7 +37,7 @@ namespace Sharpsolutions.Edt.Api.Security {
                     return;
                 }
 
-                _Logger.InfoFormat("Access for user: {0} granted");
+                _Logger.InfoFormat("Access for user: {0} granted", context.UserName);
 
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
                 identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));

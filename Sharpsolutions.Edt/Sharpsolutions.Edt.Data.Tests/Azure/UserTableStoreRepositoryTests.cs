@@ -13,24 +13,33 @@ using System.Threading.Tasks;
 namespace Sharpsolutions.Edt.Data.Tests.Azure {
     [TestFixture]
     public class UserTableStoreRepositoryTests {
-    
+        UserTableStoreRepository _Repository = new UserTableStoreRepository();
+
         [Test]
         public void AddHAvingAUserShouldNotThrow(){
-            UserTableStoreRepository repository = new UserTableStoreRepository();
-
             User u = User.Create(Guid.NewGuid().ToString(), "P@ssw0rd");
-            Console.WriteLine(u.PwdHash);
-            repository.Add(u);
+            
+            _Repository.Add(u);
         }
 
         [Test]
         public void RetrievingUserShouldNotThrow() {
-            UserTableStoreRepository repository = new UserTableStoreRepository();
-            User x =  repository.Get("admin");
-            Console.WriteLine(x.PwdHash);
+            Setup(_Repository);
+
+            User expected = _Repository.Get("admin");
+
+            Assert.NotNull(expected);
+            Assert.IsTrue(expected.Verify("P@ssw0rd"));
             
-            Assert.IsTrue(x.Verify("P@ssw0rd"));
-            Assert.NotNull(x);
+        }
+
+        private void Setup(UserTableStoreRepository repository) {
+            User x = repository.Get("admin");
+
+            if (x == null) {
+                User u = User.Create("admin", "P@ssw0rd");
+                repository.Add(u);
+            }
         }
     }
 }
