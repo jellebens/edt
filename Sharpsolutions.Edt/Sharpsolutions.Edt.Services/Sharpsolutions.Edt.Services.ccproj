@@ -54,7 +54,7 @@
     <DiagnosticsConfiguration Include="Sharpsolutions.Edt.Worker.CommandContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <ItemGroup>
-    <PublishProfile Include="Profiles\edt-servicesProduction.azurePubxml" />
+    <PublishProfile Include="Profiles\Edt.Services - Production.azurePubxml" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

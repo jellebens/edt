@@ -5,5 +5,9 @@
       <Setting name="Edt.ServiceBus.ConnectionString" />
       <Setting name="Edt.Storage.TableStore" />
     </ConfigurationSettings>
+    <Imports>
+      <Import moduleName="RemoteAccess" />
+      <Import moduleName="RemoteForwarder" />
+    </Imports>
   </WorkerRole>
 </ServiceDefinition>

@@ -15,8 +15,10 @@
     <AzureEnableProfiling>False</AzureEnableProfiling>
     <AzureServiceConfiguration>Cloud</AzureServiceConfiguration>
     <AzureSolutionConfiguration>Release</AzureSolutionConfiguration>
-    <AzureStorageAccountLabel>edt</AzureStorageAccountLabel>
-    <AzureStorageAccountName>edt</AzureStorageAccountName>
+    <AzureStorageAccountLabel>edttechnical</AzureStorageAccountLabel>
+    <AzureStorageAccountName>edttechnical</AzureStorageAccountName>
     <AzureAppendTimestampToDeploymentLabel>True</AzureAppendTimestampToDeploymentLabel>
+    <EnableRemoteDebugger>True</EnableRemoteDebugger>
+    <RemoteDebuggerConnectorCertificateThumbprint>65A0FE18F245327AA254D199CE5B5166BECA3C89</RemoteDebuggerConnectorCertificateThumbprint>
   </PropertyGroup>
 </Project>
