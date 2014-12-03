@@ -186,6 +186,7 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-appinsights.js" />
     <Content Include="Scripts\angular-bootstrap-checkbox.js" />
     <Content Include="Scripts\angular-local-storage.min.js" />
     <Content Include="Scripts\angular-route.js" />
