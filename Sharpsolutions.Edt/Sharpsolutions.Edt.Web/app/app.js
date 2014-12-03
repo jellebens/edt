@@ -19,6 +19,5 @@ app.config(function ($httpProvider) {
 });
 
 var Settings = {
-    //ServiceBase : 'https://edt-api.azurewebsites.net/'
     ServiceBase: 'https://edt-api.azurewebsites.net/'
 };

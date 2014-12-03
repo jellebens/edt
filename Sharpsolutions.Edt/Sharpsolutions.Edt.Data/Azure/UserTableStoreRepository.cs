@@ -37,7 +37,7 @@ namespace Sharpsolutions.Edt.Data.Azure {
 
             UserEntity result = (UserEntity)retrievedResult.Result;
 
-            if (result == null) {
+            if (result != null) {
                 return result.AsDomain();
             }
 

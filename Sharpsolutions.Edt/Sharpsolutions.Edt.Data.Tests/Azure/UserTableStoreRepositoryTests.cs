@@ -18,9 +18,17 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
         public void AddHAvingAUserShouldNotThrow(){
             UserTableStoreRepository repository = new UserTableStoreRepository();
 
-            User u = User.Create(Guid.NewGuid().ToString(), "P@ssw0rd");
+            User u = User.Create("Admin", "P@ssw0rd");
 
             repository.Add(u);
+        }
+
+        [Test]
+        public void RetrievingUserShouldNotThrow() {
+            UserTableStoreRepository repository = new UserTableStoreRepository();
+            User x =  repository.Get("Admin");
+
+            Assert.NotNull(x);
         }
     }
 }

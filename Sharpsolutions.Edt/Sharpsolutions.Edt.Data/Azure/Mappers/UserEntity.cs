@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Azure.Mappers {
     public class UserEntity : TableEntity {
+
+
         private class aUser : User {
-            
             public override string Id { get; protected set; }
             public override string PwdHash { get; protected set; }
             public override string UserName { get; protected set; }
@@ -22,6 +23,9 @@ namespace Sharpsolutions.Edt.Data.Azure.Mappers {
                 };
                 return result;
             }
+        }
+        public UserEntity() {
+
         }
 
         public UserEntity(User u) {

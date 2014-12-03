@@ -47,10 +47,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Profiles" />
     <Folder Include="Sharpsolutions.Edt.Worker.CommandContent\" />
   </ItemGroup>
   <ItemGroup>
     <DiagnosticsConfiguration Include="Sharpsolutions.Edt.Worker.CommandContent\diagnostics.wadcfgx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishProfile Include="Profiles\edt-servicesProduction.azurePubxml" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>
