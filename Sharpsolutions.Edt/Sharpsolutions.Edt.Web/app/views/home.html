@@ -1,10 +1,24 @@
-﻿<div class="row" ng-controller="homeController">
-    <div class="col-lg-12">
-        <div class="jumbotron text-center">
-            <h1>Get Started</h1>
-            <p>This is a tool to keep track of your trading in Elite: Dangerous</p>
-            <p><a role="button" class="btn btn-primary btn-lg" ui-sref="account.signup">Get Started</a></p>
+﻿<div class="wrapper wrapper-content animated fadeInRight ng-scope">
+    <div class="row" ng-controller="homeController">
+        <div class="col-lg-12" data-ng-show="!authentication.isAuth">
+            <div class="jumbotron text-center">
+                <h1>Get Started</h1>
+                <p>This is a tool to keep track of your trading in Elite: Dangerous</p>
+                <p><a role="button" class="btn btn-primary btn-lg" ui-sref="account.signup">Get Started</a></p>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12" data-ng-show="authentication.isAuth">
+            <div class="text-center m-t-lg">
+                <h1 class="ng-binding">
+                    Welcome to the Elite: Dangerous Trading Ledger
+                </h1>
+                <small class="ng-binding">
+
+                </small>
+            </div>
         </div>
     </div>
-
 </div>
+

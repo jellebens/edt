@@ -146,6 +146,8 @@
     <Content Include="app\views\common\navigation.html" />
     <Content Include="app\views\common\topnavbar.html" />
     <Content Include="app\views\home.html" />
+    <Content Include="app\views\trade\content.html" />
+    <Content Include="app\views\trade\starport.html" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-overides.css" />
     <Content Include="Content\bootstrap.css" />

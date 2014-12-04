@@ -26,8 +26,13 @@ angular.module('EdtApp').controller('loginController', ['$scope', '$state', 'aut
 
 
     $scope.logout = function () {
-        authService.logOut();
-        $state.go("home");
+        $(".tada").addClass('fadeOut');
+        setTimeout(function () {
+            authService.logOut();
+            $state.go("home");
+        }, 500);
+
+        
     }
 
 

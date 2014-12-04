@@ -21,6 +21,14 @@
         url: "/account/signup",
         templateUrl: "app/views/account/signup.html",
         controller: "signupController"
+    }).state('trade', {
+        abstract: true,
+        url: "/trade",
+        templateUrl: "app/views/trade/content.html"
+    }).state('trade.starport', {
+        url: "/trade/starport",
+        templateUrl: "app/views/trade/starport.html",
+        controller: "starPortController"
     });
 
 }
