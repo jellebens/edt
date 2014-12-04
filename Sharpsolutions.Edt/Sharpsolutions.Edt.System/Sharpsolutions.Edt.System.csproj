@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Castle\ContainerExtensions.cs" />
+    <Compile Include="Castle\WindsorContainerInstaller.cs" />
     <Compile Include="Command\CommandBase.cs" />
     <Compile Include="Command\IBus.cs" />
     <Compile Include="Command\ICommand.cs" />

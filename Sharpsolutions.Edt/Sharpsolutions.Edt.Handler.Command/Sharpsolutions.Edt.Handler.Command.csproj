@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Castle\ContainerExtensions.cs" />
     <Compile Include="Castle\Installer\CommandInstaller.cs" />
     <Compile Include="Castle\Installer\TypedFactoryInstaller.cs" />
     <Compile Include="Account\RegisterUserHandler.cs" />

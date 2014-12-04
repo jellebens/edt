@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Azure\UserTableStoreRepository.cs" />
+    <Compile Include="Castle\ContainerExtensions.cs" />
     <Compile Include="Castle\Installers\DataInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

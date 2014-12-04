@@ -94,6 +94,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandProcessor.cs" />
+    <Compile Include="ICommandProcessor.cs" />
+    <Compile Include="Installers\ProcessorInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommandWorkerRole.cs" />
   </ItemGroup>
@@ -123,9 +126,7 @@
       <Name>Sharpsolutions.Edt.System</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Installers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

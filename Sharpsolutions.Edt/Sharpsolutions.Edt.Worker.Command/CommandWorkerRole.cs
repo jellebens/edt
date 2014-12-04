@@ -33,7 +33,7 @@ namespace Sharpsolutions.Edt.Worker.Command {
         // rather than recreating it on every request
         private QueueClient _Client;
         private ManualResetEvent _CompletedEvent = new ManualResetEvent(false);
-        private ICommandHandlerFactory _HandlerFactory;
+       
 
         public override void Run() {
             _Client.OnMessage((receivedMessage) => {
@@ -49,9 +49,15 @@ namespace Sharpsolutions.Edt.Worker.Command {
 
                 DataContractJsonSerializer serializer = JsonSerializerFactory.Create<RegisterUser>();
                 dynamic command = receivedMessage.GetBody<RegisterUser>(serializer);
-                Execute(command);
+
+                ICommandProcessor processor = _Container.Resolve<ICommandProcessor>();
+
+                processor.Execute(command);
+
                 _Logger.InfoFormat("Handled message {0}", receivedMessage.MessageId);
                 receivedMessage.Complete();
+
+                _Container.Release(processor);
 
             }catch(SerializationException e){
                 _Logger.ErrorFormat(e, "An SerializationException Has been caught  moving message to deadletter {0}.", e.Message);
@@ -62,14 +68,7 @@ namespace Sharpsolutions.Edt.Worker.Command {
             }
         }
 
-        private void Execute<TCommand>(TCommand command) {
-            ICommandHandler<TCommand> handler = _HandlerFactory.Create<TCommand>();
-            try {
-                handler.Execute(command);
-            } finally {
-                _HandlerFactory.Release(handler);
-            }
-        }
+        
 
         public override bool OnStart() {
             ConfigureContainer();
@@ -80,15 +79,15 @@ namespace Sharpsolutions.Edt.Worker.Command {
 
         private void ConfigureContainer() {
             _Container = new WindsorContainer();
+
             _Container.Install(FromAssembly.This());
-            _Container.Install(FromAssembly.Containing<Settings>());
-            _Container.Install(FromAssembly.Containing<CommandInstaller>());
-            _Container.Install(FromAssembly.Containing<DataInstaller>());
+            _Container.InstallFrom()
+                            .System()
+                            .Command()
+                            .Data();
 
             ILoggerFactory factory = _Container.Resolve<ILoggerFactory>();
             _Logger = factory.Create(Loggers.Commanding.Worker);
-
-            _HandlerFactory = _Container.Resolve<ICommandHandlerFactory>();
         }
 
         private void ConfigureWorker() {
