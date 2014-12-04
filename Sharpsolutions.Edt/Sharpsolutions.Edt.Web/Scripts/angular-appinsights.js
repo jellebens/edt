@@ -1,6 +1,5 @@
-/*global angular: true, appInsights: true */
-    "use strict";
 
+    "use strict";
     angular.module('angular-appinsights', [])
 
         .provider('insights', function () {
@@ -11,11 +10,7 @@
             this.start = function (appId, appName) {
 
                 _appId = appId;
-                _appName = appName || '(Application Root)';
-
-                //if (appInsights && appId) {
-                //    appInsights.start(appId);
-                //}
+                _appName = appName || '';
 
             };
 
@@ -24,7 +19,7 @@
                 var _logEvent = function (event, properties, property) {
 
                     if (appInsights && _appId) {
-                        appInsights.logEvent(event, properties, property);
+                        appInsights.trackEvent(event, properties, property);
                     }
 
                 },

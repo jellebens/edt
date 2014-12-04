@@ -270,10 +270,10 @@
     <None Include="Properties\PublishProfiles\edt - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\edt - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\edt.pubxml" />
-    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\edt-appinsights.js" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\loading-bar.js" />
