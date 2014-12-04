@@ -133,6 +133,7 @@
     <Content Include="app\controllers\NavBarController.js" />
     <Content Include="app\controllers\SignupController.js" />
     <Content Include="app\config.js" />
+    <Content Include="app\controllers\StarPortController.js" />
     <Content Include="app\inspinia-directives.js" />
     <Content Include="app\services.js" />
     <Content Include="app\services\AuthInterceptorService.js" />
