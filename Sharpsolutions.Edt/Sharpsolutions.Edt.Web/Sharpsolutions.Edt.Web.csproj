@@ -133,6 +133,7 @@
     <Content Include="app\controllers\NavBarController.js" />
     <Content Include="app\controllers\SignupController.js" />
     <Content Include="app\config.js" />
+    <Content Include="app\inspinia-directives.js" />
     <Content Include="app\services.js" />
     <Content Include="app\services\AuthInterceptorService.js" />
     <Content Include="app\services\AuthService.js" />
@@ -274,6 +275,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\edt-appinsights.js" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\inspinia.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\loading-bar.js" />

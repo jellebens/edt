@@ -35,9 +35,13 @@ namespace Sharpsolutions.Edt.Web {
             bundles.Add(new ScriptBundle(Bundles.Scripts.SlimScroll)
                                     .IncludeDirectory("~/Scripts/plugins/slimscroll", "*.js"));
 
+            bundles.Add(new ScriptBundle(Bundles.Scripts.Inspinia)
+                                    .Include("~/Scripts/inspinia.js"));
+
             bundles.Add(new ScriptBundle(Bundles.Scripts.EdtApp)
                 .Include("~/app/app.js")
                 .Include("~/app/config.js")
+                .Include("~/app/inspinia-directives.js")
                 .IncludeDirectory("~/app/services/", "*.js")
                  .IncludeDirectory("~/app/controllers/", "*.js")
                  .Include("~/app/services.js")

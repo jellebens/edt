@@ -15,7 +15,7 @@ namespace Sharpsolutions.Edt.Web.Core {
             public const string SlimScroll = "~/bundles/slimscroll";
             public const string Pace = "~/bundles/pace";
             public const string MetisMenu = "~/bundles/metisMenu";
-            
+            public const string Inspinia = "~/bundles/Inspinia";
         }
 
         public static class Styles {
