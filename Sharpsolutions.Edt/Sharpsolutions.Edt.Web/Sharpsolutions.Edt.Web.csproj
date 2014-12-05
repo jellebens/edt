@@ -398,6 +398,9 @@
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Scripts\loading-bar.min.js.map">
+      <DependentUpon>loading-bar.min.js</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

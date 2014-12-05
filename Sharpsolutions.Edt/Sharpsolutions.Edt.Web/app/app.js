@@ -4,6 +4,7 @@
                                     , 'angular-loading-bar'
                                     , 'ngSanitize'
                                     , 'angular-appinsights'
+                                    , 'ngAnimate'
                                    ]);
 
 app.run(['authService', function (authService) {

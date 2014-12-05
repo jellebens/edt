@@ -155,7 +155,6 @@ angular.module('cfp.loadingBarInterceptor', ['cfp.loadingBar'])
  */
 angular.module('cfp.loadingBar', [])
   .provider('cfpLoadingBar', function() {
-
     this.includeSpinner = true;
     this.includeBar = true;
     this.latencyThreshold = 100;
@@ -170,7 +169,7 @@ angular.module('cfp.loadingBar', [])
         loadingBarContainer = angular.element(this.loadingBarTemplate),
         loadingBar = loadingBarContainer.find('div').eq(0),
         spinner = angular.element(this.spinnerTemplate);
-
+      
       var incTimeout,
         completeTimeout,
         started = false,
