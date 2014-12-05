@@ -18,7 +18,7 @@ $(document).ready(function () {
         if(!$("body").hasClass('body-small')) {
             fix_height();
         }
-    })
+    });
     fix_height();
 
 });
@@ -27,9 +27,9 @@ $(document).ready(function () {
 $(function() {
     $(window).bind("load resize", function() {
         if ($(this).width() < 769) {
-            $('body').addClass('body-small')
+            $('body').addClass('body-small');
         } else {
-            $('body').removeClass('body-small')
+            $('body').removeClass('body-small');
         }
-    })
-})
+    });
+});

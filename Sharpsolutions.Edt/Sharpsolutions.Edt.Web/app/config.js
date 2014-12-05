@@ -25,10 +25,10 @@
         abstract: true,
         url: "/trade",
         templateUrl: "app/views/trade/content.html"
-    }).state('trade.starport', {
-        url: "/trade/starport",
-        templateUrl: "app/views/trade/starport.html",
-        controller: "starPortController"
+    }).state('trade.solarsystem', {
+        url: "/trade/solarsystem",
+        templateUrl: "app/views/trade/solarsystem.html",
+        controller: "solarSystemCreateController"
     });
 
 }

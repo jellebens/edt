@@ -42,9 +42,10 @@ namespace Sharpsolutions.Edt.Web {
                 .Include("~/app/app.js")
                 .Include("~/app/config.js")
                 .Include("~/app/inspinia-directives.js")
+                .IncludeDirectory("~/app/directives/", "*.js")
                 .IncludeDirectory("~/app/services/", "*.js")
-                 .IncludeDirectory("~/app/controllers/", "*.js")
-                 .Include("~/app/services.js")
+                .IncludeDirectory("~/app/controllers/", "*.js")
+                .Include("~/app/services.js")
                  );
 
             bundles.Add(new ScriptBundle(Bundles.Scripts.AppInsights).Include("~/Scripts/edt-appinsights.js"));
@@ -52,7 +53,7 @@ namespace Sharpsolutions.Edt.Web {
 
         private static void AddStyles(BundleCollection bundles) {
             bundles.Add(new StyleBundle(Bundles.Styles.Common)
-                                                        .Include("~/Content/footer.css")                                    
+                                                        .Include("~/Content/footer.css")
                                                         .Include("~/Content/site.css"));
 
             bundles.Add(new StyleBundle(Bundles.Styles.Inspinia)
