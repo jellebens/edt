@@ -7,9 +7,19 @@ using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Domain.Trade {
     public class Economy: Enumeration {
+        public static Economy Extraction = new Economy(1, "Extraction");
+        public static Economy Refinery = new Economy(2, "Refinery");
+        public static Economy Agriculture = new Economy(3, "Agriculture");
+        public static Economy Industrial = new Economy(4, "Industrial");
+        public static Economy HighTech = new Economy(5, "High Tech");
+
         public Economy(int value, string displayName): base(value, displayName)
         {
             
+        }
+
+        public static IEnumerable<Economy> All(){
+            return All<Economy>();
         }
     }
 }

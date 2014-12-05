@@ -13,17 +13,10 @@ namespace Sharpsolutions.Edt.System.Serialization.Json {
     [TestFixture]
     public class JsonSerializerFactoryTests {
         [Test]
-        public void SerializeRegisterUser() {
+        public void SerializeRegisterUserShouldNotThrow() {
             RegisterUser cmd = RegisterUser.New("John Doe", "P@ssw0rd");
 
             DataContractJsonSerializer serializer = JsonSerializerFactory.Create(cmd);
-            
-            
-            
-
-            
-            
-
         }
     }
 }

@@ -383,6 +383,7 @@
     <Content Include="Scripts\plugins\slimscroll\jquery.slimscroll.js" />
     <Content Include="Scripts\plugins\slimscroll\jquery.slimscroll.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.11.0.min.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Web.config" />
   </ItemGroup>

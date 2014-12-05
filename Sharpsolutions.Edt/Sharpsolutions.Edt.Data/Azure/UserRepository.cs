@@ -11,8 +11,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Azure {
-    public class UserTableStoreRepository : IRepository<User, string> {
-        public void Add(User user) {
+    public class UserRepository : TableStorageBase<User, string> {
+        protected override string Table {
+            get { return "users"; }
+        }
+
+        public override void Add(User user) {
 
             CloudTable table = Build();
 
@@ -30,16 +34,13 @@ namespace Sharpsolutions.Edt.Data.Azure {
             table.Execute(insertOperation);
         }
 
-        public User Get(string id) {
+        public override User Get(string id) {
 
             CloudTable table = Build();
 
             DynamicTableEntity entity = new DynamicTableEntity();
             Dictionary<string, EntityProperty> props = new Dictionary<string, EntityProperty>();
             TableOperation retrieveOperation = TableOperation.Retrieve(id, id);
-
-
-
 
             TableResult retrievedResult = table.Execute(retrieveOperation);
 
@@ -55,18 +56,5 @@ namespace Sharpsolutions.Edt.Data.Azure {
             return u;
 
         }
-
-        private static CloudTable Build() {
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-            CloudConfigurationManager.GetSetting(Settings.Storage.Table.ConfigKey));
-            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
-
-            CloudTable table = tableClient.GetTableReference("users");
-
-            table.CreateIfNotExists();
-            return table;
-        }
-
-
     }
 }

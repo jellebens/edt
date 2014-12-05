@@ -41,7 +41,8 @@
   <ItemGroup>
     <Compile Include="Account\Password.cs" />
     <Compile Include="Account\User.cs" />
-    <Compile Include="Commodity\Category.cs" />
+    <Compile Include="Commodities\Category.cs" />
+    <Compile Include="Commodities\Commodity.cs" />
     <Compile Include="Core\Enumeration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trade\Economy.cs" />
