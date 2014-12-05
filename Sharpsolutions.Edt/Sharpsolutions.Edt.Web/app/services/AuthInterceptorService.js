@@ -1,5 +1,5 @@
 ﻿'use strict';
-var authInterceptorService = function ($q, $location, localStorageService) {
+angular.module('EdtApp').factory('authInterceptorService', ['$q', '$location', 'localStorageService', function ($q, $location, localStorageService) {
 
     var authInterceptorServiceFactory = {};
 
@@ -26,4 +26,4 @@ var authInterceptorService = function ($q, $location, localStorageService) {
     authInterceptorServiceFactory.responseError = _responseError;
 
     return authInterceptorServiceFactory;
-}
+}]);

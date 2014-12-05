@@ -8,7 +8,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 
 namespace Sharpsolutions.Edt.Web {
-    public class Global : System.Web.HttpApplication {
+    public class Global : HttpApplication {
 
         protected void Application_Start(object sender, EventArgs e) {
             RouteConfig.RegisterRoutes(RouteTable.Routes);

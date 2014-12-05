@@ -25,10 +25,18 @@
         abstract: true,
         url: "/trade",
         templateUrl: "app/views/trade/content.html"
-    }).state('trade.solarsystem', {
-        url: "/trade/solarsystem",
-        templateUrl: "app/views/trade/solarsystem.html",
-        controller: "solarSystemCreateController"
+    }).state('trade.starport', {
+        abstract: true,
+        url: "/starport",
+        templateUrl: "app/views/trade/content.html"
+    }).state('trade.starport.new', {
+        url: "/new",
+        templateUrl: "app/views/trade/starport/create.html",
+        controller: "starPortController"
+    }).state('trade.starport.update', {
+        url: "/update",
+        templateUrl: "app/views/trade/starport/update.html",
+        controller: "starPortController"
     });
 
 }

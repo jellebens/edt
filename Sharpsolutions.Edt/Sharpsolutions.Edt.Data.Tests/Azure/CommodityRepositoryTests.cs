@@ -109,7 +109,7 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
 
         [Test]
         public void GetSilverShouldReturn() {
-            Commodity silver = _repository.Get("Silver");
+            Commodity silver = _repository.Get("silver");
 
             Assert.IsNotNull(silver);
 

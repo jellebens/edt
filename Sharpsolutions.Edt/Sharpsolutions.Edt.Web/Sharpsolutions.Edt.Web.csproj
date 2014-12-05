@@ -70,6 +70,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -133,12 +136,12 @@
     <Content Include="app\controllers\NavBarController.js" />
     <Content Include="app\controllers\SignupController.js" />
     <Content Include="app\config.js" />
-    <Content Include="app\controllers\SolarSystemCreateController.js" />
+    <Content Include="app\controllers\StarportController.js" />
     <Content Include="app\directives\select.js" />
     <Content Include="app\inspinia-directives.js" />
-    <Content Include="app\services.js" />
     <Content Include="app\services\AuthInterceptorService.js" />
     <Content Include="app\services\AuthService.js" />
+    <Content Include="app\services\StarportService.js" />
     <Content Include="app\views\account\loggedin.html" />
     <Content Include="app\views\account\login.html" />
     <Content Include="app\views\account\signup.html" />
@@ -149,7 +152,8 @@
     <Content Include="app\views\common\topnavbar.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\trade\content.html" />
-    <Content Include="app\views\trade\solarsystem.html" />
+    <Content Include="app\views\trade\starport\create.html" />
+    <Content Include="app\views\trade\starport\update.html" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-overides.css" />
     <Content Include="Content\bootstrap.css" />
@@ -395,6 +399,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SettingsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -412,7 +417,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sharpsolutions.Edt.System\Sharpsolutions.Edt.System.csproj">
+      <Project>{36b606df-ad7b-4f76-ad1a-b803c7f500c9}</Project>
+      <Name>Sharpsolutions.Edt.System</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
