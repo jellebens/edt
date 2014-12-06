@@ -12,9 +12,9 @@ using System.Web;
 
 namespace Sharpsolutions.Edt.Api.Security {
     public class EdtAuthorizationServerProvider : OAuthAuthorizationServerProvider {
-        private IRepository<User, string> _UserRepository;
+        private IRepository<User> _UserRepository;
         private ILogger _Logger;
-        public EdtAuthorizationServerProvider(IRepository<User, string> userRepository, ILoggerFactory loggerfactory) {
+        public EdtAuthorizationServerProvider(IRepository<User> userRepository, ILoggerFactory loggerfactory) {
             _UserRepository = userRepository;
             _Logger = loggerfactory.Create(Loggers.Security.Authentication);
         }

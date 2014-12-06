@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Azure {
-    public class UserRepository : TableStorageBase<User, string> {
+    public class UserRepository : TableStorageBase<User> {
         protected override string Table {
             get { return "users"; }
         }

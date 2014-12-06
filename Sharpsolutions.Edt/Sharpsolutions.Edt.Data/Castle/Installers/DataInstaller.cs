@@ -15,7 +15,7 @@ namespace Sharpsolutions.Edt.Data.Castle.Installers {
             
             container.Register(
                 Classes.FromAssemblyContaining<DataInstaller>()
-                .BasedOn(typeof(IRepository<,>))
+                .BasedOn(typeof(IRepository<>))
                 .WithService.Base()
                 .LifestyleTransient()
             );

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.System.Domain {
-    public interface IEntity {
-        
+    public interface IRoot: IEntity {
+
     }
 }

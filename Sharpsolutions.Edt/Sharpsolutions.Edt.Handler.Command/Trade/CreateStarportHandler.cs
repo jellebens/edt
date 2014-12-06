@@ -9,7 +9,7 @@ namespace Sharpsolutions.Edt.Handler.Command.Trade {
     public class CreateStarportHandler: CommandHandlerBase<CreateStarport>
     {
         public override void Execute(CreateStarport command) {
-            throw new NotImplementedException();
+            
         }
     }
 }

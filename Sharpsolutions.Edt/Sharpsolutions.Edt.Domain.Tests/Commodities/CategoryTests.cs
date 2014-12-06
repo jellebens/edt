@@ -1,15 +1,15 @@
 ﻿using NUnit.Framework;
-using Sharpsolutions.Edt.Domain.Commodities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sharpsolutions.Edt.Domain.Trade;
 
 namespace Sharpsolutions.Edt.Domain.Tests.Commodities {
     [TestFixture]
     public class CategoryTests {
-        private Category _Metals = new Category("Metals");
+        private readonly Category _Metals = new Category("Metals");
         [Test]
         public void EqualsSameNameShouldEqual() {
             

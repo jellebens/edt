@@ -1,18 +1,18 @@
 ﻿using Microsoft.WindowsAzure.Storage;
 using NUnit.Framework;
 using Sharpsolutions.Edt.Data.Azure;
-using Sharpsolutions.Edt.Domain.Commodities;
 using Sharpsolutions.Edt.System.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sharpsolutions.Edt.Domain.Trade;
 
 namespace Sharpsolutions.Edt.Data.Tests.Azure {
     [TestFixture]
     public class CommodityRepositoryTests {
-        private IRepository<Commodity, string> _repository = new CommodityRepository();
+        private IRepository<Commodity> _repository = new CommodityRepository();
 
         [Test]
         public void AddHavingACommodityShouldNotThrow() {

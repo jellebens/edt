@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Sharpsolutions.Edt.Domain.Commodities {
+namespace Sharpsolutions.Edt.Domain.Trade {
     public class Category: IEquatable<string> {
         public Category(string name) {
             if (string.IsNullOrWhiteSpace(name)) {

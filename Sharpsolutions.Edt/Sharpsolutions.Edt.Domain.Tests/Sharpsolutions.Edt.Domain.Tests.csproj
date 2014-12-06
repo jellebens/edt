@@ -47,6 +47,8 @@
     <Compile Include="Commodities\CategoryTests.cs" />
     <Compile Include="Commodities\CommodityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trade\FakeCommodities.cs" />
+    <Compile Include="Trade\StarportTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

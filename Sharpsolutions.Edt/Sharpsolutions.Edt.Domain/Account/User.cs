@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Domain.Account {
-    public class User: IEntity<string> {
+    public class User: IEntity {
 
         private User() { 
             
@@ -20,8 +20,7 @@ namespace Sharpsolutions.Edt.Domain.Account {
 
         
         public virtual string Name { get; protected set; }
-        public virtual string Id { get; protected set; }
-
+        
         public virtual Password Password { get; protected set; }
 
         public bool Verify(string password) {

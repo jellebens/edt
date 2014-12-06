@@ -12,8 +12,8 @@ namespace Sharpsolutions.Edt.Handler.Command.Account
 {
     public class RegisterUserHandler: CommandHandlerBase<RegisterUser>
     {
-        private readonly IRepository<User, string> _Repository;
-        public RegisterUserHandler(IRepository<User, string> repository) {
+        private readonly IRepository<User> _Repository;
+        public RegisterUserHandler(IRepository<User> repository) {
             _Repository = repository;    
         }
 

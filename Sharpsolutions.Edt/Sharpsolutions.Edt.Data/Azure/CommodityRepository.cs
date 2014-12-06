@@ -1,5 +1,4 @@
 ﻿using Microsoft.WindowsAzure.Storage.Table;
-using Sharpsolutions.Edt.Domain.Commodities;
 using Sharpsolutions.Edt.System.Data;
 using System;
 using System.Collections.Generic;
@@ -7,9 +6,10 @@ using System.Data.Services.Client;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sharpsolutions.Edt.Domain.Trade;
 
 namespace Sharpsolutions.Edt.Data.Azure {
-    public class CommodityRepository : TableStorageBase<Commodity, string> {
+    public class CommodityRepository : TableStorageBase<Commodity> {
         protected override string Table {
             get { return "commodities"; }
         }
@@ -19,10 +19,12 @@ namespace Sharpsolutions.Edt.Data.Azure {
             CloudTable table = Build();
 
 
-            DynamicTableEntity entity = new DynamicTableEntity();
+            DynamicTableEntity entity = new DynamicTableEntity
+            {
+                PartitionKey = commodity.Category.Name.ToLower(),
+                RowKey = commodity.Name.ToLower()
+            };
 
-            entity.PartitionKey = commodity.Category.Name.ToLower();
-            entity.RowKey = commodity.Id;
             entity.Properties.Add("Name", new EntityProperty(commodity.Name));
             entity.Properties.Add("Category", new EntityProperty(commodity.Category.Name));
 
