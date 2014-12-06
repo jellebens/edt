@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Azure\CommodityRepositoryTests.cs" />
+    <Compile Include="Azure\StarportRepositoryTests.cs" />
     <Compile Include="Azure\UserRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

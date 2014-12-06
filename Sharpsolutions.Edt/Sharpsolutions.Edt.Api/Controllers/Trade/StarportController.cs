@@ -1,15 +1,9 @@
-﻿using Sharpsolutions.Edt.System.Command;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Sharpsolutions.Edt.Api.Models.Universe;
-using Sharpsolutions.Edt.Contracts.Command.Account;
 using Sharpsolutions.Edt.Contracts.Command.Universe;
+using Sharpsolutions.Edt.System.Command;
 
-namespace Sharpsolutions.Edt.Api.Controllers.Universe {
+namespace Sharpsolutions.Edt.Api.Controllers.Trade {
     [RoutePrefix("starport")]
     public class StarportController : ApiController {
         private readonly IBus _Bus;

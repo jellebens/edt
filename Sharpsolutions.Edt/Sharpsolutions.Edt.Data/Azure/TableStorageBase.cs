@@ -12,18 +12,24 @@ using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Azure {
     public abstract class TableStorageBase<TEntity> : IRepository<TEntity>
-     where TEntity : IEntity {
+        where TEntity : IEntity
+    {
         protected abstract string Table { get; }
         public abstract void Add(TEntity item);
         public abstract TEntity Get(string rowId);
 
-        protected CloudTable Build() {
+        protected CloudTable Build()
+        {
+            return Build(Table);
+        }
+
+        protected CloudTable Build(string tableName) {
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                                                                             CloudConfigurationManager.GetSetting(Settings.Storage.Table.ConfigKey));
 
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-            CloudTable table = tableClient.GetTableReference(Table);
+            CloudTable table = tableClient.GetTableReference(tableName);
 
             table.CreateIfNotExists();
 

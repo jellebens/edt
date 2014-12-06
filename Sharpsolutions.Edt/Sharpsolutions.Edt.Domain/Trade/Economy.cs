@@ -21,5 +21,10 @@ namespace Sharpsolutions.Edt.Domain.Trade {
         public static IEnumerable<Economy> All(){
             return All<Economy>();
         }
+
+        public static Economy Parse(string economy)
+        {
+            return All().Single(e => e.DisplayName == economy);
+        }
     }
 }
