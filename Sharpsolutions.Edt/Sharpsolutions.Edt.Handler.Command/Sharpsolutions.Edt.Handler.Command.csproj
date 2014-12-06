@@ -51,7 +51,9 @@
     <Compile Include="Castle\Installer\CommandInstaller.cs" />
     <Compile Include="Castle\Installer\TypedFactoryInstaller.cs" />
     <Compile Include="Account\RegisterUserHandler.cs" />
+    <Compile Include="CommandHandlerBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trade\CreateStarportHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sharpsolutions.Edt.Contracts\Sharpsolutions.Edt.Contracts.csproj">

@@ -15,7 +15,7 @@ namespace Sharpsolutions.Edt.System.Serialization.Json {
         public static DataContractJsonSerializer Create<TCommand>() {
             IEnumerable<Type> knownTypes = typeof(TCommand).Assembly.GetTypes().Where(t => typeof(CommandBase).IsAssignableFrom(t));
 
-            return new DataContractJsonSerializer(typeof(TCommand), knownTypes);
+            return new DataContractJsonSerializer(typeof(ICommand), knownTypes);
         }
     }
 }
