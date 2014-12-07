@@ -12,7 +12,6 @@ angular.module('EdtApp').controller('starPortUpdateController', ['$scope', '$sta
             $scope.starport = details;
 
             var data = details.goods;
-            console.log(data);
             $scope.tableParams = new ngTableParams({
                 page: 1,   // show first page
                 count: data.length  // count per page
