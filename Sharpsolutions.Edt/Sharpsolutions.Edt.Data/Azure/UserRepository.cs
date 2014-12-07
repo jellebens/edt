@@ -50,11 +50,31 @@ namespace Sharpsolutions.Edt.Data.Azure {
                 return null;
             }
 
-            Password p = new Password(x.Properties["Password"].StringValue);
-            User u = new User(x.Properties["Name"].StringValue, p);
+            var u = Map(x);
 
             return u;
 
+        }
+
+        private static User Map(DynamicTableEntity x)
+        {
+            Password p = new Password(x.Properties["Password"].StringValue);
+            User u = new User(x.Properties["Name"].StringValue, p);
+            return u;
+        }
+
+        public override IEnumerable<User> Query() {
+            CloudTable table = Build();
+
+            TableQuery<DynamicTableEntity> q = new TableQuery<DynamicTableEntity>();
+
+            IEnumerable<DynamicTableEntity> allEntities = table.ExecuteQuery(q);
+
+
+
+            List<User> commodities = allEntities.Select(Map).ToList();
+
+            return commodities;
         }
     }
 }

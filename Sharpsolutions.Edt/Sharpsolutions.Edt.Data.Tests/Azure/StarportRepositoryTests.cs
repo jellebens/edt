@@ -21,5 +21,12 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
 
             _repository.Add(starport);
         }
+
+        [Test]
+        public void QueryShouldRetrieveAllEntities() {
+            IEnumerable<Starport> all = _repository.Query();
+
+            Assert.AreNotEqual(0, all.Count());
+        }
     }
 }

@@ -1,14 +1,37 @@
-﻿using System.Web.Http;
-using Sharpsolutions.Edt.Api.Models.Universe;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http;
+using Microsoft.WindowsAzure.Storage.Table;
+using Sharpsolutions.Edt.Api.Models.Trade;
 using Sharpsolutions.Edt.Contracts.Command.Universe;
 using Sharpsolutions.Edt.System.Command;
+using Sharpsolutions.Edt.System.Data;
+using Sharpsolutions.Edt.Domain.Trade;
 
 namespace Sharpsolutions.Edt.Api.Controllers.Trade {
     [RoutePrefix("starport")]
     public class StarportController : ApiController {
         private readonly IBus _Bus;
-        public StarportController(IBus bus) {
+        private IRepository<Starport> _repository;
+        public StarportController(IBus bus, IRepository<Starport> repository) {
             _Bus = bus;
+            _repository = repository;
+        }
+
+        [Route("")]
+        [Authorize]
+        [HttpGet]
+        public StarportListModel[] List()
+        {
+            IEnumerable<Starport> starports =  _repository.Query();
+
+            StarportListModel[] result = starports.OrderBy(s => s.Name).Select(s => new StarportListModel(){
+                Economy = s.Economy.DisplayName,
+                Name =  s.Name,
+                System =  s.System.Name
+            }).ToArray();
+
+            return result;
         }
 
         [Route("create")]

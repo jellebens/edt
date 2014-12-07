@@ -14,5 +14,7 @@ namespace Sharpsolutions.Edt.System.Data {
         void Add(TEntity entity);
 
         TEntity Get(string id);
+
+        IEnumerable<TEntity> Query();
     }
 }

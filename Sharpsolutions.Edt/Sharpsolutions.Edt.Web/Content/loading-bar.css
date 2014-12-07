@@ -55,10 +55,10 @@
   top: 0;
   height: 2px;
   opacity: .45;
-  -moz-box-shadow: #29d 1px 0 6px 1px;
-  -ms-box-shadow: #29d 1px 0 6px 1px;
-  -webkit-box-shadow: #29d 1px 0 6px 1px;
-  box-shadow: #29d 1px 0 6px 1px;
+  -moz-box-shadow: #1ab394 1px 0 6px 1px;
+  -ms-box-shadow: #1ab394 1px 0 6px 1px;
+  -webkit-box-shadow: #1ab394 1px 0 6px 1px;
+  box-shadow: #1ab394 1px 0 6px 1px;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
@@ -77,8 +77,8 @@
   height: 14px;
 
   border:  solid 2px transparent;
-  border-top-color:  #29d;
-  border-left-color: #29d;
+  border-top-color:  #1ab394;
+  border-left-color: #1ab394;
   border-radius: 10px;
 
   -webkit-animation: loading-bar-spinner 400ms linear infinite;

@@ -17,7 +17,15 @@ angular.module('EdtApp').factory('starportService', function ($http, $q) {
         return deferred.promise;
     };
 
+    var _Overview = function () {
+        var deferred = $q.defer();
+        $http.get(serviceBase + 'starport').success(deferred.resolve).error(deferred.reject);
+        
+        return deferred.promise;
+    };
+
     starportServiceFactory.Create = _Create;
+    starportServiceFactory.Overview = _Overview;
 
     return starportServiceFactory;
 });

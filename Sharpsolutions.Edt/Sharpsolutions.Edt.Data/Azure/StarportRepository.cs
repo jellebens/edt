@@ -48,5 +48,23 @@ namespace Sharpsolutions.Edt.Data.Azure {
         public override Starport Get(string rowId) {
             throw new NotImplementedException();
         }
+            
+        public override IEnumerable<Starport> Query() {
+            CloudTable table = Build();
+
+            TableQuery<DynamicTableEntity> q = new TableQuery<DynamicTableEntity>();
+
+            IEnumerable<DynamicTableEntity> allEntities = table.ExecuteQuery(q);
+
+            List<Starport> starports = allEntities.Select(Map).ToList();
+
+            return starports;
+        }
+
+        private Starport Map(DynamicTableEntity arg)
+        {
+            Starport starport = Starport.Load(arg["Name"].StringValue, arg["SolarSystem"].StringValue, arg["Economy"].StringValue);
+            return starport;
+        }
     }
 }

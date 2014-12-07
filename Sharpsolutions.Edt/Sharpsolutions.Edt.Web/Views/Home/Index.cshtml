@@ -9,6 +9,7 @@
     @Scripts.Render(Bundles.Scripts.AppInsights)
     @Styles.Render(Bundles.Styles.Inspinia)
     @Styles.Render(Bundles.Styles.Common)
+    @Styles.Render(Bundles.Styles.DataTables)
     <meta name="description" content="Elite: Dangerous Trading assistent" />
     <base href="@Url.Content("~")" />
 
@@ -54,16 +55,14 @@
     @Scripts.Render(Bundles.Scripts.Pace)
     @Scripts.Render(Bundles.Scripts.SlimScroll)
     <script src="~/Scripts/plugins/iCheck/icheck.min.js"></script>
-
+    @Scripts.Render(Bundles.Scripts.DataTables)
     @Scripts.Render(Bundles.Scripts.Inspinia)
-
     @Scripts.Render(Bundles.Scripts.EdtApp)
 
     <script type="text/javascript">
         var Settings = {
             ServiceBase: '@Model.ApiServiceBase'
         };
-
     </script>
 
 </body>

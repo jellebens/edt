@@ -29,6 +29,10 @@
         abstract: true,
         url: "/starport",
         templateUrl: "app/views/trade/content.html"
+    }).state('trade.starport.list', {
+        url: "/overview",
+        templateUrl: "app/views/trade/starport/overview.html",
+        controller: 'starPortOverviewController'
     }).state('trade.starport.new', {
         url: "/new",
         templateUrl: "app/views/trade/starport/create.html",

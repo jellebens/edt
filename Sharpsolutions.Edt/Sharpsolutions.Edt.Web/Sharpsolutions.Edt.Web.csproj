@@ -136,6 +136,7 @@
     <Content Include="app\controllers\NavBarController.js" />
     <Content Include="app\controllers\SignupController.js" />
     <Content Include="app\config.js" />
+    <Content Include="app\controllers\StarportOverviewController.js" />
     <Content Include="app\controllers\StarportController.js" />
     <Content Include="app\directives\select.js" />
     <Content Include="app\inspinia-directives.js" />
@@ -153,6 +154,7 @@
     <Content Include="app\views\home.html" />
     <Content Include="app\views\trade\content.html" />
     <Content Include="app\views\trade\starport\create.html" />
+    <Content Include="app\views\trade\starport\overview.html" />
     <Content Include="app\views\trade\starport\update.html" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-overides.css" />
@@ -289,6 +291,10 @@
     <Content Include="Scripts\loading-bar.js" />
     <Content Include="Scripts\loading-bar.min.js" />
     <Content Include="app\app.js" />
+    <Content Include="Scripts\plugins\dataTables\angular-datatables.js" />
+    <Content Include="Scripts\plugins\dataTables\angular-datatables.min.js" />
+    <Content Include="Scripts\plugins\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\plugins\dataTables\jquery.dataTables.js" />
     <Content Include="Scripts\plugins\iCheck\icheck.min.js" />
     <Content Include="Scripts\plugins\jquery-ui\i18n\jquery-ui-i18n.min.js" />
     <Content Include="Scripts\plugins\jquery-ui\i18n\jquery.ui.datepicker-af.min.js" />

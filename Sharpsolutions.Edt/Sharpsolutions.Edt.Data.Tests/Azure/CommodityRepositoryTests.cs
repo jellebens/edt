@@ -114,5 +114,13 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
             Assert.IsNotNull(silver);
 
         }
+
+        [Test]
+        public void QueryShouldRetrieveAllEntities()
+        {
+            IEnumerable<Commodity> all = _repository.Query();
+
+            Assert.AreNotEqual(0, all.Count());
+        }
     }
 }

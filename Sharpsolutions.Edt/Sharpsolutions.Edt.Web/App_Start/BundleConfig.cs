@@ -9,6 +9,7 @@ namespace Sharpsolutions.Edt.Web {
     public static class BundleConfig {
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles) {
+            
             AddScripts(bundles);
             AddStyles(bundles);
         }
@@ -18,8 +19,7 @@ namespace Sharpsolutions.Edt.Web {
             bundles.Add(new ScriptBundle(Bundles.Scripts.JQuery)
                                                     .Include("~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle(Bundles.Scripts.Bootstrap)
-                                                    .Include("~/Scripts/bootstrap.js"));
+            AddBootStrap(bundles);
 
 
             bundles.Add(new ScriptBundle(Bundles.Scripts.AngularJs)
@@ -28,12 +28,10 @@ namespace Sharpsolutions.Edt.Web {
                                                     .Include("~/Scripts/loading-bar.js")
                                                     );
 
-            bundles.Add(new ScriptBundle(Bundles.Scripts.MetisMenu)
-                                    .IncludeDirectory("~/Scripts/plugins/metisMenu", "*.js"));
-            bundles.Add(new ScriptBundle(Bundles.Scripts.Pace)
-                                    .IncludeDirectory("~/Scripts/plugins/pace", "*.js"));
-            bundles.Add(new ScriptBundle(Bundles.Scripts.SlimScroll)
-                                    .IncludeDirectory("~/Scripts/plugins/slimscroll", "*.js"));
+            AddMetisMenu(bundles);
+            AddPace(bundles);
+            AddSlimScroll(bundles);
+            AddDataTable(bundles);
 
             bundles.Add(new ScriptBundle(Bundles.Scripts.Inspinia)
                                     .Include("~/Scripts/inspinia.js"));
@@ -48,6 +46,40 @@ namespace Sharpsolutions.Edt.Web {
                  );
 
             bundles.Add(new ScriptBundle(Bundles.Scripts.AppInsights).Include("~/Scripts/edt-appinsights.js"));
+        }
+
+        private static void AddDataTable(BundleCollection bundles) {
+            bundles.Add(new ScriptBundle(Bundles.Scripts.DataTables)
+                .Include("~/Scripts/plugins/angular-datatables.min.js")
+                .Include("~/Scripts/plugins/jquery.dataTables.js")
+                .Include("~/Scripts/plugins/dataTables.bootstrap.js"));
+
+            bundles.Add(new StyleBundle(Bundles.Styles.DataTables)
+                .IncludeDirectory("~/Content/plugins/dataTables","*.css"));
+        }
+
+        private static void AddBootStrap(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle(Bundles.Scripts.Bootstrap)
+                .Include("~/Scripts/bootstrap.js"));
+        }
+
+        private static void AddPace(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle(Bundles.Scripts.Pace)
+                .IncludeDirectory("~/Scripts/plugins/pace", "*.js"));
+        }
+
+        private static void AddMetisMenu(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle(Bundles.Scripts.MetisMenu)
+                .IncludeDirectory("~/Scripts/plugins/metisMenu", "*.js"));
+        }
+
+        private static void AddSlimScroll(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle(Bundles.Scripts.SlimScroll)
+                .IncludeDirectory("~/Scripts/plugins/slimscroll", "*.js"));
         }
 
         private static void AddStyles(BundleCollection bundles) {

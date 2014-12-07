@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Sharpsolutions.Edt.Api.Models.Universe {
+namespace Sharpsolutions.Edt.Api.Models.Trade {
     public class StartportCreateModel {
         [Required]
         [Display(Name = "Starport name")]

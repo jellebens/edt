@@ -24,7 +24,18 @@ namespace Sharpsolutions.Edt.Domain.Trade {
             return Goods.Where(g => g.Commodity.Equals(commodity) && g.Imports).Any();
         }
 
-        internal static Starport Create(string name, SolarSystem solarSystemy, Trade.Economy economy) {
+        public static Starport Load(string name, string system, string economy) {
+            Starport starport = new Starport {
+                Economy = Economy.Parse(economy),
+                Name = name,
+                System = new SolarSystem(system),
+                Goods = new StockItems()
+            };
+
+            return starport;
+        }
+
+        public static Starport Create(string name, SolarSystem solarSystemy, Trade.Economy economy) {
             Starport starport = new Starport
             {
                 Economy = economy,
@@ -43,5 +54,7 @@ namespace Sharpsolutions.Edt.Domain.Trade {
             Commodity c = Commodity.CommodityFactory.Create(commodity, category);
             this.Goods.Add(StockItem.New(c, exports, imports));
         }
+
+        
     }
 }

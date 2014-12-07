@@ -19,8 +19,7 @@ namespace Sharpsolutions.Edt.Data.Azure {
             CloudTable table = Build();
 
 
-            DynamicTableEntity entity = new DynamicTableEntity
-            {
+            DynamicTableEntity entity = new DynamicTableEntity {
                 PartitionKey = commodity.Category.Name.ToLower(),
                 RowKey = commodity.Name.ToLower()
             };
@@ -34,16 +33,33 @@ namespace Sharpsolutions.Edt.Data.Azure {
         }
 
         public override Commodity Get(string id) {
-             CloudTable table = Build();
+            CloudTable table = Build();
 
             TableQuery<DynamicTableEntity> q = new TableQuery<DynamicTableEntity>();
             q.Where(TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, id));
 
             DynamicTableEntity entity = table.ExecuteQuery(q).Single();
-            
-            Commodity commodity = new Commodity(entity.Properties["Name"].StringValue, entity.Properties["Category"].StringValue);
+
+            var commodity = Map(entity);
 
             return commodity;
+        }
+
+        private static Commodity Map(DynamicTableEntity entity) {
+            Commodity commodity = new Commodity(entity.Properties["Name"].StringValue, entity.Properties["Category"].StringValue);
+            return commodity;
+        }
+
+        public override IEnumerable<Commodity> Query() {
+            CloudTable table = Build();
+
+            TableQuery<DynamicTableEntity> q = new TableQuery<DynamicTableEntity>();
+
+            IEnumerable<DynamicTableEntity> allEntities = table.ExecuteQuery(q);
+
+            List<Commodity> commodities = allEntities.Select(Map).ToList();
+
+            return commodities;
         }
     }
 }

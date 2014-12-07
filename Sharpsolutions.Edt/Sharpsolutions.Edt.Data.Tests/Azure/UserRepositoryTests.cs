@@ -41,5 +41,12 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
                 repository.Add(u);
             }
         }
+
+        [Test]
+        public void QueryShouldRetrieveAllEntities() {
+            IEnumerable<User> all = _Repository.Query();
+
+            Assert.AreNotEqual(0, all.Count());
+        }
     }
 }
