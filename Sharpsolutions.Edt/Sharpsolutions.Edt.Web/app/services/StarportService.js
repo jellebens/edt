@@ -23,7 +23,7 @@ angular.module('EdtApp').factory('starportService', function ($http, $q) {
         return deferred.promise;
     };
 
-    var _Detail = function(name) {
+    var _Detail = function (name) {
         var deferred = $q.defer();
         $http.get(serviceBase + 'starport/detail', {params: {name: name}}).success(deferred.resolve).error(deferred.reject);
         return deferred.promise;
