@@ -8,7 +8,6 @@ angular.module('EdtApp').controller('starPortOverviewController', ['$scope', '$s
     $scope.starports = {};
 
     starportService.Overview().then(function (starports) {
-        console.log(starports);
         $scope.starports = starports;
     }, function (err) { $scope.message = err });
 

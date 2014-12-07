@@ -9,13 +9,14 @@ using Sharpsolutions.Edt.Domain.Trade;
 
 namespace Sharpsolutions.Edt.Data.Tests.Azure {
     [TestFixture]
-    public class StarportRepositoryTests {
+    public class StarportRepositoryTests
+    {
         private readonly StarportRepository _repository = new StarportRepository();
 
         [Test]
         public void AddHAvingAValidStarportShouldAdd()
         {
-            StarportBuilder builder = new StarportBuilder(Guid.NewGuid().ToString(), "Sol", Economy.HighTech);
+            StarportBuilder builder = new StarportBuilder(Guid.NewGuid().ToString(), "TEST", Economy.HighTech);
 
             Starport starport = builder.Build();
 
@@ -23,10 +24,22 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
         }
 
         [Test]
-        public void QueryShouldRetrieveAllEntities() {
+        public void QueryShouldRetrieveAllEntities()
+        {
             IEnumerable<Starport> all = _repository.Query();
 
             Assert.AreNotEqual(0, all.Count());
         }
+
+        [Test]
+        public void GetHavingValueShouldNotBeNull()
+        {
+            var x = _repository.Get("test");
+
+            Assert.IsNotNull(x);
+        }
     }
+    
+
+
 }

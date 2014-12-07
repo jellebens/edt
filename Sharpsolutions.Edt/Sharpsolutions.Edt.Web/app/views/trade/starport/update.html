@@ -17,3 +17,38 @@
         </ol>
     </div>
 </div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Commodoties for {{starport.name}}</h5>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table ng-table="tableParams" class="table">
+                                <tbody>
+                                <tr class="ng-table-group">
+                                    <td colspan="{{$columns.length}}">
+                                        <a href="" ng-click="group.$hideRows = !group.$hideRows">
+                                            <span class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></span>
+                                            <strong>{{ group.value }}</strong>
+                                        </a>
+                                    </td>
+                                </tr>
+                                    <tr ng-repeat="good in starport.goods">
+                                        <td data-title="'Category'">{{good.category}}</td>
+                                        <td data-title="'Name'">{{good.name}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

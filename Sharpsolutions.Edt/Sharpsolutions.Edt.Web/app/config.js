@@ -38,9 +38,9 @@
         templateUrl: "app/views/trade/starport/create.html",
         controller: "starPortController"
     }).state('trade.starport.update', {
-        url: "/update",
+        url: "/update/{starport}",
         templateUrl: "app/views/trade/starport/update.html",
-        controller: "starPortController"
+        controller: "starPortUpdateController"
     });
 
 }

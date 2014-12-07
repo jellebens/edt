@@ -137,7 +137,8 @@
     <Content Include="app\controllers\SignupController.js" />
     <Content Include="app\config.js" />
     <Content Include="app\controllers\StarportOverviewController.js" />
-    <Content Include="app\controllers\StarportController.js" />
+    <Content Include="app\controllers\StarportCreateController.js" />
+    <Content Include="app\controllers\StarportUpdateController.js" />
     <Content Include="app\directives\select.js" />
     <Content Include="app\inspinia-directives.js" />
     <Content Include="app\services\AuthInterceptorService.js" />
@@ -167,6 +168,8 @@
     <Content Include="Content\footer.css" />
     <Content Include="Content\loading-bar.css" />
     <Content Include="Content\loading-bar.min.css" />
+    <Content Include="Content\ng-table.css" />
+    <Content Include="Content\ng-table.min.css" />
     <Content Include="Content\patterns\congruent_pentagon.png" />
     <Content Include="Content\patterns\header-profile-skin-1.png" />
     <Content Include="Content\patterns\header-profile-skin-2.png" />
@@ -278,6 +281,7 @@
     <Content Include="Content\font-awesome\scss\_variables.scss" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
     <Content Include="ApplicationInsights.config" />
+    <Content Include="Content\ng-table.less" />
     <None Include="Properties\PublishProfiles\edt - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\edt - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\edt.pubxml" />
@@ -291,6 +295,8 @@
     <Content Include="Scripts\loading-bar.js" />
     <Content Include="Scripts\loading-bar.min.js" />
     <Content Include="app\app.js" />
+    <Content Include="Scripts\ng-table.js" />
+    <Content Include="Scripts\ng-table.min.js" />
     <Content Include="Scripts\plugins\dataTables\angular-datatables.js" />
     <Content Include="Scripts\plugins\dataTables\angular-datatables.min.js" />
     <Content Include="Scripts\plugins\dataTables\dataTables.bootstrap.js" />
@@ -393,9 +399,12 @@
     <Content Include="Scripts\plugins\slimscroll\jquery.slimscroll.js" />
     <Content Include="Scripts\plugins\slimscroll\jquery.slimscroll.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.11.0.min.js" />
+    <Content Include="Scripts\ng-table.map" />
     <None Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />

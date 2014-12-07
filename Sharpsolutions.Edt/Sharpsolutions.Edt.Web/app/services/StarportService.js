@@ -8,7 +8,6 @@ angular.module('EdtApp').factory('starportService', function ($http, $q) {
         var deferred = $q.defer();
 
         $http.post(serviceBase + 'starport/create', starport).success(function (response) {
-
             deferred.resolve(response);
         }).error(function (err, status) {
 
@@ -24,8 +23,15 @@ angular.module('EdtApp').factory('starportService', function ($http, $q) {
         return deferred.promise;
     };
 
+    var _Detail = function(name) {
+        var deferred = $q.defer();
+        $http.get(serviceBase + 'starport/detail', {params: {name: name}}).success(deferred.resolve).error(deferred.reject);
+        return deferred.promise;
+    }
+
     starportServiceFactory.Create = _Create;
     starportServiceFactory.Overview = _Overview;
+    starportServiceFactory.Detail = _Detail;
 
     return starportServiceFactory;
 });

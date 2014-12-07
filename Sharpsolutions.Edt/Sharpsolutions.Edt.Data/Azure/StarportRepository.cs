@@ -35,6 +35,7 @@ namespace Sharpsolutions.Edt.Data.Azure {
             {
                 DynamicTableEntity goodEntity = new DynamicTableEntity(item.Id().Row, stockItem.Commodity.Name.ToLower());
                 goodEntity.Properties.Add("Commodity", new EntityProperty(stockItem.Commodity.Name));
+                goodEntity.Properties.Add("Category", new EntityProperty(stockItem.Commodity.Category.Name));
                 goodEntity.Properties.Add("Exports", new EntityProperty(stockItem.Exports));
                 goodEntity.Properties.Add("Imports", new EntityProperty(stockItem.Imports));
 
@@ -45,8 +46,33 @@ namespace Sharpsolutions.Edt.Data.Azure {
             starportGoods.ExecuteBatch(goodsOperation);
         }
 
-        public override Starport Get(string rowId) {
-            throw new NotImplementedException();
+        public override Starport Get(string id) {
+            CloudTable table = Build();
+
+            TableQuery<DynamicTableEntity> q = new TableQuery<DynamicTableEntity>();
+            q.Where(TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, id.ToLower()));
+
+            DynamicTableEntity entity = table.ExecuteQuery(q).Single();
+
+            Starport starport = Map(entity);
+
+            CloudTable goodsTable = Build("starportgoods");
+
+            TableQuery<DynamicTableEntity> goodsQuery = new TableQuery<DynamicTableEntity>();
+            goodsQuery.Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, id.ToLower()));
+
+            IEnumerable<DynamicTableEntity> goods = goodsTable.ExecuteQuery(goodsQuery);
+            foreach (DynamicTableEntity good in goods)
+            {
+                bool? exports = good["Exports"].BooleanValue;
+                bool? imports = good["Imports"].BooleanValue;
+
+                starport.Add(good["Commodity"].StringValue, good["Category"].StringValue, exports ?? false , imports ?? false);
+            }
+
+            return starport;
+
+
         }
             
         public override IEnumerable<Starport> Query() {
@@ -60,6 +86,8 @@ namespace Sharpsolutions.Edt.Data.Azure {
 
             return starports;
         }
+
+        
 
         private Starport Map(DynamicTableEntity arg)
         {

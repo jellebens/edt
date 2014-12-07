@@ -20,7 +20,7 @@ angular.module('EdtApp').controller('starPortController', ['$scope', '$state', '
     var _Create = function () {
         starportService.Create($scope.starport).then(function (response) {
             $scope.savedSuccessfully = true;
-            $state.go("trade.starport.update");
+            $state.go("trade.starport.update", {"starport": $scope.starport.name});
         }, function (err) {
             $scope.savedSuccessfully = false;
             $scope.message = "Failed to register user due to:";

@@ -21,24 +21,46 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
         [Route("")]
         [Authorize]
         [HttpGet]
-        public StarportListModel[] List()
-        {
-            IEnumerable<Starport> starports =  _repository.Query();
+        public StarportListModel[] List() {
+            IEnumerable<Starport> starports = _repository.Query();
 
-            StarportListModel[] result = starports.OrderBy(s => s.Name).Select(s => new StarportListModel(){
+            StarportListModel[] result = starports.OrderBy(s => s.Name).Select(s => new StarportListModel() {
                 Economy = s.Economy.DisplayName,
-                Name =  s.Name,
-                System =  s.System.Name
+                Name = s.Name,
+                System = s.System.Name
             }).ToArray();
 
+            return result;
+        }
+
+        [Route("detail")]
+        [Authorize]
+        [HttpGet]
+        public StarportUpdateModel Detail(string name)
+        {
+            Starport starport = _repository.Get(name);
+
+            StarportUpdateModel result = new StarportUpdateModel();
+            result.Economy = starport.Economy.DisplayName;
+            result.Name = starport.Name;
+            result.System = starport.System.Name;
+
+            result.Goods = starport.Goods.Select(g => new StockItemModel()
+            {
+                Name = g.Commodity.Name,
+                Category = g.Commodity.Category.Name,
+                Import = g.Imports,
+                Export = g.Exports
+
+            }).ToArray();
+            
             return result;
         }
 
         [Route("create")]
         [Authorize]
         [HttpPost]
-        public IHttpActionResult Create(StartportCreateModel createModel)
-        {
+        public IHttpActionResult Create(StartportCreateModel createModel) {
             if (!ModelState.IsValid) {
                 return BadRequest(ModelState);
             }

@@ -32,6 +32,7 @@ namespace Sharpsolutions.Edt.Web {
             AddPace(bundles);
             AddSlimScroll(bundles);
             AddDataTable(bundles);
+            AddNgTable(bundles);
 
             bundles.Add(new ScriptBundle(Bundles.Scripts.Inspinia)
                                     .Include("~/Scripts/inspinia.js"));
@@ -46,6 +47,15 @@ namespace Sharpsolutions.Edt.Web {
                  );
 
             bundles.Add(new ScriptBundle(Bundles.Scripts.AppInsights).Include("~/Scripts/edt-appinsights.js"));
+        }
+
+        private static void AddNgTable(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle(Bundles.Scripts.NgTable)
+                                    .Include("~/Scripts/ng-table.js"));
+
+            bundles.Add(new StyleBundle(Bundles.Styles.NgTable)
+                                    .Include("~/Scripts/ng-table.css"));
         }
 
         private static void AddDataTable(BundleCollection bundles) {

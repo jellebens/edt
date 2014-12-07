@@ -17,13 +17,15 @@ namespace Sharpsolutions.Edt.Web.Core {
             public const string Pace = "~/bundles/pace";
             public const string MetisMenu = "~/bundles/metisMenu";
             public const string Inspinia = "~/bundles/Inspinia";
+            public const string NgTable = "~/bundles/NgTable";
+
         }
 
         public static class Styles {
             public const string Common = "~/css/common";
             public static string DataTables = "~/css/dataTables";
             public const string Inspinia = "~/css/Inspinia";
-
+            public static string NgTable = "~/css/NgTable";
         }
     }
 }

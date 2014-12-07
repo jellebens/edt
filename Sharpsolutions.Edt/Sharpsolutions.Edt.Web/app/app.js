@@ -5,6 +5,7 @@
                                     , 'ngSanitize'
                                     , 'angular-appinsights'
                                     , 'ngAnimate'
+                                    , 'ngTable'
                                    ]);
 
 app.run(['authService', function (authService) {
