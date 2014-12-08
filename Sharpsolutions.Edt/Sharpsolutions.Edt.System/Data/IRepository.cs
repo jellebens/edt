@@ -9,10 +9,12 @@ namespace Sharpsolutions.Edt.System.Data {
     public interface IRepository {
     }
 
-    public interface IRepository<TEntity, TId> where TEntity: IEntity<TId>
+    public interface IRepository<TEntity> where TEntity: IEntity
     {
         void Add(TEntity entity);
 
-        TEntity Get(TId id);
+        TEntity Get(string id);
+
+        IEnumerable<TEntity> Query();
     }
 }

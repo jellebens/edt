@@ -10,10 +10,12 @@ namespace Sharpsolutions.Edt.Contracts.Command.Account {
     [DataContract]
     public class RegisterUser : CommandBase {
         public static RegisterUser New(string username, string password) {
-            RegisterUser cmd = new RegisterUser();
-            cmd.Id = Guid.NewGuid();
-            cmd.Username = username;
-            cmd.Password = password;
+            RegisterUser cmd = new RegisterUser
+            {
+                Id = Guid.NewGuid(), 
+                Username = username, 
+                Password = password
+            };
 
             return cmd;
         }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.System.Domain {
-    public interface IEntity<TId> {
-        TId Id{ get;}
+    public interface IEntity {
+        
     }
 }

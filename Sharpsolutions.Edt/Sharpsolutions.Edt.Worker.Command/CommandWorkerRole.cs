@@ -48,7 +48,7 @@ namespace Sharpsolutions.Edt.Worker.Command {
                 _Logger.InfoFormat("Processing message: {0}. DeliveryCount: {1}", receivedMessage.MessageId, receivedMessage.DeliveryCount);
 
                 DataContractJsonSerializer serializer = JsonSerializerFactory.Create<RegisterUser>();
-                dynamic command = receivedMessage.GetBody<RegisterUser>(serializer);
+                dynamic command = receivedMessage.GetBody<ICommand>(serializer);
 
                 ICommandProcessor processor = _Container.Resolve<ICommandProcessor>();
 

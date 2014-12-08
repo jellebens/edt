@@ -19,6 +19,6 @@
     <AzureStorageAccountName>edtservices</AzureStorageAccountName>
     <AzureAppendTimestampToDeploymentLabel>True</AzureAppendTimestampToDeploymentLabel>
     <EnableRemoteDebugger>True</EnableRemoteDebugger>
-    <RemoteDebuggerConnectorCertificateThumbprint>00895890E4DB73A812E60437234EDE50C223280B</RemoteDebuggerConnectorCertificateThumbprint>
+    <RemoteDebuggerConnectorCertificateThumbprint>D99D6E8FA0AC0BB9F512D9C9432151CC24B61B56</RemoteDebuggerConnectorCertificateThumbprint>
   </PropertyGroup>
 </Project>

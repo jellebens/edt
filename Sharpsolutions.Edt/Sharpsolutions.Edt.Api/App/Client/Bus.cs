@@ -21,6 +21,12 @@ namespace Sharpsolutions.Edt.Api.App.Client {
         }
 
         public void Publish<TCommand>(TCommand command) where TCommand : ICommand {
+
+            if (command.Id == default(Guid))
+            {
+                throw new CommandMissingIdException();
+            }
+
             string connectionString = CloudConfigurationManager.GetSetting(Settings.Bus.ConfigKey);
             
             NamespaceManager namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
@@ -33,8 +39,7 @@ namespace Sharpsolutions.Edt.Api.App.Client {
 
             DataContractJsonSerializer serializer = JsonSerializerFactory.Create(command);
 
-            BrokeredMessage message = new BrokeredMessage(command, serializer);
-            message.MessageId = command.Id.ToString();
+            BrokeredMessage message = new BrokeredMessage(command, serializer) { MessageId = command.Id.ToString()};
 
             _Logger.DebugFormat("Dispatching message with id {0}", message.MessageId);
 

@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Tests.Azure {
     [TestFixture]
-    public class UserTableStoreRepositoryTests {
-        UserTableStoreRepository _Repository = new UserTableStoreRepository();
+    public class UserRepositoryTests {
+        UserRepository _Repository = new UserRepository();
 
         [Test]
-        public void AddHAvingAUserShouldNotThrow(){
+        public void AddHavingAUserShouldNotThrow(){
             User u = User.Create(Guid.NewGuid().ToString(), "P@ssw0rd");
             
             _Repository.Add(u);
@@ -33,13 +33,20 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
             
         }
 
-        private void Setup(UserTableStoreRepository repository) {
+        private void Setup(UserRepository repository) {
             User x = repository.Get("admin");
 
             if (x == null) {
                 User u = User.Create("admin", "P@ssw0rd");
                 repository.Add(u);
             }
+        }
+
+        [Test]
+        public void QueryShouldRetrieveAllEntities() {
+            IEnumerable<User> all = _Repository.Query();
+
+            Assert.AreNotEqual(0, all.Count());
         }
     }
 }

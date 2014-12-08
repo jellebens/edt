@@ -1,0 +1,58 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>New starport</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#" ui-sref="home">Home</a>
+            </li>
+            <li class="active">
+                Trade
+            </li>
+            <li class="active">
+                <strong>Starport</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Starports</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <a class="btn btn-primary" ui-sref="trade.starport.new"><span class="fa fa-plus-circle"></span>&nbsp;Add New</a>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>System</th>
+                                        <th>Economy</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="starport in starports">
+                                        <td>{{starport.name }}</td>
+                                        <td>{{starport.system }}</td>
+                                        <td>{{starport.economy }}</td>
+                                        <td><a class="btn btn-primary" ui-sref="trade.starport.update({starport: '{{starport.name}}'})"><span class="fa fa-edit"></span>&nbsp;Update</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

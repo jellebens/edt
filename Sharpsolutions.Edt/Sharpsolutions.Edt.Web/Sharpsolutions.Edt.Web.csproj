@@ -70,6 +70,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -133,12 +136,14 @@
     <Content Include="app\controllers\NavBarController.js" />
     <Content Include="app\controllers\SignupController.js" />
     <Content Include="app\config.js" />
-    <Content Include="app\controllers\SolarSystemCreateController.js" />
+    <Content Include="app\controllers\StarportOverviewController.js" />
+    <Content Include="app\controllers\StarportCreateController.js" />
+    <Content Include="app\controllers\StarportUpdateController.js" />
     <Content Include="app\directives\select.js" />
     <Content Include="app\inspinia-directives.js" />
-    <Content Include="app\services.js" />
     <Content Include="app\services\AuthInterceptorService.js" />
     <Content Include="app\services\AuthService.js" />
+    <Content Include="app\services\StarportService.js" />
     <Content Include="app\views\account\loggedin.html" />
     <Content Include="app\views\account\login.html" />
     <Content Include="app\views\account\signup.html" />
@@ -149,7 +154,9 @@
     <Content Include="app\views\common\topnavbar.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\trade\content.html" />
-    <Content Include="app\views\trade\solarsystem.html" />
+    <Content Include="app\views\trade\starport\create.html" />
+    <Content Include="app\views\trade\starport\overview.html" />
+    <Content Include="app\views\trade\starport\update.html" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-overides.css" />
     <Content Include="Content\bootstrap.css" />
@@ -161,6 +168,8 @@
     <Content Include="Content\footer.css" />
     <Content Include="Content\loading-bar.css" />
     <Content Include="Content\loading-bar.min.css" />
+    <Content Include="Content\ng-table.css" />
+    <Content Include="Content\ng-table.min.css" />
     <Content Include="Content\patterns\congruent_pentagon.png" />
     <Content Include="Content\patterns\header-profile-skin-1.png" />
     <Content Include="Content\patterns\header-profile-skin-2.png" />
@@ -272,6 +281,7 @@
     <Content Include="Content\font-awesome\scss\_variables.scss" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
     <Content Include="ApplicationInsights.config" />
+    <Content Include="Content\ng-table.less" />
     <None Include="Properties\PublishProfiles\edt - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\edt - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\edt.pubxml" />
@@ -285,6 +295,12 @@
     <Content Include="Scripts\loading-bar.js" />
     <Content Include="Scripts\loading-bar.min.js" />
     <Content Include="app\app.js" />
+    <Content Include="Scripts\ng-table.js" />
+    <Content Include="Scripts\ng-table.min.js" />
+    <Content Include="Scripts\plugins\dataTables\angular-datatables.js" />
+    <Content Include="Scripts\plugins\dataTables\angular-datatables.min.js" />
+    <Content Include="Scripts\plugins\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\plugins\dataTables\jquery.dataTables.js" />
     <Content Include="Scripts\plugins\iCheck\icheck.min.js" />
     <Content Include="Scripts\plugins\jquery-ui\i18n\jquery-ui-i18n.min.js" />
     <Content Include="Scripts\plugins\jquery-ui\i18n\jquery.ui.datepicker-af.min.js" />
@@ -383,8 +399,12 @@
     <Content Include="Scripts\plugins\slimscroll\jquery.slimscroll.js" />
     <Content Include="Scripts\plugins\slimscroll\jquery.slimscroll.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.11.0.min.js" />
+    <Content Include="Scripts\ng-table.map" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -394,6 +414,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SettingsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -411,7 +432,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sharpsolutions.Edt.System\Sharpsolutions.Edt.System.csproj">
+      <Project>{36b606df-ad7b-4f76-ad1a-b803c7f500c9}</Project>
+      <Name>Sharpsolutions.Edt.System</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

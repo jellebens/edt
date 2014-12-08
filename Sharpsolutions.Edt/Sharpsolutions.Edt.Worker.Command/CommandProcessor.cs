@@ -6,14 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Worker.Command {
-    public class CommandProcessor : Sharpsolutions.Edt.Worker.Command.ICommandProcessor {
-        private ICommandHandlerFactory _HandlerFactory;
+    public class CommandProcessor : ICommandProcessor {
+        private readonly ICommandHandlerFactory _HandlerFactory;
 
         public CommandProcessor(ICommandHandlerFactory factory) {
             _HandlerFactory = factory;
         }
 
-        public void Execute<TCommand>(TCommand command) {
+        public void Execute<TCommand>(TCommand command) where TCommand : ICommand
+        {
             ICommandHandler<TCommand> handler = _HandlerFactory.Create<TCommand>();
             try {
                 handler.Execute(command);

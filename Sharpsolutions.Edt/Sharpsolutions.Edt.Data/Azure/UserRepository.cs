@@ -11,8 +11,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Azure {
-    public class UserTableStoreRepository : IRepository<User, string> {
-        public void Add(User user) {
+    public class UserRepository : TableStorageBase<User> {
+        protected override string Table {
+            get { return "users"; }
+        }
+
+        public override void Add(User user) {
 
             CloudTable table = Build();
 
@@ -30,16 +34,13 @@ namespace Sharpsolutions.Edt.Data.Azure {
             table.Execute(insertOperation);
         }
 
-        public User Get(string id) {
+        public override User Get(string id) {
 
             CloudTable table = Build();
 
             DynamicTableEntity entity = new DynamicTableEntity();
             Dictionary<string, EntityProperty> props = new Dictionary<string, EntityProperty>();
             TableOperation retrieveOperation = TableOperation.Retrieve(id, id);
-
-
-
 
             TableResult retrievedResult = table.Execute(retrieveOperation);
 
@@ -49,24 +50,31 @@ namespace Sharpsolutions.Edt.Data.Azure {
                 return null;
             }
 
-            Password p = new Password(x.Properties["Password"].StringValue);
-            User u = new User(x.Properties["Name"].StringValue, p);
+            var u = Map(x);
 
             return u;
 
         }
 
-        private static CloudTable Build() {
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-            CloudConfigurationManager.GetSetting(Settings.Storage.Table.ConfigKey));
-            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
-
-            CloudTable table = tableClient.GetTableReference("users");
-
-            table.CreateIfNotExists();
-            return table;
+        private static User Map(DynamicTableEntity x)
+        {
+            Password p = new Password(x.Properties["Password"].StringValue);
+            User u = new User(x.Properties["Name"].StringValue, p);
+            return u;
         }
 
+        public override IEnumerable<User> Query() {
+            CloudTable table = Build();
 
+            TableQuery<DynamicTableEntity> q = new TableQuery<DynamicTableEntity>();
+
+            IEnumerable<DynamicTableEntity> allEntities = table.ExecuteQuery(q);
+
+
+
+            List<User> commodities = allEntities.Select(Map).ToList();
+
+            return commodities;
+        }
     }
 }

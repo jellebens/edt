@@ -69,7 +69,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Azure\UserTableStoreRepositoryTests.cs" />
+    <Compile Include="Azure\CommodityRepositoryTests.cs" />
+    <Compile Include="Azure\StarportRepositoryTests.cs" />
+    <Compile Include="Azure\UserRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -41,10 +41,24 @@
   <ItemGroup>
     <Compile Include="Account\Password.cs" />
     <Compile Include="Account\User.cs" />
-    <Compile Include="Commodity\Category.cs" />
+    <Compile Include="Trade\AgricultureBuilder.cs" />
+    <Compile Include="Trade\Category.cs" />
+    <Compile Include="Trade\Commodity.cs" />
     <Compile Include="Core\Enumeration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trade\Economy.cs" />
+    <Compile Include="Trade\ExtractionBuilder.cs" />
+    <Compile Include="Trade\HighTechBuilder.cs" />
+    <Compile Include="Trade\IndustrialBuilder.cs" />
+    <Compile Include="Trade\IStarportBuilder.cs" />
+    <Compile Include="Trade\Level.cs" />
+    <Compile Include="Trade\RefineryBuilder.cs" />
+    <Compile Include="Trade\SolarSystem.cs" />
+    <Compile Include="Trade\Starport.cs" />
+    <Compile Include="Trade\StarportBuilder.cs" />
+    <Compile Include="Trade\StarportBuilderBase.cs" />
+    <Compile Include="Trade\StockItems.cs" />
+    <Compile Include="Trade\StockItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sharpsolutions.Edt.System\Sharpsolutions.Edt.System.csproj">

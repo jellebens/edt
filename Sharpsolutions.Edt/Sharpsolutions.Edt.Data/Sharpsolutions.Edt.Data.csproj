@@ -72,7 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Azure\UserTableStoreRepository.cs" />
+    <Compile Include="Azure\CommodityRepository.cs" />
+    <Compile Include="Azure\HelperExtensions.cs" />
+    <Compile Include="Azure\StarportRepository.cs" />
+    <Compile Include="Azure\TableKey.cs" />
+    <Compile Include="Azure\TableStorageBase.cs" />
+    <Compile Include="Azure\UserRepository.cs" />
     <Compile Include="Castle\ContainerExtensions.cs" />
     <Compile Include="Castle\Installers\DataInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

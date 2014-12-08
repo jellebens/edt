@@ -8,7 +8,9 @@ namespace Sharpsolutions.Edt.System.Command {
 
     }
 
-    public interface ICommandHandler<in TCommand>: ICommandHandler {
+    public interface ICommandHandler<in TCommand>: ICommandHandler
+    where TCommand : ICommand
+    {
         void Execute(TCommand command);
     }
 }

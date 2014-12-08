@@ -1,0 +1,57 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>New starport</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#" ui-sref="home">Home</a>
+            </li>
+            <li class="active">
+                Trade
+            </li>
+            <li class="active">
+                Starport
+            </li>
+            <li class="active">
+                <strong>Update</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Commodoties for {{starport.name}}</h5>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table ng-table="tableParams" class="table">
+                                <tbody ng-repeat="group in $groups">
+                                    <tr class="ng-table-group">
+                                        <td colspan="{{$columns.length}}">
+                                            <a href="" ng-click="group.$hideRows = !group.$hideRows">
+                                                <span class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></span>
+                                                <strong>{{ group.value }}</strong>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr ng-hide="group.$hideRows" ng-repeat="good in group.data">
+                                        <td sortable="category" data-title="'Category'"></td>
+                                        <td sortable="name" data-title="'Name'">
+                                            {{good.name}}
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

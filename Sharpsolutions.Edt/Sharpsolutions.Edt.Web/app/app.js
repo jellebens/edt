@@ -5,6 +5,7 @@
                                     , 'ngSanitize'
                                     , 'angular-appinsights'
                                     , 'ngAnimate'
+                                    , 'ngTable'
                                    ]);
 
 app.run(['authService', function (authService) {
@@ -25,8 +26,4 @@ app.config(['insightsProvider', function (insightsProvider) {
 app.config(function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptorService');
 });
-
-var Settings = {
-    ServiceBase: 'https://edt-api.azurewebsites.net/'
-};
 
