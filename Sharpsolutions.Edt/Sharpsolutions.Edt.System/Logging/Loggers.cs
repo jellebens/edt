@@ -8,6 +8,11 @@ namespace Sharpsolutions.Edt.System.Logging {
     public static class Loggers {
         private const string Base = "Edit.";
 
+        public static class System
+        {
+            public const string Sql = Base + "SQL";
+        }
+
         public static class Security { 
             public const string Sec = Base + "Security";
             public const string Authentication = Sec + "Authentication";
@@ -18,5 +23,7 @@ namespace Sharpsolutions.Edt.System.Logging {
             public const string Producer = Command + "Producer";
             public const string Worker = Command + "Worker";
         }
+
+            
     }
 }

@@ -9,6 +9,9 @@ namespace Sharpsolutions.Edt.Domain.Trade {
 
             this.Name = name;
         }
+
+        public Guid Id { get; set; }
+
         public string Name { get; set; }
 
         public override string ToString() {
@@ -35,5 +38,7 @@ namespace Sharpsolutions.Edt.Domain.Trade {
         public bool Equals(string other) {
             return this.Name.Equals(other);
         }
+
+        
     }
 }

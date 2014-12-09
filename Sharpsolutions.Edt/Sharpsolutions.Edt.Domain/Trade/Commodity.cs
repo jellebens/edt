@@ -8,6 +8,8 @@ namespace Sharpsolutions.Edt.Domain.Trade {
 
         }
 
+        public virtual Guid Id { get; protected set; }
+
         public Commodity(string name, string category) {
             this.Name = name;
             this.Category = new Category(category);
