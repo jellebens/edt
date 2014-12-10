@@ -16,6 +16,7 @@ namespace Sharpsolutions.Edt.Data.Sql {
     {
         private readonly ILogger _Logger;
         private readonly TradeDbContext _Context;
+        private readonly bool _DisposeContext = false;
 
         public CommodityRepository(TradeDbContext context, ILoggerFactory loggerFactory) {
             _Context = context;
@@ -23,11 +24,16 @@ namespace Sharpsolutions.Edt.Data.Sql {
 
             _Context.Database.Log = (s) => _Logger.DebugFormat("{0}", s.Replace(Environment.NewLine, string.Empty));
         }
+
+        public CommodityRepository(ILoggerFactory loggerFactory): this(new TradeDbContext(), loggerFactory)
+        {
+            _DisposeContext = true;
+        }
        
 
         public void Add(Commodity entity)
         {
-            throw new NotImplementedException();
+            _Context.Set<Commodity>().Add(entity);
         }
 
         public Commodity Get(string id)
@@ -35,13 +41,23 @@ namespace Sharpsolutions.Edt.Data.Sql {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Commodity> Query()
+        public IQueryable<Commodity> Query()
         {
-            throw new NotImplementedException();
+            return _Context.Set<Commodity>();
         }
 
-        public void Dispose() {
-            throw new NotImplementedException();
+        public void Dispose()
+        {
+            if (_DisposeContext)
+            {
+                _Context.Dispose();
+            }
+        }
+
+
+        public void Commit()
+        {
+            _Context.SaveChanges();
         }
     }
 }

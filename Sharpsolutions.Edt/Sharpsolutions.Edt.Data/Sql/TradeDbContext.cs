@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using Sharpsolutions.Edt.Data.Migrations;
+
 using Sharpsolutions.Edt.Data.Sql.Mappings;
 
 namespace Sharpsolutions.Edt.Data.Sql {
@@ -10,9 +10,8 @@ namespace Sharpsolutions.Edt.Data.Sql {
             
         }
 
-        public TradeDbContext(string nameOrConnectionString)
+        public TradeDbContext(string nameOrConnectionString): base(nameOrConnectionString)
         {
-            Database.SetInitializer<TradeDbContext>(new MigrateDatabaseToLatestVersion<TradeDbContext, TradeMigrationsConfiguration>(nameOrConnectionString));
             
         }
 

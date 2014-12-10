@@ -11,14 +11,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Azure {
-    public abstract class TableStorageBase<TEntity> : IRepository<TEntity>
+    public abstract class TableStorageBase<TEntity>
         where TEntity : IEntity
     {
         protected abstract string Table { get; }
         public abstract void Add(TEntity item);
         public abstract TEntity Get(string rowId);
-
-        public abstract IEnumerable<TEntity> Query();
 
         protected CloudTable Build()
         {

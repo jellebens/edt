@@ -67,7 +67,7 @@ namespace Sharpsolutions.Edt.Data.Azure {
                 bool? exports = good["Exports"].BooleanValue;
                 bool? imports = good["Imports"].BooleanValue;
 
-                starport.Add(good["Commodity"].StringValue, good["Category"].StringValue, exports ?? false , imports ?? false);
+                //starport.Add(good["Commodity"].StringValue, good["Category"].StringValue, exports ?? false , imports ?? false);
             }
 
             return starport;
@@ -75,7 +75,7 @@ namespace Sharpsolutions.Edt.Data.Azure {
 
         }
             
-        public override IEnumerable<Starport> Query() {
+        public IEnumerable<Starport> Query() {
             CloudTable table = Build();
 
             TableQuery<DynamicTableEntity> q = new TableQuery<DynamicTableEntity>();

@@ -63,18 +63,5 @@ namespace Sharpsolutions.Edt.Data.Azure {
             return u;
         }
 
-        public override IEnumerable<User> Query() {
-            CloudTable table = Build();
-
-            TableQuery<DynamicTableEntity> q = new TableQuery<DynamicTableEntity>();
-
-            IEnumerable<DynamicTableEntity> allEntities = table.ExecuteQuery(q);
-
-
-
-            List<User> commodities = allEntities.Select(Map).ToList();
-
-            return commodities;
-        }
     }
 }

@@ -81,7 +81,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Azure\CommodityRepository.cs" />
     <Compile Include="Azure\HelperExtensions.cs" />
     <Compile Include="Azure\StarportRepository.cs" />
     <Compile Include="Azure\TableKey.cs" />
@@ -89,7 +88,6 @@
     <Compile Include="Azure\UserRepository.cs" />
     <Compile Include="Castle\ContainerExtensions.cs" />
     <Compile Include="Castle\Installers\DataInstaller.cs" />
-    <Compile Include="Migrations\TradeMigrationsConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sql\CommodityRepository.cs" />
     <Compile Include="Sql\Mappings\CategoryMapping.cs" />
@@ -111,7 +109,6 @@
       <Name>Sharpsolutions.Edt.System</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

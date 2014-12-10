@@ -2,6 +2,12 @@
 
 namespace Sharpsolutions.Edt.Domain.Trade {
     public class Category: IEquatable<string> {
+
+        protected Category()
+        {
+
+        }
+
         public Category(string name) {
             if (string.IsNullOrWhiteSpace(name)) {
                 throw new ArgumentNullException(name);

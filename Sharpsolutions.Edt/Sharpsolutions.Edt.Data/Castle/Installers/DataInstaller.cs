@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sharpsolutions.Edt.Data.Azure;
 
 namespace Sharpsolutions.Edt.Data.Castle.Installers {
     public class DataInstaller : IWindsorInstaller {

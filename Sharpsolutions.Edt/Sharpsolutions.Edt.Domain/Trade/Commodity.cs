@@ -34,13 +34,13 @@ namespace Sharpsolutions.Edt.Domain.Trade {
         }
 
         public class CommodityFactory {
-            public static Commodity Create(string commodity, string category) {
+            public static Commodity Create(string commodity, Category category) {
                 if (string.IsNullOrWhiteSpace(commodity)) { throw new ArgumentNullException("commodity"); }
-                if (string.IsNullOrWhiteSpace(category)) { throw new ArgumentNullException("category"); }
+                if (category == null) { throw new ArgumentNullException("category"); }
 
                 Commodity cmdty = new Commodity
                 {
-                    Category = new Category(category), 
+                    Category = category, 
                     Name = commodity
                 };
 
