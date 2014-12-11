@@ -13,5 +13,6 @@ namespace Sharpsolutions.Edt.Domain.Trade {
         }
 
         public string Name { get; private set; }
+        public Guid Id { get; set; }
     }
 }

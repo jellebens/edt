@@ -20,6 +20,10 @@ namespace Sharpsolutions.Edt.Data.Castle.Installers {
                 .WithService.Base()
                 .LifestyleTransient()
             );
+
+            container.Register(Component.For<IUserRepository>()
+                                        .ImplementedBy<UserRepository>()
+                                        .LifeStyle.Transient);
         }
     }
 }

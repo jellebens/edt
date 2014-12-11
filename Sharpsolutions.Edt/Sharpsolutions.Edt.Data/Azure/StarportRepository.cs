@@ -14,7 +14,7 @@ namespace Sharpsolutions.Edt.Data.Azure {
             get { return "starport"; }
         }
 
-        public override void Add(Starport item)
+        public void Add(Starport item)
         {
             DynamicTableEntity entity = new DynamicTableEntity(item.Id().Partition, item.Id().Row);
 
@@ -46,7 +46,7 @@ namespace Sharpsolutions.Edt.Data.Azure {
             starportGoods.ExecuteBatch(goodsOperation);
         }
 
-        public override Starport Get(string id) {
+        public Starport Get(string id) {
             CloudTable table = Build();
 
             TableQuery<DynamicTableEntity> q = new TableQuery<DynamicTableEntity>();

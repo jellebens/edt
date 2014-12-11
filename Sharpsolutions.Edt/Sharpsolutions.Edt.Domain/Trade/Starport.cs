@@ -13,7 +13,8 @@ namespace Sharpsolutions.Edt.Domain.Trade {
 
         public virtual Economy Economy { get; protected set; }
 
-        public StockItems Goods { get; protected set; }
+        public virtual IList<StockItem> Goods { get; protected set; }
+        public Guid Id { get; protected set; }
 
         public bool Sells(Commodity commodity)
         {

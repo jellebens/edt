@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Azure\HelperExtensions.cs" />
+    <Compile Include="Azure\IUserRepository.cs" />
     <Compile Include="Azure\StarportRepository.cs" />
     <Compile Include="Azure\TableKey.cs" />
     <Compile Include="Azure\TableStorageBase.cs" />
@@ -96,13 +97,22 @@
     <Compile Include="Migrations\201412110841405_AddUniqueConstraints.Designer.cs">
       <DependentUpon>201412110841405_AddUniqueConstraints.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412111711050_AddStarports.cs" />
+    <Compile Include="Migrations\201412111711050_AddStarports.Designer.cs">
+      <DependentUpon>201412111711050_AddStarports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sql\CommodityRepository.cs" />
-    <Compile Include="Sql\Mappings\CategoryMapping.cs" />
-    <Compile Include="Sql\Mappings\CommodityMapping.cs" />
+    <Compile Include="Sql\Mappings\CategoryMap.cs" />
+    <Compile Include="Sql\Mappings\CommodityMap.cs" />
+    <Compile Include="Sql\Mappings\EconomyMap.cs" />
     <Compile Include="Sql\Mappings\Mapping.cs" />
     <Compile Include="Sql\EdtDbContext.cs" />
+    <Compile Include="Sql\Mappings\MigrationsBuilders.cs" />
+    <Compile Include="Sql\Mappings\SolarSystemMap.cs" />
+    <Compile Include="Sql\Mappings\StarportMap.cs" />
+    <Compile Include="Sql\Mappings\StockItemMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -127,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412110841405_AddUniqueConstraints.resx">
       <DependentUpon>201412110841405_AddUniqueConstraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412111711050_AddStarports.resx">
+      <DependentUpon>201412111711050_AddStarports.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

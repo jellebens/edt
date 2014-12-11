@@ -9,12 +9,13 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
+using Sharpsolutions.Edt.Data.Azure;
 
 namespace Sharpsolutions.Edt.Api.Security {
     public class EdtAuthorizationServerProvider : OAuthAuthorizationServerProvider {
-        private IRepository<User> _UserRepository;
-        private ILogger _Logger;
-        public EdtAuthorizationServerProvider(IRepository<User> userRepository, ILoggerFactory loggerfactory) {
+        private readonly IUserRepository _UserRepository;
+        private readonly ILogger _Logger;
+        public EdtAuthorizationServerProvider(IUserRepository userRepository, ILoggerFactory loggerfactory) {
             _UserRepository = userRepository;
             _Logger = loggerfactory.Create(Loggers.Security.Authentication);
         }

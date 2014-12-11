@@ -15,9 +15,7 @@ namespace Sharpsolutions.Edt.Data.Azure {
         where TEntity : IEntity
     {
         protected abstract string Table { get; }
-        public abstract void Add(TEntity item);
-        public abstract TEntity Get(string rowId);
-
+        
         protected CloudTable Build()
         {
             return Build(Table);

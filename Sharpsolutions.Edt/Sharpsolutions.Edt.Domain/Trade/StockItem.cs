@@ -10,7 +10,8 @@ namespace Sharpsolutions.Edt.Domain.Trade {
         public Commodity Commodity { get; protected set; }
         public bool Exports { get; protected set; }
         public bool Imports { get; protected set; }
-        
+        public long Id { get; set; }
+
 
         public static StockItem New(Commodity commodity, bool exports, bool imports)
         {
