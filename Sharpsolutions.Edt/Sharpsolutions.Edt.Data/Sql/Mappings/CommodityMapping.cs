@@ -3,7 +3,6 @@ using Sharpsolutions.Edt.Domain.Trade;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.ModelConfiguration;
 
 namespace Sharpsolutions.Edt.Data.Sql.Mappings {
     public class CommodityMapping : EntityTypeConfiguration<Commodity> {

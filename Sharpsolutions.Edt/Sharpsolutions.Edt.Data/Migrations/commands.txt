@@ -1,0 +1,4 @@
+﻿Enable-Migrations -StartUpProjectName "SharpSolutions.Edt.Data"
+Add-Migration -StartUpProjectName "SharpSolutions.Edt.Data" -ConnectionStringName "default"
+Update-Database -StartUpProjectName "SharpSolutions.Edt.Data" -ConnectionStringName "default" -Verbose
+Update-Database -StartUpProjectName "SharpSolutions.Edt.Data" -ConnectionStringName "default" -Verbose –TargetMigration: $InitialDatabase

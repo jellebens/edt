@@ -15,17 +15,17 @@ namespace Sharpsolutions.Edt.Data.Sql {
     public class CommodityRepository: IRepository<Commodity>, IDisposable
     {
         private readonly ILogger _Logger;
-        private readonly TradeDbContext _Context;
+        private readonly EdtDbContext _Context;
         private readonly bool _DisposeContext = false;
 
-        public CommodityRepository(TradeDbContext context, ILoggerFactory loggerFactory) {
+        public CommodityRepository(EdtDbContext context, ILoggerFactory loggerFactory) {
             _Context = context;
             _Logger = loggerFactory.Create(Loggers.System.Sql);
 
             _Context.Database.Log = (s) => _Logger.DebugFormat("{0}", s.Replace(Environment.NewLine, string.Empty));
         }
 
-        public CommodityRepository(ILoggerFactory loggerFactory): this(new TradeDbContext(), loggerFactory)
+        public CommodityRepository(ILoggerFactory loggerFactory): this(new EdtDbContext(), loggerFactory)
         {
             _DisposeContext = true;
         }

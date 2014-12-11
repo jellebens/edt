@@ -8,7 +8,7 @@ namespace Sharpsolutions.Edt.Data.Sql.Mappings {
     public static class Mapping {
         public static class Schema
         {
-            public const string Trade = "Trade";
+            public const string Trade = "trade";
         }
     }
 }

@@ -16,10 +16,10 @@ namespace Sharpsolutions.Edt.Data.Tests.Sql {
     public class CommodityRepositoryTests {
 
         private CommodityRepository _repository;
-        private TradeDbContext _tradeDbContext;
+        private EdtDbContext _tradeDbContext;
         [SetUp]
         public void SetUp() {
-            _tradeDbContext = new TradeDbContext();
+            _tradeDbContext = new EdtDbContext();
             _repository = new CommodityRepository(_tradeDbContext, new ConsoleFactory());
         }
 
@@ -33,7 +33,7 @@ namespace Sharpsolutions.Edt.Data.Tests.Sql {
         [Test]
         public void ExecutePendingMigrations()
         {
-            using (TradeDbContext context = new TradeDbContext("default")) {
+            using (EdtDbContext context = new EdtDbContext("default")) {
                 context.Database.Log = Console.Write;
                 var x = context.Set<Category>().First();
 
