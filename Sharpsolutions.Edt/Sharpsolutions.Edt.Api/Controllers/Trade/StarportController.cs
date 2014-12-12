@@ -38,7 +38,7 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
         [HttpGet]
         public StarportUpdateModel Detail(string name)
         {
-            Starport starport = _repository.Get(name);
+            Starport starport = _repository.Query().Single(x => x.Name == name);
 
             StarportUpdateModel result = new StarportUpdateModel();
             result.Economy = starport.Economy.DisplayName;

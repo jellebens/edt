@@ -97,9 +97,13 @@
     <Compile Include="Migrations\201412110841405_AddUniqueConstraints.Designer.cs">
       <DependentUpon>201412110841405_AddUniqueConstraints.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201412111711050_AddStarports.cs" />
-    <Compile Include="Migrations\201412111711050_AddStarports.Designer.cs">
-      <DependentUpon>201412111711050_AddStarports.cs</DependentUpon>
+    <Compile Include="Migrations\201412121940270_AddStarports.cs" />
+    <Compile Include="Migrations\201412121940270_AddStarports.Designer.cs">
+      <DependentUpon>201412121940270_AddStarports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412121958358_InsertDefaultCommodities.cs" />
+    <Compile Include="Migrations\201412121958358_InsertDefaultCommodities.Designer.cs">
+      <DependentUpon>201412121958358_InsertDefaultCommodities.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +117,8 @@
     <Compile Include="Sql\Mappings\SolarSystemMap.cs" />
     <Compile Include="Sql\Mappings\StarportMap.cs" />
     <Compile Include="Sql\Mappings\StockItemMap.cs" />
+    <Compile Include="Sql\RepositoryBase.cs" />
+    <Compile Include="Sql\StarportRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -138,8 +144,11 @@
     <EmbeddedResource Include="Migrations\201412110841405_AddUniqueConstraints.resx">
       <DependentUpon>201412110841405_AddUniqueConstraints.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412111711050_AddStarports.resx">
-      <DependentUpon>201412111711050_AddStarports.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201412121940270_AddStarports.resx">
+      <DependentUpon>201412121940270_AddStarports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412121958358_InsertDefaultCommodities.resx">
+      <DependentUpon>201412121958358_InsertDefaultCommodities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

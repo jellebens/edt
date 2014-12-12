@@ -23,6 +23,7 @@ namespace Sharpsolutions.Edt.Data.Sql.Mappings {
 
             Property(x => x.DisplayName)
                 .HasMaxLength(15)
+                .HasColumnName("Name")
                 .IsRequired();
         }
     }

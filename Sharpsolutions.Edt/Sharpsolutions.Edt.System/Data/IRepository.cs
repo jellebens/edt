@@ -13,7 +13,7 @@ namespace Sharpsolutions.Edt.System.Data {
     {
         void Add(TEntity entity);
 
-        TEntity Get(string id);
+        TEntity Get(Guid id);
 
         IQueryable<TEntity> Query();
 

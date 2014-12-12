@@ -7,6 +7,7 @@ using System.Resources;
 namespace Sharpsolutions.Edt.Data.Migrations
 {
     
+    
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
     public sealed partial class AddStarports : IMigrationMetadata
     {
@@ -14,7 +15,7 @@ namespace Sharpsolutions.Edt.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201412111711050_AddStarports"; }
+            get { return "201412121940270_AddStarports"; }
         }
         
         string IMigrationMetadata.Source

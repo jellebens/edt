@@ -1,5 +1,5 @@
 using System.Data.Entity.Migrations;
-using Sharpsolutions.Edt.Data.Sql.Mappings;
+using Sharpsolutions.Edt.Domain.Trade;
 
 namespace Sharpsolutions.Edt.Data.Migrations
 {
@@ -13,35 +13,32 @@ namespace Sharpsolutions.Edt.Data.Migrations
                 "trade.Economy",
                 c => new
                     {
-                        Id = c.Int(false),
-                        DisplayName = c.String(false, 15),
+                        Id = c.Int(nullable: false),
+                        Name = c.String(nullable: false, maxLength: 15),
                     })
-                .Index(t => t.DisplayName, "UC_Name", true)
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "trade.SolarSystem",
                 c => new
                     {
-                        Id = c.UniqueIdentifier(),
-                        Name = c.String(false, 50),
+                        Id = c.Guid(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 50),
                     })
-                .Index(t => t.Name, "UC_Name", true)
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "trade.Starport",
                 c => new
                     {
-                        Id = c.UniqueIdentifier(),
-                        Name = c.String(false, 50),
-                        EconomyId = c.Int(false),
-                        SolarSystemId = c.Guid(false),
+                        Id = c.Guid(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 50),
+                        EconomyId = c.Int(nullable: false),
+                        SolarSystemId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("trade.Economy", t => t.EconomyId)
                 .ForeignKey("trade.SolarSystem", t => t.SolarSystemId)
-                .Index(t => t.Name, "UC_Name", true)
                 .Index(t => t.EconomyId)
                 .Index(t => t.SolarSystemId);
             
@@ -49,18 +46,25 @@ namespace Sharpsolutions.Edt.Data.Migrations
                 "trade.StarportCommodities",
                 c => new
                     {
-                        RowId = c.Long(false, true),
-                        Exports = c.Boolean(false),
-                        Imports = c.Boolean(false),
-                        CommodityId = c.Guid(false),
-                        StarportId = c.Guid(false),
+                        RowId = c.Long(nullable: false, identity: true),
+                        Exports = c.Boolean(nullable: false),
+                        Imports = c.Boolean(nullable: false),
+                        CommodityId = c.Guid(nullable: false),
+                        StarportId = c.Guid(nullable: false),
                     })
-                .PrimaryKey(t => new {t.CommodityId, t.StarportId})
-                .ForeignKey("trade.Commodity", t => t.CommodityId, true)
-                .ForeignKey("trade.Starport", t => t.StarportId, true)
-
+                .PrimaryKey(t => t.RowId)
+                .ForeignKey("trade.Commodity", t => t.CommodityId, cascadeDelete: true)
+                .ForeignKey("trade.Starport", t => t.StarportId, cascadeDelete: true)
                 .Index(t => t.CommodityId)
                 .Index(t => t.StarportId);
+
+            foreach (Economy economy in Economy.All())
+            {
+                string sql = string.Format("INSERT INTO trade.Economy(Id, Name) VALUES({0}, '{1}')", economy.Value,
+                    economy.DisplayName);
+
+                Sql(sql);
+            }
             
         }
         
