@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Castle.Core.Logging;
 using NUnit.Framework;
 using Sharpsolutions.Edt.Data.Azure;
+using Sharpsolutions.Edt.Data.Sql;
 using Sharpsolutions.Edt.Domain.Trade;
 
 namespace Sharpsolutions.Edt.Data.Tests.Azure {
@@ -12,11 +14,12 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
     public class StarportRepositoryTests
     {
         private readonly StarportRepository _repository = new StarportRepository();
+        private readonly CommodityRepository _commodityRepository = new CommodityRepository(new ConsoleFactory());
 
         [Test]
         public void AddHAvingAValidStarportShouldAdd()
         {
-            StarportBuilder builder = new StarportBuilder(Guid.NewGuid().ToString(), "TEST", Economy.HighTech);
+            StarportBuilder builder = new StarportBuilder(Guid.NewGuid().ToString(), "TEST", Economy.HighTech, _commodityRepository.Query());
 
             Starport starport = builder.Build();
 

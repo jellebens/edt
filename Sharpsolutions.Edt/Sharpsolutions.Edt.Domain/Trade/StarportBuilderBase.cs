@@ -1,11 +1,16 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Sharpsolutions.Edt.Domain.Trade
 {
     public abstract class StarportBuilderBase : IStarportBuilder
     {
-        protected IQueryable<Category> _Categories;
-        public virtual Starport Build(string name, string system) {
+        protected IQueryable<Commodity> _Commodities;
+
+        public virtual Starport Build(string name, string system, IQueryable<Commodity> commodities)
+        {
+            _Commodities = commodities;
+
             SolarSystem solarSystemy = new SolarSystem(system);
 
             Starport starport = Starport.Create(name, solarSystemy, Economy.Industrial);
@@ -15,10 +20,12 @@ namespace Sharpsolutions.Edt.Domain.Trade
             return starport;
         }
 
-        public void AddCategories(IQueryable<Category> categories)
+
+        public virtual Commodity GetCommodity(string name)
         {
-            _Categories = categories;
+            return _Commodities.Single(x => x.Name == name);
         }
+
 
         protected abstract void AddGoods(Starport starport);
     }

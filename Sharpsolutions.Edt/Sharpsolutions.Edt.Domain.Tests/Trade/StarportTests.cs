@@ -9,11 +9,14 @@ using Sharpsolutions.Edt.Domain.Trade;
 namespace Sharpsolutions.Edt.Domain.Tests.Trade {
     [TestFixture]
     public class StarportTests {
+        readonly FakeCommodities _commodities = new FakeCommodities();
         [Test]
         public void CreateNewIndustrialShouldPopulateTheGoods()
         {
-            StarportBuilder builder = new StarportBuilder("Kaku Orbital", "Chemaku", Economy.Industrial);
+           
 
+            StarportBuilder builder = new StarportBuilder("Kaku Orbital", "Chemaku", Economy.Industrial, _commodities.AllCommodities());
+            
             Starport kaku = builder.Build();
 
             Assert.NotNull(kaku);
@@ -26,7 +29,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
         public void CreateNewExtractionShouldPopulateTheGoods()
         {
             Economy e = Economy.Extraction;
-            StarportBuilder builder = new StarportBuilder(e.DisplayName, "Chemaku", e);
+            StarportBuilder builder = new StarportBuilder(e.DisplayName, "Chemaku", e, _commodities.AllCommodities());
 
             Starport starport = builder.Build();
 
@@ -39,7 +42,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
         [Test]
         public void CreateNewRefineryShouldPopulateTheGoods() {
             Economy e = Economy.Refinery;
-            StarportBuilder builder = new StarportBuilder(e.DisplayName, "Chemaku", e);
+            StarportBuilder builder = new StarportBuilder(e.DisplayName, "Chemaku", e, _commodities.AllCommodities());
 
             Starport starport = builder.Build();
 
@@ -52,7 +55,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
         [Test]
         public void CreateNewAgricultureShouldPopulateTheGoods() {
             Economy e = Economy.Agriculture;
-            StarportBuilder builder = new StarportBuilder(e.DisplayName, "Chemaku", e);
+            StarportBuilder builder = new StarportBuilder(e.DisplayName, "Chemaku", e, _commodities.AllCommodities());
 
             Starport starport = builder.Build();
 
@@ -65,7 +68,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
         [Test]
         public void CreateNewHighTechShouldPopulateTheGoods() {
             Economy e = Economy.HighTech;
-            StarportBuilder builder = new StarportBuilder(e.DisplayName, "Chemaku", e);
+            StarportBuilder builder = new StarportBuilder(e.DisplayName, "Chemaku", e, _commodities.AllCommodities());
 
             Starport starport = builder.Build();
 

@@ -13,14 +13,15 @@ namespace Sharpsolutions.Edt.Domain.Trade {
         private readonly string _Name;
         private readonly Economy _Economy;
         private readonly Dictionary<Economy, IStarportBuilder> _builders = new Dictionary<Economy, IStarportBuilder>();
+        private readonly IQueryable<Commodity> _Commodities;
 
-
-        public StarportBuilder(string name, string system, Economy economy)
+        public StarportBuilder(string name, string system, Economy economy, IQueryable<Commodity> commodities)
         {
             _SolarSystemName = system;
             _Name = name;
             _Economy = economy;
-        
+            _Commodities = commodities;
+
             _builders.Add(Economy.Extraction, new ExtractionBuilder());
             _builders.Add(Economy.Refinery, new RefineryBuilder());
             _builders.Add(Economy.Agriculture, new AgricultureBuilder());
@@ -29,13 +30,11 @@ namespace Sharpsolutions.Edt.Domain.Trade {
 
         }
 
-
-
         public Starport Build()
         {
             IStarportBuilder builder = _builders[_Economy];
 
-            return builder.Build(_Name, _SolarSystemName);
+            return builder.Build(_Name, _SolarSystemName, _Commodities);
         }
     }
 }

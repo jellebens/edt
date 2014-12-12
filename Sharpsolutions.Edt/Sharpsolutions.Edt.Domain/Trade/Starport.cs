@@ -48,10 +48,9 @@ namespace Sharpsolutions.Edt.Domain.Trade {
             return starport;
         }
 
-        public void Add(string commodity, Category category, bool exports, bool imports)
+        public void Add(Commodity commodity, bool exports, bool imports)
         {
-            Commodity c = Commodity.CommodityFactory.Create(commodity, category);
-            this.Goods.Add(StockItem.New(c, exports, imports));
+            this.Goods.Add(StockItem.New(commodity, exports, imports));
         }
 
         
