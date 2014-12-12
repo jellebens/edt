@@ -44,12 +44,17 @@ namespace Sharpsolutions.Edt.Data.Tests.Sql {
         [Test]
         public void AddCategory()
         {
-            
+
             Category c = new Category("test");
+
 
             _tradeDbContext.Set<Category>().Add(c);
             _tradeDbContext.SaveChanges();
 
+            //Category c =_tradeDbContext.Set<Category>().Single(x => x.Name == "test");
+
+            _tradeDbContext.Set<Category>().Remove(c);
+            _tradeDbContext.SaveChanges();
         }
 
         [Test]
