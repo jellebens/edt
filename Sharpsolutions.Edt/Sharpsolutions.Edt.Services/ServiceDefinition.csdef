@@ -4,6 +4,7 @@
     <ConfigurationSettings>
       <Setting name="Edt.ServiceBus.ConnectionString" />
       <Setting name="Edt.Storage.TableStore" />
+      <Setting name="default" />
     </ConfigurationSettings>
     <Imports>
       <Import moduleName="RemoteAccess" />

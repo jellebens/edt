@@ -26,6 +26,8 @@ namespace Sharpsolutions.Edt.Handler.Command.Trade {
             Starport starport = builder.Build();
 
             _starportRepository.Add(starport);
+
+            _starportRepository.Commit();
         }
     }
 }

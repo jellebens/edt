@@ -88,6 +88,8 @@ namespace Sharpsolutions.Edt.Worker.Command {
 
             ILoggerFactory factory = _Container.Resolve<ILoggerFactory>();
             _Logger = factory.Create(Loggers.Commanding.Worker);
+
+
         }
 
         private void ConfigureWorker() {

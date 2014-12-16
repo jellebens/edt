@@ -56,7 +56,7 @@ namespace Sharpsolutions.Edt.Data.Migrations
             Sql("INSERT [Trade].[Commodity] ([Id], [Name], [CategoryId]) VALUES (N'd63d97f2-3882-e411-8286-40167ead2fa4', N'Performance Enhancers', N'd23d97f2-3882-e411-8286-40167ead2fa4')");
             Sql("INSERT [Trade].[Commodity] ([Id], [Name], [CategoryId]) VALUES (N'd83d97f2-3882-e411-8286-40167ead2fa4', N'Palladium', N'd73d97f2-3882-e411-8286-40167ead2fa4')");
             Sql("INSERT [Trade].[Commodity] ([Id], [Name], [CategoryId]) VALUES (N'd93d97f2-3882-e411-8286-40167ead2fa4', N'Silver', N'd73d97f2-3882-e411-8286-40167ead2fa4')");
-            Sql("INSERT [Trade].[Commodity] ([Id], [Name], [CategoryId]) VALUES (N'da3d97f2-3882-e411-8286-40167ead2fa4', N'ld', N'd73d97f2-3882-e411-8286-40167ead2fa4')");
+            Sql("INSERT [Trade].[Commodity] ([Id], [Name], [CategoryId]) VALUES (N'da3d97f2-3882-e411-8286-40167ead2fa4', N'Gold', N'd73d97f2-3882-e411-8286-40167ead2fa4')");
             Sql("INSERT [Trade].[Commodity] ([Id], [Name], [CategoryId]) VALUES (N'db3d97f2-3882-e411-8286-40167ead2fa4', N'Copper', N'd73d97f2-3882-e411-8286-40167ead2fa4')");
             Sql("INSERT [Trade].[Commodity] ([Id], [Name], [CategoryId]) VALUES (N'dc3d97f2-3882-e411-8286-40167ead2fa4', N'Alaminium', N'd73d97f2-3882-e411-8286-40167ead2fa4')");
             Sql("INSERT [Trade].[Commodity] ([Id], [Name], [CategoryId]) VALUES (N'dd3d97f2-3882-e411-8286-40167ead2fa4', N'Beryllium', N'd73d97f2-3882-e411-8286-40167ead2fa4')");

@@ -1,5 +1,5 @@
 ﻿'use strict';
-angular.module('EdtApp').controller('starPortController', ['$scope', '$state', 'starportService', function ($scope, $state, starportService) {
+angular.module('EdtApp').controller('starPortCreateController', ['$scope', '$state', 'starportService', function ($scope, $state, starportService) {
     $scope.economies = [
         { Name: 'Extraction' },
         { Name: 'Refinery' },
@@ -23,7 +23,7 @@ angular.module('EdtApp').controller('starPortController', ['$scope', '$state', '
             $state.go("trade.starport.update", {"starport": $scope.starport.name});
         }, function (err) {
             $scope.savedSuccessfully = false;
-            $scope.message = "Failed to register user due to:";
+            $scope.message = "Failed to register starport due to:";
             $scope.message += "<ul>";
 
             for (var key in err.modelState) {

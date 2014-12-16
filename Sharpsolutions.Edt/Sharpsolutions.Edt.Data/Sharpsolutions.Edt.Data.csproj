@@ -108,6 +108,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sql\CommodityRepository.cs" />
+    <Compile Include="Sql\EdtConfiguration.cs" />
     <Compile Include="Sql\Mappings\CategoryMap.cs" />
     <Compile Include="Sql\Mappings\CommodityMap.cs" />
     <Compile Include="Sql\Mappings\EconomyMap.cs" />

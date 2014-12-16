@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Castle.Core.Logging;
+using Microsoft.WindowsAzure;
 using Sharpsolutions.Edt.System.Data;
 using Sharpsolutions.Edt.System.Domain;
 using Sharpsolutions.Edt.System.Logging;
@@ -24,7 +25,7 @@ namespace Sharpsolutions.Edt.Data.Sql {
             DbContext.Database.Log = (s) => _Logger.DebugFormat("{0}", s.Replace(Environment.NewLine, string.Empty));
         }
 
-        protected RepositoryBase(ILoggerFactory loggerFactory): this(new EdtDbContext(), loggerFactory)
+        protected RepositoryBase(ILoggerFactory loggerFactory): this(new EdtDbContext(CloudConfigurationManager.GetSetting("default")), loggerFactory)
         {
             _OwnsContext = true;
         }

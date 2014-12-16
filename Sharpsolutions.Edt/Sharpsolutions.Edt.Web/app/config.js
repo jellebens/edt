@@ -36,7 +36,7 @@
     }).state('trade.starport.new', {
         url: "/new",
         templateUrl: "app/views/trade/starport/create.html",
-        controller: "starPortController"
+        controller: "starPortCreateController"
     }).state('trade.starport.update', {
         url: "/update/{starport}",
         templateUrl: "app/views/trade/starport/update.html",
