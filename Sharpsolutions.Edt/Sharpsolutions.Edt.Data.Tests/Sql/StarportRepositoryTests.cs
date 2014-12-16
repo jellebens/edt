@@ -37,9 +37,9 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
         [Test]
         public void AddHAvingAValidStarportShouldAdd()
         {
-            //Economy.HighTech
+            
             Economy hightech = _repository.Get<Economy>(Economy.HighTech.Value); 
-            StarportBuilder builder = new StarportBuilder(Guid.NewGuid().ToString(), "TEST", hightech, _commodityRepository.Query());
+            StarportBuilder builder = new StarportBuilder(Guid.NewGuid().ToString(), "TEST", hightech, _commodityRepository.Query().ToList().AsQueryable());
 
             Starport starport = builder.Build();
             
@@ -60,7 +60,7 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
         [Test]
         public void GetHavingValueShouldNotBeNull()
         {
-            Starport starport = _repository.Query().Single(x => x.Name == "Test");
+            Starport starport = _repository.Query().First(x => x.System.Name == "TEST");
 
             Assert.IsNotNull(starport);
         }
