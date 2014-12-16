@@ -17,6 +17,7 @@ namespace Sharpsolutions.Edt.Data.Sql.Mappings {
 
             HasRequired(x => x.Category)
                 .WithMany()
+                
                 .Map(m => m.MapKey("CategoryId"))
                 .WillCascadeOnDelete(false);
 

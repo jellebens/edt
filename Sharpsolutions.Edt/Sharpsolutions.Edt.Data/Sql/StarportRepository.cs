@@ -12,10 +12,18 @@ namespace Sharpsolutions.Edt.Data.Sql {
         {
         }
 
+        public StarportRepository(ILoggerFactory loggerFactory)
+            : base(loggerFactory) {
+        }
+
         public override void Add(Starport entity)
         {
-            DbContext.Set<Starport>().Add(entity);
+            
+           DbContext.Set<Starport>().Add(entity);
+            
         }
+
+
 
 
         public override Starport Get(Guid id)
@@ -27,5 +35,7 @@ namespace Sharpsolutions.Edt.Data.Sql {
         {
             return DbContext.Set<Starport>().AsQueryable();
         }
+
+        
     }
 }

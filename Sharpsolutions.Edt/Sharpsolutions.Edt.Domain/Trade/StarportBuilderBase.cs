@@ -7,13 +7,13 @@ namespace Sharpsolutions.Edt.Domain.Trade
     {
         protected IQueryable<Commodity> _Commodities;
 
-        public virtual Starport Build(string name, string system, IQueryable<Commodity> commodities)
+        public virtual Starport Build(string name, string system,Economy economy, IQueryable<Commodity> commodities)
         {
             _Commodities = commodities;
 
             SolarSystem solarSystemy = new SolarSystem(system);
 
-            Starport starport = Starport.Create(name, solarSystemy, Economy.Industrial);
+            Starport starport = Starport.Create(name, solarSystemy, economy);
 
             AddGoods(starport);
 

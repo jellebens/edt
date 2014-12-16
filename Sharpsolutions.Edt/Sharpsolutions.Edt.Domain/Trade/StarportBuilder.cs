@@ -34,7 +34,7 @@ namespace Sharpsolutions.Edt.Domain.Trade {
         {
             IStarportBuilder builder = _builders[_Economy];
 
-            return builder.Build(_Name, _SolarSystemName, _Commodities);
+            return builder.Build(_Name, _SolarSystemName,_Economy, _Commodities);
         }
     }
 }

@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Sharpsolutions.Edt.Domain.Trade {
     public class StockItem {
-        
-        public Commodity Commodity { get; protected set; }
-        public bool Exports { get; protected set; }
-        public bool Imports { get; protected set; }
-        public long Id { get; set; }
+
+        public virtual Commodity Commodity { get; protected set; }
+        public virtual bool Exports { get; protected set; }
+        public virtual bool Imports { get; protected set; }
+        public virtual long Id { get; set; }
 
 
         public static StockItem New(Commodity commodity, bool exports, bool imports)

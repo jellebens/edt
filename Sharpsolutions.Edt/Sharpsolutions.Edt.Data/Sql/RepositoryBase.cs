@@ -12,8 +12,7 @@ using Sharpsolutions.Edt.System.Domain;
 using Sharpsolutions.Edt.System.Logging;
 
 namespace Sharpsolutions.Edt.Data.Sql {
-    public abstract class RepositoryBase<TEntity>: IRepository<TEntity>, IDisposable where TEntity : IEntity
-    {
+    public abstract class RepositoryBase<TEntity> : IRepository<TEntity>, IDisposable where TEntity : IEntity {
         protected readonly DbContext DbContext;
         private readonly ILogger _Logger;
         private readonly bool _OwnsContext = false;
@@ -25,8 +24,8 @@ namespace Sharpsolutions.Edt.Data.Sql {
             DbContext.Database.Log = (s) => _Logger.DebugFormat("{0}", s.Replace(Environment.NewLine, string.Empty));
         }
 
-        protected RepositoryBase(ILoggerFactory loggerFactory): this(new EdtDbContext(CloudConfigurationManager.GetSetting("default")), loggerFactory)
-        {
+        protected RepositoryBase(ILoggerFactory loggerFactory)
+            : this(new EdtDbContext(), loggerFactory) {
             _OwnsContext = true;
         }
 
@@ -37,16 +36,20 @@ namespace Sharpsolutions.Edt.Data.Sql {
 
         public abstract IQueryable<TEntity> Query();
 
-        public void Commit()
-        {
+        public void Commit() {
             DbContext.SaveChanges();
         }
 
         public void Dispose() {
-            if (_OwnsContext)
-            {
+            if (_OwnsContext) {
                 DbContext.Dispose();
             }
+        }
+
+        public TResult Get<TResult>(params object[] keyValues) where TResult : class
+        {
+
+            return DbContext.Set<TResult>().Find(keyValues);
         }
     }
 }

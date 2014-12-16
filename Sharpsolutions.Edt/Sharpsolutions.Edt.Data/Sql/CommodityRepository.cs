@@ -40,7 +40,7 @@ namespace Sharpsolutions.Edt.Data.Sql {
 
         public override IQueryable<Commodity> Query()
         {
-            return DbContext.Set<Commodity>();
+            return DbContext.Set<Commodity>().AsQueryable().Include(x => x.Category);
         }
 
     }

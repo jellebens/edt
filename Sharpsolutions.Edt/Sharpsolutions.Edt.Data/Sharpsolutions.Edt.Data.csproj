@@ -83,7 +83,6 @@
   <ItemGroup>
     <Compile Include="Azure\HelperExtensions.cs" />
     <Compile Include="Azure\IUserRepository.cs" />
-    <Compile Include="Azure\StarportRepository.cs" />
     <Compile Include="Azure\TableKey.cs" />
     <Compile Include="Azure\TableStorageBase.cs" />
     <Compile Include="Azure\UserRepository.cs" />

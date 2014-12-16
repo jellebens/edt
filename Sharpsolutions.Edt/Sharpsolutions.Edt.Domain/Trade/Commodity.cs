@@ -15,8 +15,8 @@ namespace Sharpsolutions.Edt.Domain.Trade {
             this.Category = new Category(category);
         }
 
-        public string Name { get; protected set; }
-        public Category Category { get; protected set; }
+        public virtual string Name { get; protected set; }
+        public virtual Category Category { get; protected set; }
 
         public static bool operator ==(Commodity left, Commodity right)
         {

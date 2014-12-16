@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Sharpsolutions.Edt.Domain.Trade;
 
 namespace Sharpsolutions.Edt.Domain.Core {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Sharpsolutions.Edt.Domain.Core {
                 return false;
             }
 
-            var typeMatches = GetType().Equals(obj.GetType());
+            var typeMatches = obj is Economy;
             var valueMatches = _value.Equals(otherValue.Value);
 
             return typeMatches && valueMatches;

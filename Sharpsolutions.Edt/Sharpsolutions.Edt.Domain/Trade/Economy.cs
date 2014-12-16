@@ -13,6 +13,10 @@ namespace Sharpsolutions.Edt.Domain.Trade {
         public static Economy Industrial = new Economy(4, "Industrial");
         public static Economy HighTech = new Economy(5, "High Tech");
 
+        protected Economy()
+        {
+        }
+
         public Economy(int value, string displayName): base(value, displayName)
         {
             
