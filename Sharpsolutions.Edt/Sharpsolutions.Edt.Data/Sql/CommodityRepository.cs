@@ -25,9 +25,6 @@ namespace Sharpsolutions.Edt.Data.Sql {
             
         }
 
-
-        
-
         public override void Add(Commodity entity)
         {
             DbContext.Set<Commodity>().Add(entity);

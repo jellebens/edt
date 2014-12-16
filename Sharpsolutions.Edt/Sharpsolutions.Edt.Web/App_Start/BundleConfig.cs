@@ -55,7 +55,7 @@ namespace Sharpsolutions.Edt.Web {
                                     .Include("~/Scripts/ng-table.js"));
 
             bundles.Add(new StyleBundle(Bundles.Styles.NgTable)
-                                    .Include("~/Scripts/ng-table.css"));
+                                    .Include("~/Content/ng-table.css"));
         }
 
         private static void AddDataTable(BundleCollection bundles) {

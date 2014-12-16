@@ -7,6 +7,11 @@ using System.Text;
 namespace Sharpsolutions.Edt.Domain.Trade {
     public class SolarSystem
     {
+        protected SolarSystem()
+        {
+
+        }
+
         public SolarSystem(string name)
         {
             this.Name = name;

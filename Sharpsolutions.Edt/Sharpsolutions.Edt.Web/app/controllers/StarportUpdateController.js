@@ -14,7 +14,10 @@ angular.module('EdtApp').controller('starPortUpdateController', ['$scope', '$sta
             var data = details.goods;
             $scope.tableParams = new ngTableParams({
                 page: 1,   // show first page
-                count: data.length  // count per page
+                count: data.length,  // count per page
+                sorting: {
+                category: 'asc'     // initial sorting
+            }
             }, {
                 counts: [], // hide page counts control
                 total: data.length,  // value less than count hide pagination

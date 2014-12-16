@@ -14,10 +14,9 @@ namespace Sharpsolutions.Edt.Data.Sql.Mappings {
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.Name);
-
+            
             HasRequired(x => x.Category)
                 .WithMany()
-                
                 .Map(m => m.MapKey("CategoryId"))
                 .WillCascadeOnDelete(false);
 

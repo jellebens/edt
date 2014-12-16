@@ -23,9 +23,6 @@ namespace Sharpsolutions.Edt.Data.Sql {
             
         }
 
-
-
-
         public override Starport Get(Guid id)
         {
             return DbContext.Set<Starport>().Find(id);

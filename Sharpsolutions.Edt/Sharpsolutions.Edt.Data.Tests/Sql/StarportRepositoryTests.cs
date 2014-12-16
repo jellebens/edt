@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using Castle.Core.Logging;
 using NUnit.Framework;
 using Sharpsolutions.Edt.Data.Azure;
@@ -60,9 +62,18 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
         [Test]
         public void GetHavingValueShouldNotBeNull()
         {
-            Starport starport = _repository.Query().First(x => x.System.Name == "TEST");
-
+            Starport starport = _repository.Query()
+                .Include(x => x.Goods.Select(g => g.Commodity.Category))
+                .First(x => x.System.Name == "TEST");
+            
             Assert.IsNotNull(starport);
+
+            foreach (StockItem good in starport.Goods)
+            {
+                Console.WriteLine(good.Commodity.Name);
+                Console.WriteLine(good.Commodity.Category.Name);
+            }
+
         }
     }
     

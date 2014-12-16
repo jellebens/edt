@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
-using Microsoft.WindowsAzure.Storage.Table;
 using Sharpsolutions.Edt.Api.Models.Trade;
 using Sharpsolutions.Edt.Contracts.Command.Universe;
 using Sharpsolutions.Edt.System.Command;
 using Sharpsolutions.Edt.System.Data;
 using Sharpsolutions.Edt.Domain.Trade;
+
 
 namespace Sharpsolutions.Edt.Api.Controllers.Trade {
     [RoutePrefix("starport")]
@@ -38,7 +39,9 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
         [HttpGet]
         public StarportUpdateModel Detail(string name)
         {
-            Starport starport = _repository.Query().Single(x => x.Name == name);
+            Starport starport = _repository.Query()
+                .Include(x => x.Goods.Select(g => g.Commodity.Category))
+                .Single(x => x.Name == name);
 
             StarportUpdateModel result = new StarportUpdateModel();
             result.Economy = starport.Economy.DisplayName;
@@ -52,7 +55,7 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
                 Import = g.Imports,
                 Export = g.Exports
 
-            }).ToArray();
+            }).OrderBy(x => x.Category).ToArray();
             
             return result;
         }

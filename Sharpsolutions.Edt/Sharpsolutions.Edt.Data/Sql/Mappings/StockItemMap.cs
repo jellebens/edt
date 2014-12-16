@@ -20,7 +20,10 @@ namespace Sharpsolutions.Edt.Data.Sql.Mappings {
 
             HasRequired(x => x.Commodity)
                 .WithMany()
-                .Map(m => m.MapKey("CommodityId"));
+                .Map(m =>
+                {
+                    m.MapKey("CommodityId");
+                });
 
             Property(x => x.Exports);
             Property(x => x.Imports);
