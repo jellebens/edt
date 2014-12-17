@@ -1,7 +1,7 @@
 ﻿using System;
 using Sharpsolutions.Edt.System.Command;
 
-namespace Sharpsolutions.Edt.Contracts.Command.Universe {
+namespace Sharpsolutions.Edt.Contracts.Command.Trade {
     public class CreateStarport: CommandBase {
 
         public static CreateStarport New(string name, string system, string economy) {

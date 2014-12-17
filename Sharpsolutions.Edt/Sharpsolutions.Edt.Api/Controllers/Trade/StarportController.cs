@@ -3,11 +3,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
 using Sharpsolutions.Edt.Api.Models.Trade;
-using Sharpsolutions.Edt.Contracts.Command.Universe;
+using Sharpsolutions.Edt.Contracts.Command.Trade;
 using Sharpsolutions.Edt.System.Command;
 using Sharpsolutions.Edt.System.Data;
 using Sharpsolutions.Edt.Domain.Trade;
-
+using Dto = Sharpsolutions.Edt.Contracts.Data;
 
 namespace Sharpsolutions.Edt.Api.Controllers.Trade {
     [RoutePrefix("starport")]
@@ -37,8 +37,7 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
         [Route("detail")]
         [Authorize]
         [HttpGet]
-        public StarportDetailModel Detail(string name)
-        {
+        public StarportDetailModel Detail(string name) {
             Starport starport = _repository.Query()
                 .Include(x => x.Goods.Select(g => g.Commodity.Category))
                 .Single(x => x.Name == name);
@@ -48,15 +47,14 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
             result.Name = starport.Name;
             result.System = starport.System.Name;
 
-            result.Goods = starport.Goods.Select(g => new StockItemModel()
-            {
+            result.Goods = starport.Goods.Select(g => new StockItemModel() {
                 Name = g.Commodity.Name,
                 Category = g.Commodity.Category.Name,
                 Import = g.Imports,
                 Export = g.Exports
 
             }).OrderBy(x => x.Category).ToArray();
-            
+
             return result;
         }
 
@@ -78,12 +76,22 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
         [Route("stock/update")]
         [Authorize]
         [HttpPost]
-        public IHttpActionResult Update(StockUpdateViewModel updateModel)
-        {
+        public IHttpActionResult Update(StockUpdateViewModel updateModel) {
             if (!ModelState.IsValid) {
                 return BadRequest(ModelState);
             }
 
+
+            UpdateStockCommand command = UpdateStockCommand.Create(updateModel.Name, updateModel.Goods.Select(g => new Dto.StockItem() {
+                Buy = g.Buy,
+                Category = g.Category,
+                Sell = g.Sell,
+                Demand = g.Demand,
+                Name = g.Name,
+                Supply = g.Supply
+            }).ToArray());
+
+            _Bus.Publish(command);
 
             return Ok();
         }
