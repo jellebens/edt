@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 using Castle.Core.Logging;
 using NUnit.Framework;
-using Sharpsolutions.Edt.Data.Azure;
 using Sharpsolutions.Edt.Data.Sql;
 using Sharpsolutions.Edt.Domain.Trade;
 
-namespace Sharpsolutions.Edt.Data.Tests.Azure {
+namespace Sharpsolutions.Edt.Data.Tests.Sql {
     [TestFixture]
     public class StarportRepositoryTests
     {
