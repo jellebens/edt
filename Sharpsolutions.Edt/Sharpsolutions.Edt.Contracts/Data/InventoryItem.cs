@@ -5,11 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Contracts.Data {
-    public class StockItem {
+    public class InventoryItem {
         public string Category { get; set; }
-        public string Name { get; set; }
-        public char Supply { get; set; }
-        public char Demand { get; set; }
+        public string Commodity { get; set; }
         public int? Sell { get; set; }
         public int? Buy { get; set; }
     }

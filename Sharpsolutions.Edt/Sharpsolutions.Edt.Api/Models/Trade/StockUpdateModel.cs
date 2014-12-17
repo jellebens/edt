@@ -9,10 +9,6 @@ namespace Sharpsolutions.Edt.Api.Models.Trade
         [Required]
         [Display(Name = "Commodity name")]
         public string Name { get; set; }
-        [Display(Name = "Supply")]
-        public char Supply { get; set; }
-        [Display(Name = "Demand")]
-        public char Demand { get; set; }
         [Display(Name = "Sell Price")]
         public int? Sell { get; set; }
         [Display(Name = "Buy Price")]

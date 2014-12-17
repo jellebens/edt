@@ -29,13 +29,13 @@ angular.module('EdtApp').factory('starportService', function ($http, $q) {
         return deferred.promise;
     }
 
-    var _UpdateStock = function (name, goods) {
+    var _UpdateStock = function (name, system ,goods) {
         var deferred = $q.defer();
         
         var udpdateModel = {
             Name: name,
+            System: system,
             Goods: goods
-
         };
 
         $http.post(serviceBase + 'starport/stock/update', udpdateModel).success(deferred.resolve).error(deferred.reject);

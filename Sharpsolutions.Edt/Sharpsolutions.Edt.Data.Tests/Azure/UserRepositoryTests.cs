@@ -15,6 +15,19 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
     public class UserRepositoryTests {
         UserRepository _Repository = new UserRepository();
 
+        [TestFixtureSetUp]
+        public void FixtureSetup() {
+            
+        }
+
+        [Test]
+        public void TestEmulator()
+        {
+            Emulator e = new Emulator();
+
+            Assert.IsTrue(e.IsRunning);
+        }
+
         [Test]
         public void AddHavingAUserShouldNotThrow() {
             User u = User.Create(Guid.NewGuid().ToString(), "P@ssw0rd");

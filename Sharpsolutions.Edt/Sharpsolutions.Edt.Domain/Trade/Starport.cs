@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace Sharpsolutions.Edt.Domain.Trade {
                 Economy = Economy.Parse(economy),
                 Name = name,
                 System = new SolarSystem(system),
-                Goods = new StockItems()
+                Goods = new List<StockItem>()
             };
 
             return starport;
@@ -42,7 +43,7 @@ namespace Sharpsolutions.Edt.Domain.Trade {
                 Economy = economy,
                 Name = name,
                 System = solarSystemy,
-                Goods = new StockItems()
+                Goods = new List<StockItem>()
             };
 
             return starport;
@@ -53,6 +54,11 @@ namespace Sharpsolutions.Edt.Domain.Trade {
             this.Goods.Add(StockItem.New(commodity, exports, imports));
         }
 
-        
+        public void Update(Commodity commodity, int? sell, int? buy)
+        {
+            StockItem item = Goods.Single(g => g.Commodity == commodity);
+
+            item.Update(sell, buy);
+        }
     }
 }

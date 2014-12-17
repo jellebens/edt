@@ -48,6 +48,8 @@
     <Compile Include="Commodities\CommodityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trade\FakeCommodities.cs" />
+    <Compile Include="Trade\FakeStarportBuilder.cs" />
+    <Compile Include="Trade\StarportInventoryTests.cs" />
     <Compile Include="Trade\StarportTests.cs" />
   </ItemGroup>
   <ItemGroup>

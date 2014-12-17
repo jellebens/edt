@@ -10,7 +10,7 @@ angular.module('EdtApp').controller('starPortUpdateController', ['$scope', '$sta
     };
 
     var _Save = function() {
-        starportService.UpdateStock($scope.starport.name, $scope.starport.goods).then(function(response) {
+        starportService.UpdateStock($scope.starport.name, $scope.starport.system, $scope.starport.goods).then(function (response) {
             $scope.savedSuccessfully = true;
             $state.go('trade.starport.list');
         }, function (err) {

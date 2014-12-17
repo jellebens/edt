@@ -104,6 +104,10 @@
     <Compile Include="Migrations\201412121958358_InsertDefaultCommodities.Designer.cs">
       <DependentUpon>201412121958358_InsertDefaultCommodities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412171338374_AddBuySellPrices.cs" />
+    <Compile Include="Migrations\201412171338374_AddBuySellPrices.Designer.cs">
+      <DependentUpon>201412171338374_AddBuySellPrices.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sql\CommodityRepository.cs" />
@@ -149,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412121958358_InsertDefaultCommodities.resx">
       <DependentUpon>201412121958358_InsertDefaultCommodities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412171338374_AddBuySellPrices.resx">
+      <DependentUpon>201412171338374_AddBuySellPrices.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,7 +10,10 @@ namespace Sharpsolutions.Edt.Api.Models.Trade {
         [Required]
         [Display(Name = "Starport name")]
         public string Name { get; set; }
-
+        [Required]
+        [Display(Name = "Solar System name")]
+        public string System { get; set; }
         public IList<StockUpdateModel> Goods { get; set; }
+        
     }
 }

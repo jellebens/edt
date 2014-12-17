@@ -51,7 +51,10 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
                 Name = g.Commodity.Name,
                 Category = g.Commodity.Category.Name,
                 Import = g.Imports,
-                Export = g.Exports
+                Export = g.Exports,
+                Sell = g.Sell,
+                Buy =  g.Buy
+
 
             }).OrderBy(x => x.Category).ToArray();
 
@@ -82,13 +85,11 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
             }
 
 
-            UpdateStockCommand command = UpdateStockCommand.Create(updateModel.Name, updateModel.Goods.Select(g => new Dto.StockItem() {
+            UpdateInventoryCommand command = UpdateInventoryCommand.Create(updateModel.Name, updateModel.System ,updateModel.Goods.Select(g => new Dto.InventoryItem() {
                 Buy = g.Buy,
                 Category = g.Category,
                 Sell = g.Sell,
-                Demand = g.Demand,
-                Name = g.Name,
-                Supply = g.Supply
+                Commodity = g.Name
             }).ToArray());
 
             _Bus.Publish(command);

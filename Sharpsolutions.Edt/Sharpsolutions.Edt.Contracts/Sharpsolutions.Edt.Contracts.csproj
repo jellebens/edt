@@ -42,8 +42,8 @@
   <ItemGroup>
     <Compile Include="Command\Account\RegisterUser.cs" />
     <Compile Include="Command\Trade\CreateStarport.cs" />
-    <Compile Include="Command\Trade\UpdateStockCommand.cs" />
-    <Compile Include="Data\StockItem.cs" />
+    <Compile Include="Command\Trade\UpdateInventoryCommand.cs" />
+    <Compile Include="Data\InventoryItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

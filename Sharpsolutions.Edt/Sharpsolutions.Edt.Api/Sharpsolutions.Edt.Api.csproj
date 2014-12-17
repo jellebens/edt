@@ -209,7 +209,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\WindsorConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CommoditiesController.cs" />
+    <Compile Include="Controllers\System\SystemController.cs" />
     <Compile Include="Controllers\Trade\StarportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

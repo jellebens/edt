@@ -9,7 +9,7 @@ using Sharpsolutions.Edt.Domain.Trade;
 namespace Sharpsolutions.Edt.Domain.Tests.Trade {
     [TestFixture]
     public class StarportTests {
-        readonly FakeCommodities _commodities = new FakeCommodities();
+        private readonly FakeCommodities _commodities = new FakeCommodities();
         [Test]
         public void CreateNewIndustrialShouldPopulateTheGoods()
         {
