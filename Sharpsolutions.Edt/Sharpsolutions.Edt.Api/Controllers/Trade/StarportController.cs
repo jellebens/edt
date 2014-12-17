@@ -37,13 +37,13 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
         [Route("detail")]
         [Authorize]
         [HttpGet]
-        public StarportUpdateModel Detail(string name)
+        public StarportDetailModel Detail(string name)
         {
             Starport starport = _repository.Query()
                 .Include(x => x.Goods.Select(g => g.Commodity.Category))
                 .Single(x => x.Name == name);
 
-            StarportUpdateModel result = new StarportUpdateModel();
+            StarportDetailModel result = new StarportDetailModel();
             result.Economy = starport.Economy.DisplayName;
             result.Name = starport.Name;
             result.System = starport.System.Name;
@@ -71,6 +71,19 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
             CreateStarport cmd = CreateStarport.New(createModel.Name, createModel.System, createModel.Economy);
 
             _Bus.Publish(cmd);
+
+            return Ok();
+        }
+
+        [Route("stock/update")]
+        [Authorize]
+        [HttpPost]
+        public IHttpActionResult Update(StockUpdateViewModel updateModel)
+        {
+            if (!ModelState.IsValid) {
+                return BadRequest(ModelState);
+            }
+
 
             return Ok();
         }

@@ -31,53 +31,65 @@
                         <div class="col-lg-12">
                             <table ng-table="tableParams" class="table table-hover table-responsive">
                                 <tbody ng-repeat="group in $groups">
-                                    <tr class="ng-table-group">
-                                        <td colspan="{{$columns.length}}">
-                                            <a href="" ng-click="group.$hideRows = !group.$hideRows">
-                                                <span class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></span>
-                                                <strong>{{ group.value }}</strong>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr ng-hide="group.$hideRows" ng-repeat="good in group.data">
-                                        <td sortable="'category'" data-title="'Category'"></td>
-                                        <td data-title="'Name'">
-                                            {{good.name}}
-                                        </td>
-                                        <td>
-                                            <span class="glyphicon" ng-class="{'glyphicon-circle-arrow-left' : good.import}"></span>
-                                            <span class="glyphicon" ng-class="{'glyphicon-circle-arrow-right' : good.export}"></span>
-                                        </td>
-                                        <td data-title="'Sell'" width="90">
-                                            <div class="form-group-sm">
-                                                <input type="number" ng-model="good.sell" class="form-control" />
-                                            </div>
-                                        </td>
-                                        <td data-title="'Buy'" width="90">
-                                            <div class="form-group-sm">
-                                                <input type="number" ng-model="good.buy" class="form-control" />
-                                            </div>
-                                        </td>
-                                        <td data-title="'Supply'">
-                                            <div class="form-group-sm">
-                                                <label class="radio-inline"> <input icheck type="radio" ng-model="good.supply" value="H"> H </label>
-                                                <label class="radio-inline"> <input icheck type="radio" ng-model="good.supply" value="M"> M </label>
-                                                <label class="radio-inline"> <input icheck type="radio" ng-model="good.supply" value="L"> L </label>
-                                            </div>
-                                        </td>
-                                        <td data-title="'Demand'">
-                                            <div class="form-group-sm">
-                                                <label class="radio-inline"> <input icheck type="radio" ng-model="good.demand" value="H"> H </label>
-                                                <label class="radio-inline"> <input icheck type="radio" ng-model="good.demand" value="M"> M </label>
-                                                <label class="radio-inline"> <input icheck type="radio" ng-model="good.demand" value="L"> L </label>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <tr class="ng-table-group">
+                                    <td colspan="{{$columns.length}}">
+                                        <a href="" ng-click="group.$hideRows = !group.$hideRows">
+                                            <span class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></span>
+                                            <strong>{{ group.value }}</strong>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr ng-hide="group.$hideRows" ng-repeat="good in group.data">
+                                    <td sortable="'category'" data-title="'Category'" width="10"></td>
+                                    <td data-title="'Name'" width="200">
+                                        {{good.name}}
+                                    </td>
+                                    <td width="50">
+                                        <span class="glyphicon" ng-class="{'glyphicon-circle-arrow-left' : good.import}"></span>
+                                        <span class="glyphicon" ng-class="{'glyphicon-circle-arrow-right' : good.export}"></span>
+                                    </td>
+                                    <td data-title="'Sell'" width="90">
+                                        <div class="form-group-sm">
+                                            <input type="number" ng-model="good.sell" class="form-control"/>
+                                        </div>
+                                    </td>
+                                    <td data-title="'Buy'" width="90">
+                                        <div class="form-group-sm">
+                                            <input type="number" ng-model="good.buy" class="form-control"/>
+                                        </div>
+                                    </td>
+                                    <td data-title="'Supply'" width="125">
+                                        <div class="btn-group">
+                                            <label class="btn btn-primary ng-pristine ng-valid" ng-model="good.supply" btn-radio="'L'">L</label>
+                                            <label class="btn btn-primary ng-pristine ng-valid" ng-model="good.supply" btn-radio="'M'">M</label>
+                                            <label class="btn btn-primary ng-pristine ng-valid" ng-model="good.supply" btn-radio="'H'">H</label>
+                                        </div>
+                                    </td>
+                                    <td data-title="'Demand'" width="125">
+                                        <div class="btn-group">
+                                            <label class="btn btn-primary ng-pristine ng-valid" ng-model="good.demand" btn-radio="'L'">L</label>
+                                            <label class="btn btn-primary ng-pristine ng-valid" ng-model="good.demand" btn-radio="'M'">M</label>
+                                            <label class="btn btn-primary ng-pristine ng-valid" ng-model="good.demand" btn-radio="'H'">H</label>
+                                        </div>
+                                    </td>
+                                    <td data-title="''"></td>
+                                </tr>
                                 </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="{{$columns.length - 1}}">
+                                        <div class="pull-right">
+                                            <a class="btn btn-w-m btn-warning" ng-click="Cancel()">Cancel</a>
+                                            <a class="btn btn-w-m btn-primary" ng-click="Save()">Save</a>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tfoot>
                             </table>
                         </div>
                     </div>
-                </div>
+                </div> <!--End ibox-content-->
             </div>
         </div>
     </div>

@@ -1,11 +1,24 @@
 ﻿'use strict';
-angular.module('EdtApp').controller('starPortUpdateController', ['$scope', '$stateParams', '$filter', 'ngTableParams', 'starportService', function ($scope, $stateParams, $filter, ngTableParams, starportService) {
+angular.module('EdtApp').controller('starPortUpdateController', ['$scope', '$state', '$stateParams', '$filter', 'ngTableParams', 'starportService', function ($scope, $state ,$stateParams, $filter, ngTableParams, starportService) {
     $scope.savedSuccessfully = false;
     $scope.message = "";
 
     $scope.starport = {};
 
+    var _Cancel = function () {
+        $state.go('trade.starport.list');
+    };
 
+    var _Save = function() {
+        starportService.UpdateStock($scope.starport.name, $scope.starport.goods).then(function(response) {
+            $scope.savedSuccessfully = true;
+            //$state.go('trade.starport.list');
+        }, function (err) {
+            $scope.savedSuccessfully = false;
+            $scope.message = err;
+        });
+
+    }
 
     var _Detail = function (name) {
         starportService.Detail(name).then(function (details) {
@@ -18,7 +31,7 @@ angular.module('EdtApp').controller('starPortUpdateController', ['$scope', '$sta
                 sorting: {
                     category: 'asc',
                     name: 'asc' // initial sorting
-            }
+                }
             }, {
                 counts: [], // hide page counts control
                 total: data.length,  // value less than count hide pagination
@@ -35,5 +48,8 @@ angular.module('EdtApp').controller('starPortUpdateController', ['$scope', '$sta
     }
 
     _Detail($stateParams.starport);
+
+    $scope.Cancel = _Cancel;
+    $scope.Save = _Save;
 
 }]);

@@ -29,9 +29,23 @@ angular.module('EdtApp').factory('starportService', function ($http, $q) {
         return deferred.promise;
     }
 
+    var _UpdateStock = function (name, goods) {
+        var deferred = $q.defer();
+        
+        var udpdateModel = {
+            Name: name,
+            Goods: goods
+
+        };
+
+        $http.post(serviceBase + 'starport/stock/update', udpdateModel).success(deferred.resolve).error(deferred.reject);
+        return deferred.promise;
+    }
+
     starportServiceFactory.Create = _Create;
     starportServiceFactory.Overview = _Overview;
     starportServiceFactory.Detail = _Detail;
+    starportServiceFactory.UpdateStock = _UpdateStock;
 
     return starportServiceFactory;
 });
