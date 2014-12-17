@@ -10,15 +10,15 @@
         url: "/account",
         templateUrl: "app/views/common/content.html",
     }).state('account.login', {
-        url: "/account/login",
+        url: "/login",
         templateUrl: "app/views/account/login.html",
         controller: "loginController"
     }).state('account.loggedin', {
-        url: "/account/loggedin",
+        url: "/loggedin",
         templateUrl: "app/views/account/loggedin.html",
         controller: "loginController"
     }).state('account.signup', {
-        url: "/account/signup",
+        url: "/signup",
         templateUrl: "app/views/account/signup.html",
         controller: "signupController"
     }).state('trade', {

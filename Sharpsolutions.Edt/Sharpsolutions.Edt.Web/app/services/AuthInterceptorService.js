@@ -17,7 +17,7 @@ angular.module('EdtApp').factory('authInterceptorService', ['$q', '$location', '
 
     var _responseError = function (rejection) {
         if (rejection.status === 401) {
-            $location.path('/login');
+            $location.path('/account/login');
         }
         return $q.reject(rejection);
     }

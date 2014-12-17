@@ -16,7 +16,8 @@ angular.module('EdtApp').controller('starPortUpdateController', ['$scope', '$sta
                 page: 1,   // show first page
                 count: data.length,  // count per page
                 sorting: {
-                category: 'asc'     // initial sorting
+                    category: 'asc',
+                    name: 'asc' // initial sorting
             }
             }, {
                 counts: [], // hide page counts control

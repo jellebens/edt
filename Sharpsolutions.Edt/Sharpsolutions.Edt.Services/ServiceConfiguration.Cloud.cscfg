@@ -10,7 +10,7 @@
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEB1M5qQ9niq7T3r0ehk3bCEwDQYJKoZIhvcNAQEBBQAEggEAI1YdhMu9sCtJK9nMEA/HHlQd6/nocmjLhqjmmQBjDGHnw9hp86+BDauubbUZvgxN/cqxzc1rP6ZFrkh/quyq6JFFzkU6Q8MuDFNmXfKyMwM9ocl+DDZiC3DECyTlyDSLA0Hcr0L8qLkcK1ADZ9AM47tyPbkHovH77UE73rpU7VBhx3zDE1fCuhtvAr+MQPXh65/HfAp/R4rTxdgs+IqqgXXzgFXcpJx5829WX9/HIkx8ebh+vSb6dOQhWEk+XtPfgZcvB7X4fv9uFCu0dOlZ2nwO6iTBP0VjE0Ai12YMOjkiNmKFeBjBCV+wqouz8wuUawDXzEeKdV2agM6yfPDouDAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECCb9N+ulwaJzgBBZ9S1leCOWeJkkancGy+13" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2015-12-03T23:59:59.0000000+01:00" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
-      <Setting name="default" value="Data Source=.;Initial Catalog=Edt;Integrated Security=True;" />
+      <Setting name="default" value="Server=tcp:n686bnyhk4.database.windows.net,1433;Database=edt;User ID=edt@n686bnyhk4;Password=P@ssw0rd;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" />
     </ConfigurationSettings>
     <Certificates>
       <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="7FC12898703356F20E0A5CBE0A5E74A319A90EB6" thumbprintAlgorithm="sha1" />
