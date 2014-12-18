@@ -34,6 +34,7 @@ namespace Sharpsolutions.Edt.Data.Tests.Sql {
         public void ExecutePendingMigrations()
         {
             using (EdtDbContext context = new EdtDbContext("default")) {
+                
                 context.Database.Log = Console.Write;
                 var x = context.Set<Category>().First();
 
