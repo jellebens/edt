@@ -25,10 +25,6 @@ namespace Sharpsolutions.Edt.Domain.Trade {
         }
 
         public override bool Equals(object obj) {
-            if(this.GetType() != obj.GetType()){
-                return false;
-            }
-            
             Category other = obj as Category;
             if(other == null){
                 return false;

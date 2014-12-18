@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Castle.Core.Internal;
 using Castle.Core.Logging;
 using Sharpsolutions.Edt.Contracts.Command.Trade;
 using Sharpsolutions.Edt.Contracts.Data;
@@ -28,7 +29,8 @@ namespace Sharpsolutions.Edt.Handler.Command.Trade {
 
         public override void Execute(UpdateInventoryCommand command)
         {
-            IQueryable<Commodity> commodities =  _dbContext.Set<Commodity>().AsQueryable();
+            IQueryable<Commodity> commodities =  _dbContext.Set<Commodity>()
+                                                    .Include(c => c.Category);
             
             Starport starport = _starportRepository.Query().Single(s => s.Name == command.Starport && s.System.Name == command.System);
 

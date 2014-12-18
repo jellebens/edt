@@ -20,9 +20,9 @@ namespace Sharpsolutions.Edt.Domain.Trade {
 
         public static bool operator ==(Commodity left, Commodity right)
         {
-            if ((object) left == null && (object)right != null)
+            if (object.ReferenceEquals(left, null))
             {
-                return false;
+                return ReferenceEquals(right, null);
             }
 
             return left.Equals(right);
@@ -61,21 +61,12 @@ namespace Sharpsolutions.Edt.Domain.Trade {
 
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
-
-            if (this.GetType() != obj.GetType()) {
-                return false;
-            }
-
             Commodity other = obj as Commodity;
             if (other == null) {
                 return false;
             }
             bool nameSame = string.Equals(this.Name, other.Name, StringComparison.InvariantCultureIgnoreCase);
-            bool categorySame = this.Category.Equals(other.Category);
+            bool categorySame = Category == other.Category;
             return nameSame && categorySame;
         }
     }
