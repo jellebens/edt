@@ -33,7 +33,7 @@ namespace Sharpsolutions.Edt.Worker.Command {
         // rather than recreating it on every request
         private QueueClient _Client;
         private ManualResetEvent _CompletedEvent = new ManualResetEvent(false);
-       
+
 
         public override void Run() {
             _Client.OnMessage((receivedMessage) => {
@@ -45,30 +45,33 @@ namespace Sharpsolutions.Edt.Worker.Command {
 
         private void HandleMessage(BrokeredMessage receivedMessage) {
             try {
-                _Logger.InfoFormat("Processing message: {0}. DeliveryCount: {1}", receivedMessage.MessageId, receivedMessage.DeliveryCount);
+                _Logger.InfoFormat("Processing message: {0}. DeliveryCount: {1}", receivedMessage.MessageId,
+                    receivedMessage.DeliveryCount);
 
                 DataContractJsonSerializer serializer = JsonSerializerFactory.Create<RegisterUser>();
                 dynamic command = receivedMessage.GetBody<ICommand>(serializer);
 
                 ICommandProcessor processor = _Container.Resolve<ICommandProcessor>();
+                try {
+                    processor.Execute(command);
 
-                processor.Execute(command);
-
-                _Logger.InfoFormat("Handled message {0}", receivedMessage.MessageId);
-                receivedMessage.Complete();
-
-                _Container.Release(processor);
-
-            }catch(SerializationException e){
-                _Logger.ErrorFormat(e, "An SerializationException Has been caught  moving message to deadletter {0}.", e.Message);
-                receivedMessage.DeadLetter();
-            }
-            catch (Exception e) {
+                    _Logger.InfoFormat("Handled message {0}", receivedMessage.MessageId);
+                    receivedMessage.Complete();
+                } finally {
+                    _Container.Release(processor);
+                }
+            } catch (InvalidCastException e) {
+                _Logger.ErrorFormat(e, "An InvalidCastException has been caught moving message to deadletter");
+                receivedMessage.DeadLetter("Unknown Message can not cast to ICommand", e.Message);
+            } catch (SerializationException e) {
+                _Logger.ErrorFormat(e, "An SerializationException has been caught moving message to deadletter {0}.", e.Message);
+                receivedMessage.DeadLetter("Can not deserialize message", e.Message);
+            } catch (Exception e) {
                 _Logger.FatalFormat(e, "An Exception Has been caught: {0}", e.Message);
             }
         }
 
-        
+
 
         public override bool OnStart() {
             ConfigureContainer();

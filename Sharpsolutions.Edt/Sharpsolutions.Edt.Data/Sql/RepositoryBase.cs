@@ -21,7 +21,7 @@ namespace Sharpsolutions.Edt.Data.Sql {
             DbContext = dbContext;
             _Logger = loggerFactory.Create(Loggers.System.Sql);
 
-            DbContext.Database.Log = (s) => _Logger.DebugFormat("{0}", s.Replace(Environment.NewLine, string.Empty));
+            DbContext.Database.Log = (s) => _Logger.DebugFormat("{0}", s);
         }
 
         protected RepositoryBase(ILoggerFactory loggerFactory)

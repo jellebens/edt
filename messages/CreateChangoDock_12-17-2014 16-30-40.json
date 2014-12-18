@@ -1,0 +1,33 @@
+{
+  "body": {
+    "__type": "CreateStarport:#Sharpsolutions.Edt.Contracts.Command.Trade",
+    "Id": "6bba5778-b1f6-4e1b-9855-f3cb4c492263",
+    "Economy": "Industrial",
+    "Name": "Chango Dock",
+    "System": "I Bootis"
+  },
+  "contentType": null,
+  "correlationId": null,
+  "deliveryCount": null,
+  "enqueuedSequenceNumber": null,
+  "enqueuedTimeUtc": null,
+  "expiresAtUtc": null,
+  "forcePersistence": false,
+  "isBodyConsumed": false,
+  "label": null,
+  "lockedUntilUtc": null,
+  "lockToken": null,
+  "messageId": "6bba5778-b1f6-4e1b-9855-f3cb4c492263",
+  "partitionKey": null,
+  "properties": {},
+  "replyTo": null,
+  "replyToSessionId": null,
+  "scheduledEnqueueTimeUtc": "0001-01-01T00:00:00",
+  "sequenceNumber": null,
+  "sessionId": null,
+  "size": 311,
+  "state": 0,
+  "timeToLive": "10675199.02:48:05.4775807",
+  "to": null,
+  "viaPartitionKey": null
+}

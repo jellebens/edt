@@ -12,6 +12,7 @@
     <AssemblyName>Sharpsolutions.Edt.Services</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
     <Name>Sharpsolutions.Edt.Services</Name>
+    <UseWebProjectPorts>False</UseWebProjectPorts>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
