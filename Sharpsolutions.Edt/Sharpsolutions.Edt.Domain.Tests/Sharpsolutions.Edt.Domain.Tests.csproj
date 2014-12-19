@@ -51,6 +51,7 @@
     <Compile Include="Trade\FakeStarportBuilder.cs" />
     <Compile Include="Trade\StarportInventoryTests.cs" />
     <Compile Include="Trade\StarportTests.cs" />
+    <Compile Include="Trade\TradeRouteFinderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

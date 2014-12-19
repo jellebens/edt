@@ -50,8 +50,6 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
             result.Goods = starport.Goods.Select(g => new StockItemModel() {
                 Name = g.Commodity.Name,
                 Category = g.Commodity.Category.Name,
-                Import = g.Imports,
-                Export = g.Exports,
                 Sell = g.Sell,
                 Buy =  g.Buy
 

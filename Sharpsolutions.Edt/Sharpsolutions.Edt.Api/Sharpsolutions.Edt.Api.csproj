@@ -229,8 +229,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config" />
-    <None Include="Properties\PublishProfiles\edt-api - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\edt-api - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\edt-api .pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

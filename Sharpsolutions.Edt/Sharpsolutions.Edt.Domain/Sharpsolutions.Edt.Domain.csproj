@@ -58,6 +58,9 @@
     <Compile Include="Trade\StarportBuilder.cs" />
     <Compile Include="Trade\StarportBuilderBase.cs" />
     <Compile Include="Trade\StockItem.cs" />
+    <Compile Include="Trade\TradeCommodity.cs" />
+    <Compile Include="Trade\TradeRoute.cs" />
+    <Compile Include="Trade\TradeRouteFinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sharpsolutions.Edt.System\Sharpsolutions.Edt.System.csproj">

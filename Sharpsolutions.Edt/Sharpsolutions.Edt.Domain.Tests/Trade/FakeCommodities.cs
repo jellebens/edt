@@ -13,7 +13,8 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
         public static Commodity HydrogenFuel = Commodity.CommodityFactory.Create("Hydrogen Fuel", new Category("Chemicals"));
         public static Commodity Biowaste = Commodity.CommodityFactory.Create("Biowaste", new Category("Waste"));
         public static Commodity Clothing = Commodity.CommodityFactory.Create("Clothing", new Category("Consumer Items"));
-
+        public static Commodity MineralExtractors = Commodity.CommodityFactory.Create("Mineral Extractors", new Category("Machinery"));
+        public static Commodity Gallium = Commodity.CommodityFactory.Create("Gallium", new Category("Metals"));
         private List<Commodity> _commodities = new List<Commodity>();
 
         public FakeCommodities()
@@ -62,7 +63,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
             this.Add("Tantalum", "Metals");
             this.Add("Titanium", "Metals");
             this.Add("Uranium", "Metals");
-            this.Add("Gallium", "Minerals");
+            this.Add("Gallium", "Metals");
             this.Add("Lepidolite", "Minerals");
             this.Add("Cobalt", "Minerals");
             this.Add("Gallite", "Minerals");

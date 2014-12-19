@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using Sharpsolutions.Edt.System.Domain;
 
-namespace Sharpsolutions.Edt.Domain.Trade {
-    public class Starport: IEntity
+namespace Sharpsolutions.Edt.Domain.Trade
+{
+    public class Starport : IEntity
     {
         public virtual string Name { get; protected set; }
         public virtual SolarSystem System { get; protected set; }
@@ -19,15 +21,18 @@ namespace Sharpsolutions.Edt.Domain.Trade {
 
         public bool Sells(Commodity commodity)
         {
-            return Goods.Where(g => g.Commodity.Equals(commodity) && g.Exports).Any();
+            return Goods.Where(g => g.Commodity.Equals(commodity) && g.Buy.HasValue).Any();
         }
 
-        public bool Buys(Commodity commodity) {
-            return Goods.Where(g => g.Commodity.Equals(commodity) && g.Imports).Any();
+        public bool Buys(Commodity commodity)
+        {
+            return Goods.Where(g => g.Commodity.Equals(commodity) && g.Sell.HasValue).Any();
         }
 
-        public static Starport Load(string name, string system, string economy) {
-            Starport starport = new Starport {
+        public static Starport Load(string name, string system, string economy)
+        {
+            Starport starport = new Starport
+            {
                 Economy = Economy.Parse(economy),
                 Name = name,
                 System = new SolarSystem(system),
@@ -37,7 +42,8 @@ namespace Sharpsolutions.Edt.Domain.Trade {
             return starport;
         }
 
-        public static Starport Create(string name, SolarSystem solarSystemy, Trade.Economy economy) {
+        public static Starport Create(string name, SolarSystem solarSystemy, Trade.Economy economy)
+        {
             Starport starport = new Starport
             {
                 Economy = economy,
@@ -49,9 +55,9 @@ namespace Sharpsolutions.Edt.Domain.Trade {
             return starport;
         }
 
-        public void Add(Commodity commodity, bool exports, bool imports)
+        public void Add(Commodity commodity)
         {
-            this.Goods.Add(StockItem.New(commodity, exports, imports));
+            this.Goods.Add(StockItem.New(commodity));
         }
 
         public void Update(Commodity commodity, int? sell, int? buy)
@@ -59,6 +65,25 @@ namespace Sharpsolutions.Edt.Domain.Trade {
             StockItem item = Goods.Single(g => g.Commodity == commodity);
 
             item.Update(sell, buy);
+        }
+
+        public IEnumerable<TradeCommodity> Exports()
+        {
+            return Goods.Where(g => g.Sell.HasValue)
+                .Select(g => new TradeCommodity()
+                {
+                    Commodity = g.Commodity,
+                    Price = g.Sell.Value
+                });
+        }
+
+        public IEnumerable<TradeCommodity> Imports()
+        {
+            return Goods.Where(g => g.Buy.HasValue)
+                .Select(g => new TradeCommodity() {
+                    Commodity = g.Commodity,
+                    Price = g.Buy.Value
+                });
         }
     }
 }

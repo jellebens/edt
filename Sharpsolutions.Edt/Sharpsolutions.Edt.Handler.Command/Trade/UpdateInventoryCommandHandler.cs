@@ -34,7 +34,7 @@ namespace Sharpsolutions.Edt.Handler.Command.Trade {
             
             Starport starport = _starportRepository.Query().Single(s => s.Name == command.Starport && s.System.Name == command.System);
 
-            foreach (InventoryItem item in command.Goods.Where(g => g.Buy.HasValue))
+            foreach (InventoryItem item in command.Goods)
             {
                 Commodity commodity =
                     commodities.Single(c => c.Name == item.Commodity && c.Category.Name == item.Category);
