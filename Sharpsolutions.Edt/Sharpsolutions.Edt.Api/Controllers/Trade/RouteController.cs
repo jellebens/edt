@@ -35,7 +35,7 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
                 .Include(x => x.Goods.Select(c => c.Commodity))
                 .Include(x => x.Goods.Select(c => c.Commodity.Category));
 
-            TradeRouteFinder calculator = new TradeRouteFinder(starports.ToList());
+            TradeRouteCalculator calculator = new TradeRouteCalculator(starports.ToList());
 
             foreach (Starport origin in starports.Where(x => x.Name == name))
             {

@@ -60,7 +60,7 @@
     <Compile Include="Trade\StockItem.cs" />
     <Compile Include="Trade\TradeCommodity.cs" />
     <Compile Include="Trade\TradeRoute.cs" />
-    <Compile Include="Trade\TradeRouteFinder.cs" />
+    <Compile Include="Trade\TradeRouteCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sharpsolutions.Edt.System\Sharpsolutions.Edt.System.csproj">

@@ -21,7 +21,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
                 FakeStarportBuilder.HuiMines()
             };
 
-            TradeRouteFinder finder = new TradeRouteFinder(destinations);
+            TradeRouteCalculator finder = new TradeRouteCalculator(destinations);
 
             TradeRoute route = finder.Find(origin);
 

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using System.Xml;
 
 namespace Sharpsolutions.Edt.Domain.Trade {
-    public class TradeRouteFinder {
+    public class TradeRouteCalculator {
         private readonly IEnumerable<Starport> _starports;
 
-        public TradeRouteFinder(IEnumerable<Starport> starports) {
+        public TradeRouteCalculator(IEnumerable<Starport> starports) {
             _starports = starports;
         }
 
