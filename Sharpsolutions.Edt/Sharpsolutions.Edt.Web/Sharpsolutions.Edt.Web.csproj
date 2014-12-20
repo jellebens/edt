@@ -139,11 +139,13 @@
     <Content Include="app\controllers\StarportOverviewController.js" />
     <Content Include="app\controllers\StarportCreateController.js" />
     <Content Include="app\controllers\StarportUpdateController.js" />
+    <Content Include="app\controllers\TradeRouteListController.js" />
     <Content Include="app\directives\select.js" />
     <Content Include="app\inspinia-directives.js" />
     <Content Include="app\services\AuthInterceptorService.js" />
     <Content Include="app\services\AuthService.js" />
     <Content Include="app\services\StarportService.js" />
+    <Content Include="app\services\TraderouteService.js" />
     <Content Include="app\views\account\loggedin.html" />
     <Content Include="app\views\account\login.html" />
     <Content Include="app\views\account\signup.html" />
@@ -154,6 +156,7 @@
     <Content Include="app\views\common\topnavbar.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\trade\content.html" />
+    <Content Include="app\views\trade\routes\destinations.html" />
     <Content Include="app\views\trade\starport\create.html" />
     <Content Include="app\views\trade\starport\overview.html" />
     <Content Include="app\views\trade\starport\update.html" />

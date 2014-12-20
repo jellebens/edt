@@ -20,6 +20,7 @@
         public static TradeRoute Create(Starport origin, Starport destination, Commodity commodity, int buy, int sell)
         {
             TradeRoute route = new TradeRoute();
+            route.Commodity = commodity;
             route.Origin = origin;
             route.Destination = destination;
             route.Buy = buy;

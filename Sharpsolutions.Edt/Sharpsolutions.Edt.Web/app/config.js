@@ -41,6 +41,14 @@
         url: "/update/{starport}",
         templateUrl: "app/views/trade/starport/update.html",
         controller: "starPortUpdateController"
+    }).state('trade.routes', {
+        abstract: true,
+        url: "/routes",
+        templateUrl: "app/views/trade/content.html"
+    }).state('trade.routes.destinations', {
+        url: "/destinations/{starport}",
+        templateUrl: "app/views/trade/routes/destinations.html",
+        controller: "tradeRouteListController"
     });
 
 }
