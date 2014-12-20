@@ -42,6 +42,40 @@ namespace Sharpsolutions.Edt.Domain.Trade
             return starport;
         }
 
+        public override string ToString()
+        {
+            return string.Format("{0} ({1})", this.Name, this.System.Name);
+        }
+
+        public static bool operator ==(Starport left, Starport right) {
+            if (object.ReferenceEquals(left, null)) {
+                return ReferenceEquals(right, null);
+            }
+
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Starport left, Starport right) {
+            return !(left == right);
+        }
+
+
+        public override int GetHashCode() {
+            return Name.GetHashCode() ^ System.Name.GetHashCode();
+        }
+
+        public override bool Equals(object obj) {
+            Starport other = obj as Starport;
+            if (other == null) {
+                return false;
+            }
+            bool nameSame = string.Equals(this.Name, other.Name, StringComparison.InvariantCultureIgnoreCase);
+            bool economySame = Economy == other.Economy;
+            bool systemSame = System == other.System;
+            
+            return nameSame && economySame && systemSame;
+        }
+
         public static Starport Create(string name, SolarSystem solarSystemy, Trade.Economy economy)
         {
             Starport starport = new Starport

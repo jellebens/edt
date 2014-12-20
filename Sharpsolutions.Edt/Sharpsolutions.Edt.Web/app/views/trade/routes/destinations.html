@@ -23,11 +23,35 @@
         <div class="col-lg-12">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <h5>Trade routes for {{orgin.name}} in {{orgin.system}}</h5>
+                    <h5>Trade routes for {{origin.name}} in {{origin.system}}</h5>
                 </div>
                 <div class="ibox-content">
-                    
-                </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Cargo space</label>
+
+                            <div class="col-lg-10">
+                                <input type="number" placeholder="Cargo space" ng-model="maxcargo" autofocus required class="form-control m-b">
+                                
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <table ng-table="tableParams" class="table table-hover table-striped">
+                                    <tr ng-repeat="route in $data">
+                                        <td data-title="'Category'" sortable="'category'">{{route.category}}</td>
+                                        <td data-title="'Commodity'" sortable="'commodtiy'">{{route.commodtiy}}</td>
+                                        <td data-title="'Destination'" sortable="'destination'">{{route.destination.name}} ({{route.destination.system}})</td>
+                                        <td data-title="'Profit'" sortable="'profit'">{{route.profit}} </td>
+                                        <td data-title="'Total profit'">{{maxcargo > 0? (route.profit * maxcargo | number:0) : '-'}} </td>
+                                        <td data-title="'Total invest'">{{maxcargo > 0? (route.buy * maxcargo | number:0): '-' }} </td>
+                                        
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

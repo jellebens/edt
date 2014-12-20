@@ -70,6 +70,14 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
             Assert.IsNotEmpty(starport.Goods);
         }
 
+        [Test]
+        public void EqualsHavingSameShouldReturnTrue()
+        {
+            Starport hui = Starport.Create("Hui mines", new SolarSystem("Ciguru"), Economy.Refinery);
+
+            Assert.AreEqual(FakeStarportBuilder.HuiMines(), hui);
+        }
+
 
     }
 }

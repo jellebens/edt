@@ -57,6 +57,7 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
                         System = origin.System.Name
                     };
                     model.Profit = route.Profit;
+                    model.Buy = route.Buy;
 
                     result.Add(model);
                 }

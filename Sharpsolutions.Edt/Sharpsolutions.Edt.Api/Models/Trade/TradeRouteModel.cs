@@ -13,5 +13,6 @@ namespace Sharpsolutions.Edt.Api.Models.Trade {
         public string Category { get; set; }
 
         public int Profit { get; set; }
+        public int Buy { get; set; }
     }
 }
