@@ -25,8 +25,11 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
 
             TradeRoute route = finder.Find(origin);
 
-            Assert.AreNotEqual(FakeStarportBuilder.HuiMines(), route.Destination);
+            Assert.AreEqual(5133, route.Buy);
+            Assert.AreEqual(5818, route.Sell);
             Assert.AreEqual(685, route.Profit);
+            Assert.AreNotEqual(FakeStarportBuilder.HuiMines(), route.Destination);
+            
         }
     }
 }

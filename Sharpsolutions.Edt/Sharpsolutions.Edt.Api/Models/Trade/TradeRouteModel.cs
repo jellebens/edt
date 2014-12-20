@@ -14,5 +14,6 @@ namespace Sharpsolutions.Edt.Api.Models.Trade {
 
         public int Profit { get; set; }
         public int Buy { get; set; }
+        public int Sell { get; set; }
     }
 }

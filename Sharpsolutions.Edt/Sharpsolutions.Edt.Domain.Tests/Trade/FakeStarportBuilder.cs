@@ -13,7 +13,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
             StarportBuilder builder = new StarportBuilder("Kaku Orbital", "Chemaku", Economy.Industrial, new FakeCommodities().AllCommodities());
 
             Starport kaku = builder.Build();
-            kaku.Update(FakeCommodities.Gallium, null, 5818);
+            kaku.Update(FakeCommodities.Gallium, 5818, null);
             return kaku;
         }
 
@@ -22,7 +22,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
             StarportBuilder builder = new StarportBuilder("Hui Mines", "Ciguru", Economy.Refinery, new FakeCommodities().AllCommodities());
 
             Starport huiMines = builder.Build();
-            huiMines.Update(FakeCommodities.Gallium, 5133, 5191);
+            huiMines.Update(FakeCommodities.Gallium, 5126, 5133);
 
 
             return huiMines;

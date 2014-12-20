@@ -4,7 +4,7 @@
     {
         public virtual int Profit
         {
-            get { return Buy - Sell; }
+            get { return Sell - Buy; }
         }
 
         public virtual Commodity Commodity { get; protected set; }

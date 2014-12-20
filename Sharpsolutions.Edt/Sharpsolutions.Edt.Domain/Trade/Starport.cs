@@ -103,20 +103,20 @@ namespace Sharpsolutions.Edt.Domain.Trade
 
         public IEnumerable<TradeCommodity> Exports()
         {
-            return Goods.Where(g => g.Sell.HasValue)
+            return Goods.Where(g => g.Buy.HasValue)
                 .Select(g => new TradeCommodity()
                 {
                     Commodity = g.Commodity,
-                    Price = g.Sell.Value
+                    Price = g.Buy.Value
                 });
         }
 
         public IEnumerable<TradeCommodity> Imports()
         {
-            return Goods.Where(g => g.Buy.HasValue)
+            return Goods.Where(g => g.Sell.HasValue)
                 .Select(g => new TradeCommodity() {
                     Commodity = g.Commodity,
-                    Price = g.Buy.Value
+                    Price = g.Sell.Value
                 });
         }
     }
