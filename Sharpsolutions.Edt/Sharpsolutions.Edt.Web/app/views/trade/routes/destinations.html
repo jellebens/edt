@@ -42,7 +42,9 @@
                                     <tr ng-repeat="route in $data">
                                         <td data-title="'Category'" sortable="'category'">{{route.category}}</td>
                                         <td data-title="'Commodity'" sortable="'commodtiy'">{{route.commodtiy}}</td>
-                                        <td data-title="'Destination'" sortable="'destination'">{{route.destination.name}} ({{route.destination.system}})</td>
+                                        <td data-title="'Destination'" sortable="'destination'">
+                                            <a ui-sref="trade.routes.destinations({starport: '{{route.destination.name}}'})">{{route.destination.name}} ({{route.destination.system}})</a>
+                                        </td>
                                         <td data-title="'Profit'" sortable="'profit'">{{route.profit}} </td>
                                         <td data-title="'Total profit'">{{maxcargo > 0? (route.profit * maxcargo | number:0) : '-'}} </td>
                                         <td data-title="'Total invest'">{{maxcargo > 0? (route.buy * maxcargo | number:0): '-' }} </td>

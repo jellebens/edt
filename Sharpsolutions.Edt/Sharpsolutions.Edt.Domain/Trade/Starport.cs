@@ -113,11 +113,13 @@ namespace Sharpsolutions.Edt.Domain.Trade
 
         public IEnumerable<TradeCommodity> Imports()
         {
-            return Goods.Where(g => g.Sell.HasValue)
+            return Goods.Where(g => g.Sell.HasValue && g.Sell > 0)
                 .Select(g => new TradeCommodity() {
                     Commodity = g.Commodity,
                     Price = g.Sell.Value
                 });
         }
+
+        public virtual bool IsInRange { get; protected set; }
     }
 }

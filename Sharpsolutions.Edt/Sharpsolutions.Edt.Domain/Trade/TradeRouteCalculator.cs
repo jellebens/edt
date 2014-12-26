@@ -29,7 +29,7 @@ namespace Sharpsolutions.Edt.Domain.Trade {
                 foreach (TradeCommodity import in imports) {
                     TradeCommodity export = exports.SingleOrDefault(e => e.Commodity == import.Commodity);
 
-                    if (export != null && import.Price > 0) {
+                    if (export != null) {
                         TradeRoute route = TradeRoute.Create(origin, destination, export.Commodity, export.Price, import.Price);
                         tradeRoutes.Add(route);
                     }

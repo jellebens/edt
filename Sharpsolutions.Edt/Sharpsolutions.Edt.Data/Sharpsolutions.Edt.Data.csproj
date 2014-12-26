@@ -112,6 +112,10 @@
     <Compile Include="Migrations\201412191202185_RemoveImportAndExportFromGoods.Designer.cs">
       <DependentUpon>201412191202185_RemoveImportAndExportFromGoods.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412261959492_AddIsInRangeProperty.cs" />
+    <Compile Include="Migrations\201412261959492_AddIsInRangeProperty.Designer.cs">
+      <DependentUpon>201412261959492_AddIsInRangeProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sql\CommodityRepository.cs" />
@@ -163,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412191202185_RemoveImportAndExportFromGoods.resx">
       <DependentUpon>201412191202185_RemoveImportAndExportFromGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412261959492_AddIsInRangeProperty.resx">
+      <DependentUpon>201412261959492_AddIsInRangeProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
