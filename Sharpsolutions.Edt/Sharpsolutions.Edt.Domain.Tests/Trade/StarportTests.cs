@@ -13,16 +13,12 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
         [Test]
         public void CreateNewIndustrialShouldPopulateTheGoods()
         {
-           
-
             StarportBuilder builder = new StarportBuilder("Kaku Orbital", "Chemaku", Economy.Industrial, _commodities.AllCommodities());
             
             Starport kaku = builder.Build();
 
             Assert.NotNull(kaku);
-
-            Assert.IsTrue(kaku.Sells(FakeCommodities.Clothing), "Should be selling Clothing");
-            Assert.IsTrue(kaku.Buys(FakeCommodities.Clothing), "Should be buying Biowaste");
+            Assert.IsNotEmpty(kaku.Goods);
         }
 
         [Test]
@@ -35,8 +31,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
 
             Assert.NotNull(starport);
 
-            Assert.IsTrue(starport.Sells(FakeCommodities.Biowaste), "Should be selling Biowaste");
-            Assert.IsTrue(starport.Buys(FakeCommodities.Clothing), "Should be buying Clothing");
+            Assert.IsNotEmpty(starport.Goods);
         }
 
         [Test]
@@ -48,8 +43,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
 
             Assert.NotNull(starport);
 
-            Assert.IsTrue(starport.Sells(FakeCommodities.Biowaste), "Should be selling Biowaste");
-            Assert.IsTrue(starport.Buys(FakeCommodities.Clothing), "Should be buying Clothing");
+            Assert.IsNotEmpty(starport.Goods);
         }
 
         [Test]
@@ -60,9 +54,8 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
             Starport starport = builder.Build();
 
             Assert.NotNull(starport);
-
-            Assert.IsTrue(starport.Sells(FakeCommodities.Biowaste), "Should be selling Biowaste");
-            Assert.IsTrue(starport.Buys(FakeCommodities.Clothing), "Should be buying Clothing");
+            Assert.IsNotEmpty(starport.Goods);
+            
         }
 
         [Test]
@@ -74,9 +67,15 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
 
             Assert.NotNull(starport);
 
-            Assert.IsTrue(starport.Sells(FakeCommodities.Biowaste), "Should be selling Biowaste");
-            Assert.IsFalse(starport.Buys(FakeCommodities.Pesticides), "Should not be selling Pesticides");
-            Assert.IsTrue(starport.Buys(FakeCommodities.Clothing), "Should be buying Clothing");
+            Assert.IsNotEmpty(starport.Goods);
+        }
+
+        [Test]
+        public void EqualsHavingSameShouldReturnTrue()
+        {
+            Starport hui = Starport.Create("Hui mines", new SolarSystem("Ciguru"), Economy.Refinery);
+
+            Assert.AreEqual(FakeStarportBuilder.HuiMines(), hui);
         }
 
 

@@ -25,10 +25,6 @@ namespace Sharpsolutions.Edt.Domain.Trade {
         }
 
         public override bool Equals(object obj) {
-            if(this.GetType() != obj.GetType()){
-                return false;
-            }
-            
             Category other = obj as Category;
             if(other == null){
                 return false;
@@ -45,6 +41,17 @@ namespace Sharpsolutions.Edt.Domain.Trade {
             return this.Name.Equals(other);
         }
 
-        
+        public static bool operator ==(Category left, Category right) {
+            if (object.ReferenceEquals(left, null)) {
+                return ReferenceEquals(right, null);
+            }
+
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Category left, Category right) {
+            
+            return !(left == right);
+        }
     }
 }

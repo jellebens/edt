@@ -210,6 +210,7 @@
     <Compile Include="App_Start\WindsorConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\System\SystemController.cs" />
+    <Compile Include="Controllers\Trade\RouteController.cs" />
     <Compile Include="Controllers\Trade\StarportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -218,10 +219,12 @@
     <Compile Include="Models\Account\CreateModel.cs" />
     <Compile Include="Models\Trade\StarportListModel.cs" />
     <Compile Include="Models\Trade\StarportDetailModel.cs" />
+    <Compile Include="Models\Trade\StarportModel.cs" />
     <Compile Include="Models\Trade\StartportCreateModel.cs" />
     <Compile Include="Models\Trade\StockItemModel.cs" />
     <Compile Include="Models\Trade\StockUpdateModel.cs" />
     <Compile Include="Models\Trade\StockUpdateViewModel.cs" />
+    <Compile Include="Models\Trade\TradeRouteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\EdtAuthorizationServerProvider.cs" />
     <Compile Include="Startup.cs" />
@@ -229,8 +232,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config" />
-    <None Include="Properties\PublishProfiles\edt-api - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\edt-api - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\edt-api .pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

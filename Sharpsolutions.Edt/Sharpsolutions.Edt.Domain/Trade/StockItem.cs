@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
 
 namespace Sharpsolutions.Edt.Domain.Trade {
+    [DebuggerDisplay("{Commodity.Name}")]
     public class StockItem {
 
         public virtual Commodity Commodity { get; protected set; }
-        public virtual bool Exports { get; protected set; }
-        public virtual bool Imports { get; protected set; }
         public virtual long Id { get; protected set; }
         public virtual int? Sell { get; protected set; }
         public virtual int? Buy { get; protected set; }
@@ -21,13 +21,11 @@ namespace Sharpsolutions.Edt.Domain.Trade {
             
         }
         
-        public static StockItem New(Commodity commodity, bool exports, bool imports)
+        public static StockItem New(Commodity commodity)
         {
             return new StockItem()
             {
                 Commodity = commodity,
-                Exports = exports,
-                Imports = imports
             };
         }
     }

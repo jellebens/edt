@@ -13,17 +13,19 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
             StarportBuilder builder = new StarportBuilder("Kaku Orbital", "Chemaku", Economy.Industrial, new FakeCommodities().AllCommodities());
 
             Starport kaku = builder.Build();
-
+            kaku.Update(FakeCommodities.Gallium, 5818, 0);
             return kaku;
         }
 
-        public static Starport AzebanCity()
+        public static Starport HuiMines()
         {
-            StarportBuilder builder = new StarportBuilder("Azeban City", "Eranin", Economy.Agriculture, new FakeCommodities().AllCommodities());
+            StarportBuilder builder = new StarportBuilder("Hui Mines", "Ciguru", Economy.Refinery, new FakeCommodities().AllCommodities());
 
-            Starport azebanStarport = builder.Build();
+            Starport huiMines = builder.Build();
+            huiMines.Update(FakeCommodities.Gallium, 5126, 5133);
 
-            return azebanStarport;
+
+            return huiMines;
         }
     }
 }

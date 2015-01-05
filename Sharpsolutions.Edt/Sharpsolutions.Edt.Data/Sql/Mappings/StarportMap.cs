@@ -19,6 +19,8 @@ namespace Sharpsolutions.Edt.Data.Sql.Mappings {
 
             Property(x => x.Name).HasMaxLength(50).IsRequired();
 
+            Property(x => x.IsInRange);
+
             HasRequired(x => x.Economy)
                 .WithMany()
                 .Map(m => m.MapKey("EconomyId"))

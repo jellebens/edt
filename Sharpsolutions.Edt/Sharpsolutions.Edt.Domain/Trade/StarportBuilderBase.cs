@@ -27,6 +27,13 @@ namespace Sharpsolutions.Edt.Domain.Trade
         }
 
 
-        protected abstract void AddGoods(Starport starport);
+        protected void AddGoods(Starport starport)
+        {
+            foreach (Commodity commodity in _Commodities)
+            {
+                starport.Add(commodity);
+            }
+        }
+
     }
 }

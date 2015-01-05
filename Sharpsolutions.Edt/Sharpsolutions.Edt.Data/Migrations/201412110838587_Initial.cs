@@ -12,7 +12,7 @@ namespace Sharpsolutions.Edt.Data.Migrations
                 "trade.Category",
                 c => new
                     {
-                        Id = c.Guid(false, true, null, "NEWSEQUENTIALID()"),
+                        Id = c.Guid(false, true, null, "NEWID()"),
                         Name = c.String(false, 50)
                     })
                 .PrimaryKey(t => t.Id);
@@ -21,7 +21,7 @@ namespace Sharpsolutions.Edt.Data.Migrations
                 "trade.Commodity",
                 c => new
                     {
-                        Id = c.Guid(false, true, null, "NEWSEQUENTIALID()"),
+                        Id = c.Guid(false, true, null, "NEWID()"),
                         Name = c.String(false, 50),
                         CategoryId = c.Guid(false),
                     })

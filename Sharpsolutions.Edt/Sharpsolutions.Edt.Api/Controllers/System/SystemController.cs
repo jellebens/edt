@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Diagnostics;
 using System.Web.Http;
 using System.Linq;
+using Microsoft.WindowsAzure;
 
 namespace Sharpsolutions.Edt.Api.Controllers.System
 {
@@ -20,15 +22,24 @@ namespace Sharpsolutions.Edt.Api.Controllers.System
         [HttpGet]
         public IHttpActionResult Up()
         {
-            int x = _dbContext.Database.SqlQuery<int>("SELECT COUNT(1) FROM [dbo].[__MigrationHistory]").Single();
-
-
-            var status = new
+            try
             {
-                Version = x
-            };
+                string s = CloudConfigurationManager.GetSetting("default");
+                Trace.Write(s);
+                int x = _dbContext.Database.SqlQuery<int>("SELECT COUNT(1) FROM [dbo].[__MigrationHistory]").Single();
 
-            return Ok(status);
+
+                var status = new {
+                    Version = x
+                };
+
+                return Ok(status);
+            }
+            catch (Exception exc)
+            {
+                return BadRequest(exc.Message);
+            }
+            
         }
 
         protected override void Dispose(bool disposing)

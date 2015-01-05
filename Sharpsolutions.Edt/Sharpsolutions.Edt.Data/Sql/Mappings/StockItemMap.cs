@@ -25,8 +25,7 @@ namespace Sharpsolutions.Edt.Data.Sql.Mappings {
                     m.MapKey("CommodityId");
                 });
 
-            Property(x => x.Exports);
-            Property(x => x.Imports);
+           
 
         }
     }

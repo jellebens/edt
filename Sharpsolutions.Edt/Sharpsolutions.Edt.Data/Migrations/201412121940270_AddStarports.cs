@@ -13,8 +13,8 @@ namespace Sharpsolutions.Edt.Data.Migrations
                 "trade.Economy",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
-                        Name = c.String(nullable: false, maxLength: 15),
+                        Id = c.Int(false),
+                        Name = c.String(false, 15),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -22,8 +22,8 @@ namespace Sharpsolutions.Edt.Data.Migrations
                 "trade.SolarSystem",
                 c => new
                     {
-                        Id = c.Guid(nullable: false, identity: true),
-                        Name = c.String(nullable: false, maxLength: 50),
+                        Id = c.Guid(false, true),
+                        Name = c.String(false, 50),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -31,10 +31,10 @@ namespace Sharpsolutions.Edt.Data.Migrations
                 "trade.Starport",
                 c => new
                     {
-                        Id = c.Guid(nullable: false, identity: true),
-                        Name = c.String(nullable: false, maxLength: 50),
-                        EconomyId = c.Int(nullable: false),
-                        SolarSystemId = c.Guid(nullable: false),
+                        Id = c.Guid(false, true),
+                        Name = c.String(false, 50),
+                        EconomyId = c.Int(false),
+                        SolarSystemId = c.Guid(false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("trade.Economy", t => t.EconomyId)
@@ -46,15 +46,15 @@ namespace Sharpsolutions.Edt.Data.Migrations
                 "trade.StarportCommodities",
                 c => new
                     {
-                        RowId = c.Long(nullable: false, identity: true),
-                        Exports = c.Boolean(nullable: false),
-                        Imports = c.Boolean(nullable: false),
-                        CommodityId = c.Guid(nullable: false),
-                        StarportId = c.Guid(nullable: false),
+                        RowId = c.Long(false, true),
+                        Exports = c.Boolean(false),
+                        Imports = c.Boolean(false),
+                        CommodityId = c.Guid(false),
+                        StarportId = c.Guid(false),
                     })
                 .PrimaryKey(t => t.RowId)
-                .ForeignKey("trade.Commodity", t => t.CommodityId, cascadeDelete: true)
-                .ForeignKey("trade.Starport", t => t.StarportId, cascadeDelete: true)
+                .ForeignKey("trade.Commodity", t => t.CommodityId, true)
+                .ForeignKey("trade.Starport", t => t.StarportId, true)
                 .Index(t => t.CommodityId)
                 .Index(t => t.StarportId);
 

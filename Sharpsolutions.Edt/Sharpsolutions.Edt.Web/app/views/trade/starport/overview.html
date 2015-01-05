@@ -45,7 +45,10 @@
                                         <td>{{starport.name }}</td>
                                         <td>{{starport.system }}</td>
                                         <td>{{starport.economy }}</td>
-                                        <td><a class="btn btn-primary" ui-sref="trade.starport.update({starport: '{{starport.name}}'})"><span class="fa fa-edit"></span>&nbsp;Update</a></td>
+                                        <td>
+                                            <a class="btn btn-primary" ui-sref="trade.starport.update({starport: '{{starport.name}}'})"><span class="fa fa-edit"></span>&nbsp;Update</a>
+                                            <a class="btn btn-primary" ui-sref="trade.routes.destinations({starport: '{{starport.name}}'})"><span class="fa fa-search"></span>&nbsp;Destinations</a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
