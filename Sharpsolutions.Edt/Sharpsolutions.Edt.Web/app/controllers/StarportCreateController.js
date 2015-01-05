@@ -1,5 +1,5 @@
 ﻿'use strict';
-angular.module('EdtApp').controller('starPortCreateController', ['$scope', '$state', 'starportService', function ($scope, $state, starportService) {
+angular.module('EdtApp').controller('starPortCreateController', ['$scope', '$state','$timeout', 'starportService', function ($scope, $state,$timeout, starportService) {
     $scope.economies = [
         { Name: 'Extraction' },
         { Name: 'Refinery' },
@@ -9,6 +9,7 @@ angular.module('EdtApp').controller('starPortCreateController', ['$scope', '$sta
     ];
 
     $scope.savedSuccessfully = false;
+    $scope.saving = false;
     $scope.message = "";
 
     $scope.starport = {
@@ -18,9 +19,10 @@ angular.module('EdtApp').controller('starPortCreateController', ['$scope', '$sta
     };
 
     var _Create = function () {
+        $scope.saving = true;
         starportService.Create($scope.starport).then(function (response) {
             $scope.savedSuccessfully = true;
-            $state.go("trade.starport.update", {"starport": $scope.starport.name});
+            startTimer();            
         }, function (err) {
             $scope.savedSuccessfully = false;
             $scope.message = "Failed to register starport due to:";
@@ -38,6 +40,13 @@ angular.module('EdtApp').controller('starPortCreateController', ['$scope', '$sta
             $scope.message += "</ul>";
         });
     };
+
+    var startTimer = function () {
+        var timer = $timeout(function () {
+            $timeout.cancel(timer);
+            $state.go("trade.starport.update", { "starport": $scope.starport.name });
+        }, 2000);
+    }
 
     $scope.Create = _Create;
     
