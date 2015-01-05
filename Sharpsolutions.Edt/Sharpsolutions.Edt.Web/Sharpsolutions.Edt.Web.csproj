@@ -146,6 +146,8 @@
     <Content Include="app\services\AuthService.js" />
     <Content Include="app\services\StarportService.js" />
     <Content Include="app\services\TraderouteService.js" />
+    <Content Include="app\tests\conf.js" />
+    <Content Include="app\tests\spec.js" />
     <Content Include="app\views\account\loggedin.html" />
     <Content Include="app\views\account\login.html" />
     <Content Include="app\views\account\signup.html" />
