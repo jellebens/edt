@@ -102,7 +102,7 @@ namespace Sharpsolutions.Edt.Web {
                                                     .Include("~/Content/animate.css")
                                                     .Include("~/Content/style.css")
                                                     .Include("~/Content/loading-bar.css")
-                                                    .IncludeDirectory("~/Content/font-awesome/css", "*.css")
+                                                    .Include("~/Content/font-awesome.css")
                                                     .Include("~/Content/bootstrap-overides.css")
                                                     .IncludeDirectory("~/Content/plugins/iCheck", "*.css")
                                                     );

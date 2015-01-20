@@ -147,6 +147,7 @@
     <Content Include="app\services\StarportService.js" />
     <Content Include="app\services\TraderouteService.js" />
     <Content Include="app\tests\conf.js" />
+    <Content Include="app\tests\home\homeTests.js" />
     <Content Include="app\tests\spec.js" />
     <Content Include="app\views\account\loggedin.html" />
     <Content Include="app\views\account\login.html" />
@@ -166,10 +167,10 @@
     <Content Include="Content\bootstrap-overides.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\font-awesome\css\font-awesome.css" />
-    <Content Include="Content\font-awesome\css\font-awesome.min.css" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\footer.css" />
     <Content Include="Content\loading-bar.css" />
     <Content Include="Content\loading-bar.min.css" />
@@ -251,39 +252,13 @@
     <Content Include="Content\plugins\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\plugins\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\plugins\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="Content\font-awesome\less\bordered-pulled.less" />
-    <Content Include="Content\font-awesome\less\core.less" />
-    <Content Include="Content\font-awesome\less\fixed-width.less" />
-    <Content Include="Content\font-awesome\less\font-awesome.less" />
-    <Content Include="Content\font-awesome\less\icons.less" />
-    <Content Include="Content\font-awesome\less\larger.less" />
-    <Content Include="Content\font-awesome\less\list.less" />
-    <Content Include="Content\font-awesome\less\mixins.less" />
-    <Content Include="Content\font-awesome\less\path.less" />
-    <Content Include="Content\font-awesome\less\rotated-flipped.less" />
-    <Content Include="Content\font-awesome\less\spinning.less" />
-    <Content Include="Content\font-awesome\less\stacked.less" />
-    <Content Include="Content\font-awesome\less\variables.less" />
-    <Content Include="Content\font-awesome\scss\font-awesome.scss" />
-    <Content Include="Content\font-awesome\scss\_bordered-pulled.scss" />
-    <Content Include="Content\font-awesome\scss\_core.scss" />
-    <Content Include="Content\font-awesome\scss\_fixed-width.scss" />
-    <Content Include="Content\font-awesome\scss\_icons.scss" />
-    <Content Include="Content\font-awesome\scss\_larger.scss" />
-    <Content Include="Content\font-awesome\scss\_list.scss" />
-    <Content Include="Content\font-awesome\scss\_mixins.scss" />
-    <Content Include="Content\font-awesome\scss\_path.scss" />
-    <Content Include="Content\font-awesome\scss\_rotated-flipped.scss" />
-    <Content Include="Content\font-awesome\scss\_spinning.scss" />
-    <Content Include="Content\font-awesome\scss\_stacked.scss" />
-    <Content Include="Content\font-awesome\scss\_variables.scss" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="Content\ng-table.less" />
@@ -406,7 +381,9 @@
     <Content Include="Scripts\ui-bootstrap-tpls-0.11.0.min.js" />
     <Content Include="Scripts\ng-table.map" />
     <None Include="Scripts\_references.js" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
