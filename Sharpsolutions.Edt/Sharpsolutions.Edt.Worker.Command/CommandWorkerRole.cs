@@ -36,9 +36,7 @@ namespace Sharpsolutions.Edt.Worker.Command {
 
 
         public override void Run() {
-            _Client.OnMessage((receivedMessage) => {
-                HandleMessage(receivedMessage);
-            });
+            _Client.OnMessage(HandleMessage);
 
             _CompletedEvent.WaitOne();
         }
