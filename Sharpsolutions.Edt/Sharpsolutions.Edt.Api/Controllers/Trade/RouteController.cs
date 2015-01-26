@@ -13,7 +13,7 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
     
     [RoutePrefix("trade")]
     public class RouteController: ApiController {
-        private DbContext _Context;
+        private readonly DbContext _Context;
 
 
         public RouteController(DbContext context)

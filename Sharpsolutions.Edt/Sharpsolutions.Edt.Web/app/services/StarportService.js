@@ -1,5 +1,5 @@
 ﻿'use strict';
-angular.module('EdtApp').factory('starportService', function ($http, $q) {
+angular.module('EdtApp').factory('starportService', ['$http', '$q', function ($http, $q) {
     var serviceBase = Settings.ServiceBase;
 
     var starportServiceFactory = {};
@@ -48,6 +48,6 @@ angular.module('EdtApp').factory('starportService', function ($http, $q) {
     starportServiceFactory.UpdateStock = _UpdateStock;
 
     return starportServiceFactory;
-});
+}]);
 
 
