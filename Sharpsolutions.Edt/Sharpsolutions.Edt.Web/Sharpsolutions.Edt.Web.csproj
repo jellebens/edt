@@ -134,6 +134,7 @@
     <Content Include="app\controllers\HomeController.js" />
     <Content Include="app\controllers\LoginController.js" />
     <Content Include="app\controllers\NavBarController.js" />
+    <Content Include="app\controllers\ProcessingController.js" />
     <Content Include="app\controllers\SignupController.js" />
     <Content Include="app\config.js" />
     <Content Include="app\controllers\StarportOverviewController.js" />
@@ -156,6 +157,7 @@
     <Content Include="app\views\common\footer.html" />
     <Content Include="app\views\common\ibox_tools.html" />
     <Content Include="app\views\common\navigation.html" />
+    <Content Include="app\views\common\Processing.html" />
     <Content Include="app\views\common\topnavbar.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\trade\content.html" />

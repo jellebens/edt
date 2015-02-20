@@ -7,6 +7,10 @@
         $stateProvider.state('home', {
             url: "/",
             templateUrl: "app/views/home.html"
+        }).state('processing', {
+            url: "/processing",
+            templateUrl: "app/views/common/processing.html",
+            controller: "processingController"
         }).state('account', {
             abstract: true,
             url: "/account",

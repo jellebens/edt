@@ -11,8 +11,10 @@ angular.module('EdtApp').factory('authService', ['$http', '$q', 'localStorageSer
         };
 
         var _saveRegistration = function(registration) {
-
-            _logOut();
+            if (_authentication.isAuth) {
+                _logOut();
+            }
+            
 
             return $http.post(serviceBase + 'account/register', registration).then(function(response) {
                 return response;
@@ -62,7 +64,7 @@ angular.module('EdtApp').factory('authService', ['$http', '$q', 'localStorageSer
 
         }
 
-        authServiceFactory.saveRegistration = _saveRegistration;
+        authServiceFactory.SaveRegistration = _saveRegistration;
         authServiceFactory.login = _login;
         authServiceFactory.logOut = _logOut;
         authServiceFactory.fillAuthData = _fillAuthData;

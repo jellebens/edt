@@ -1,4 +1,5 @@
 ﻿using Sharpsolutions.Edt.Contracts.Command.Account;
+using Sharpsolutions.Edt.Data.Azure;
 using Sharpsolutions.Edt.Domain.Account;
 using Sharpsolutions.Edt.System.Command;
 using Sharpsolutions.Edt.System.Data;
@@ -12,8 +13,8 @@ namespace Sharpsolutions.Edt.Handler.Command.Account
 {
     public class RegisterUserHandler: CommandHandlerBase<RegisterUser>
     {
-        private readonly IRepository<User> _Repository;
-        public RegisterUserHandler(IRepository<User> repository) {
+        private readonly IUserRepository _Repository;
+        public RegisterUserHandler(IUserRepository repository) {
             _Repository = repository;    
         }
 

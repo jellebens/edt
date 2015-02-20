@@ -83,6 +83,7 @@ namespace Sharpsolutions.Edt.Domain.Trade
                 Economy = economy,
                 Name = name,
                 System = solarSystemy,
+                IsInRange = true,
                 Goods = new List<StockItem>()
             };
 

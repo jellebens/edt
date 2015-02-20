@@ -19,7 +19,7 @@ angular.module('EdtApp').controller('signupController', ['$scope', '$state', '$t
 
     $scope.signup = function () {
 
-        authService.saveRegistration($scope.registration).then(function (response) {
+        authService.SaveRegistration($scope.registration).then(function (response) {
 
             $scope.savedSuccessfully = true;
             $scope.message = "User has been registered successfully, you will be redicted to login page in 2 seconds.";

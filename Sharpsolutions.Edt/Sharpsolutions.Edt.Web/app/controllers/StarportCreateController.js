@@ -22,7 +22,7 @@ angular.module('EdtApp').controller('starPortCreateController', ['$scope', '$sta
         $scope.saving = true;
         starportService.Create($scope.starport).then(function (response) {
             $scope.savedSuccessfully = true;
-            startTimer();            
+            $state.go("processing", response.id);
         }, function (err) {
             $scope.savedSuccessfully = false;
             $scope.message = "Failed to register starport due to:";

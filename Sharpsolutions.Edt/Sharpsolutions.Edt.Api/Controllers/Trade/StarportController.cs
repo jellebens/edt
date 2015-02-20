@@ -71,7 +71,7 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
 
             _Bus.Publish(cmd);
 
-            return Ok();
+            return Ok(cmd.Id);
         }
 
         [Route("stock/update")]
