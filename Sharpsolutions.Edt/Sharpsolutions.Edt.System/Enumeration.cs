@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Sharpsolutions.Edt.Domain.Trade;
 
-namespace Sharpsolutions.Edt.Domain.Core {
+
+namespace Sharpsolutions.Edt.System {
     /// <summary>
     /// This class is used to replace the default .NET enum types
     /// Since imo they violate the Open Closed principle
@@ -49,7 +46,7 @@ namespace Sharpsolutions.Edt.Domain.Core {
                 return false;
             }
 
-            var typeMatches = obj is Economy;
+            var typeMatches = obj is Enumeration;
             var valueMatches = _value.Equals(otherValue.Value);
 
             return typeMatches && valueMatches;

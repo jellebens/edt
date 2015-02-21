@@ -145,6 +145,7 @@
     <Content Include="app\inspinia-directives.js" />
     <Content Include="app\services\AuthInterceptorService.js" />
     <Content Include="app\services\AuthService.js" />
+    <Content Include="app\services\CommandService.js" />
     <Content Include="app\services\StarportService.js" />
     <Content Include="app\services\TraderouteService.js" />
     <Content Include="app\tests\conf.js" />

@@ -44,7 +44,6 @@
     <Compile Include="Trade\AgricultureBuilder.cs" />
     <Compile Include="Trade\Category.cs" />
     <Compile Include="Trade\Commodity.cs" />
-    <Compile Include="Core\Enumeration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trade\Economy.cs" />
     <Compile Include="Trade\ExtractionBuilder.cs" />
@@ -67,6 +66,9 @@
       <Project>{36b606df-ad7b-4f76-ad1a-b803c7f500c9}</Project>
       <Name>Sharpsolutions.Edt.System</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

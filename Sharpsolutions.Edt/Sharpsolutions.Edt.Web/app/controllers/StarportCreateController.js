@@ -22,7 +22,7 @@ angular.module('EdtApp').controller('starPortCreateController', ['$scope', '$sta
         $scope.saving = true;
         starportService.Create($scope.starport).then(function (response) {
             $scope.savedSuccessfully = true;
-            $state.go("processing", response.id);
+            $state.go("processing", { commandId: response, destination : "trade.starport.update", params : "trade.starport.update"});
         }, function (err) {
             $scope.savedSuccessfully = false;
             $scope.message = "Failed to register starport due to:";
@@ -40,13 +40,6 @@ angular.module('EdtApp').controller('starPortCreateController', ['$scope', '$sta
             $scope.message += "</ul>";
         });
     };
-
-    var startTimer = function () {
-        var timer = $timeout(function () {
-            $timeout.cancel(timer);
-            $state.go("trade.starport.update", { "starport": $scope.starport.name });
-        }, 2000);
-    }
 
     $scope.Create = _Create;
     

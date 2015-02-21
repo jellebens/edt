@@ -9,6 +9,7 @@
             templateUrl: "app/views/home.html"
         }).state('processing', {
             url: "/processing",
+            params:{ CommandId:null},
             templateUrl: "app/views/common/processing.html",
             controller: "processingController"
         }).state('account', {

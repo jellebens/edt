@@ -63,7 +63,10 @@
     <Compile Include="Command\ICommandHandler.cs" />
     <Compile Include="Command\ICommandHandlerFactory.cs" />
     <Compile Include="Command\CommandMissingIdException.cs" />
+    <Compile Include="Command\Job.cs" />
+    <Compile Include="Command\JobStatus.cs" />
     <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Enumeration.cs" />
     <Compile Include="Domain\IEntity.cs" />
     <Compile Include="Domain\IRoot.cs" />
     <Compile Include="Logging\Azure\TraceAppender.cs" />
