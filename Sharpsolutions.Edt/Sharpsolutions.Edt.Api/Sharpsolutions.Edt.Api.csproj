@@ -209,6 +209,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\WindsorConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\System\CommandController.cs" />
     <Compile Include="Controllers\System\SystemController.cs" />
     <Compile Include="Controllers\Trade\RouteController.cs" />
     <Compile Include="Controllers\Trade\StarportController.cs" />

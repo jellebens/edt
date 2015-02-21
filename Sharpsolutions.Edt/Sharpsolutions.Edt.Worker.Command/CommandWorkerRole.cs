@@ -20,14 +20,16 @@ using Sharpsolutions.Edt.Contracts.Command.Account;
 using Sharpsolutions.Edt.Handler.Command.Castle.Installer;
 using System.Runtime.Serialization;
 using Sharpsolutions.Edt.Data.Castle.Installers;
+using Sharpsolutions.Edt.Data.Azure;
 
 namespace Sharpsolutions.Edt.Worker.Command {
-    //TODO: refactor this *crap* to SOLID
+    
     public class CommandWorkerRole : RoleEntryPoint {
         // The name of your queue
         private const string QueueName = Settings.Bus.Queue.SendCommand;
         private IWindsorContainer _Container;
         private ILogger _Logger = NullLogger.Instance;
+        private IJobRepository _JobRepository;
 
         // QueueClient is thread-safe. Recommended that you cache 
         // rather than recreating it on every request
@@ -50,11 +52,16 @@ namespace Sharpsolutions.Edt.Worker.Command {
                 dynamic command = receivedMessage.GetBody<ICommand>(serializer);
 
                 ICommandProcessor processor = _Container.Resolve<ICommandProcessor>();
+                Job job = Job.Create(command.Id);
                 try {
+                    _JobRepository.Add(job);
+                    
                     processor.Execute(command);
 
                     _Logger.InfoFormat("Handled message {0}", receivedMessage.MessageId);
                     receivedMessage.Complete();
+                    job.Complete();
+                    _JobRepository.Add(job);
                 } finally {
                     _Container.Release(processor);
                 }
@@ -89,8 +96,7 @@ namespace Sharpsolutions.Edt.Worker.Command {
 
             ILoggerFactory factory = _Container.Resolve<ILoggerFactory>();
             _Logger = factory.Create(Loggers.Commanding.Worker);
-
-
+            _JobRepository = _Container.Resolve<IJobRepository>();
         }
 
         private void ConfigureWorker() {

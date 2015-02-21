@@ -27,6 +27,10 @@ namespace Sharpsolutions.Edt.Data.Castle.Installers {
                                         .ImplementedBy<UserRepository>()
                                         .LifeStyle.Transient);
 
+            container.Register(Component.For<IJobRepository>()
+                                        .ImplementedBy<JobRepository>()
+                                        .LifeStyle.Transient);
+
             container.Register(Component.For<DbContext>().ImplementedBy<EdtDbContext>().LifestyleTransient());
         }
     }

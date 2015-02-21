@@ -1,4 +1,6 @@
-﻿using Sharpsolutions.Edt.System.Domain;
+﻿using System;
+using System.Linq;
+using Sharpsolutions.Edt.System.Domain;
 
 namespace Sharpsolutions.Edt.System.Command {
     public class JobStatus : Enumeration {
@@ -19,6 +21,12 @@ namespace Sharpsolutions.Edt.System.Command {
             get {
                 return (this == JobStatus.Done) || (this == JobStatus.Error);
             }
+        }
+
+        
+
+        internal static JobStatus FromInt(int code) {
+            return All<JobStatus>().Single(j => j.Value == code);
         }
     }
 }
