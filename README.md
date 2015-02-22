@@ -1,2 +1,2 @@
-AngularJS pet project
+Little Toy project to try out some ideas
 ===
