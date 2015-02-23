@@ -158,7 +158,7 @@
     <Content Include="app\views\common\footer.html" />
     <Content Include="app\views\common\ibox_tools.html" />
     <Content Include="app\views\common\navigation.html" />
-    <Content Include="app\views\common\Processing.html" />
+    <Content Include="app\views\common\processing.html" />
     <Content Include="app\views\common\topnavbar.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\trade\content.html" />

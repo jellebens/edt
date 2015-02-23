@@ -1,25 +1,36 @@
 ﻿'use strict';
-angular.module("EdtApp").controller("processingController", ['$scope', '$state', '$stateParams', '$interval', function ($scope, $state, $stateParams, $interval) {
+angular.module("EdtApp").controller("processingController", ['$scope', '$state', '$stateParams', '$timeout', 'commandService', function ($scope, $state, $stateParams, $timeout, commandService) {
     $scope.commandId = $stateParams.commandId;
-    $scope.destination = $stateParams.CommandId;
+    $scope.destination = $stateParams.destination;
     $scope.destinationArgs = $stateParams.params;
 
-    var stop = $interval(_Poll, 300, 5);
+    var count = 1;
 
-    var _Poll = function () {
-        commandService.Query($scope.CommandId).then(function (response) {
-            $interval.cancel(stop);
+    function doPoll() {
+        var backoffdelay = 80 * (count + 1) * (count + 1)
 
-            stop = undefined;
+        $timeout(function () { $scope.poll(); }, backoffdelay);
+    }
 
-            $state.go($scope.destination, $stateParams);
+    $scope.poll = function () {
+        console.log("Polling #" + count);
+        commandService.Query($scope.commandId).then(function (response) {
+            if (response.isComplete) {
+                $scope.showError = response.hasError;
 
+                if (!response.hasError) {
+                    $state.go($scope.destination, $scope.destinationArgs);
+                }
+            } else {
+                count++;
+                doPoll();
+            }
         }, function (err) {
             console.error(err);
             $interval.cancel(stop);
         });
     }
 
-    
+    doPoll();
 
 }]);

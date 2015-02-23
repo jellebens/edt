@@ -5,9 +5,10 @@ angular.module('EdtApp').factory('commandService', ['$http', '$q', function ($ht
     var commandServiceFactory = {};
 
     var _Query = function (commandId) {
+        console.log(commandId);
         var deferred = $q.defer();
-
-        $http.post(serviceBase + 'command/checkresult', commandId).success(function (response) {
+        
+        $http.get(serviceBase + 'command/checkresult', { params: { commandId: commandId } }).success(function (response) {
             deferred.resolve(response);
         }).error(function (err, status) {
             deferred.reject(err);
@@ -16,5 +17,7 @@ angular.module('EdtApp').factory('commandService', ['$http', '$q', function ($ht
         return deferred.promise;
     };
 
-    commandService.Query = _Query;
+    commandServiceFactory.Query = _Query;
+
+    return commandServiceFactory;
 }]);

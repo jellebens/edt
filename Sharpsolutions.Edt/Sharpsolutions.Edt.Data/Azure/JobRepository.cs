@@ -1,5 +1,6 @@
 ﻿using Microsoft.WindowsAzure.Storage.Table;
 using Sharpsolutions.Edt.System.Command;
+using Sharpsolutions.Edt.System.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace Sharpsolutions.Edt.Data.Azure {
             entity.RowKey = job.CommandId.ToString();
             entity.Properties.Add("Status", new EntityProperty(job.Status.Value));
             entity.Properties.Add("CommandId", new EntityProperty(job.CommandId));
+			entity.Properties.Add("UpdatedOn", new EntityProperty(DateTime.UtcNow));
 
             TableOperation insertOperation = TableOperation.InsertOrReplace(entity);
 

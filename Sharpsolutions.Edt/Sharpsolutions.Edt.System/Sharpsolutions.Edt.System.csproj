@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Castle\ContainerExtensions.cs" />
+    <Compile Include="Castle\JobInstaller.cs" />
     <Compile Include="Castle\WindsorContainerInstaller.cs" />
     <Compile Include="Command\CommandBase.cs" />
     <Compile Include="Command\IBus.cs" />
@@ -63,8 +64,11 @@
     <Compile Include="Command\ICommandHandler.cs" />
     <Compile Include="Command\ICommandHandlerFactory.cs" />
     <Compile Include="Command\CommandMissingIdException.cs" />
+    <Compile Include="Command\IJobService.cs" />
     <Compile Include="Command\Job.cs" />
+    <Compile Include="Command\JobService.cs" />
     <Compile Include="Command\JobStatus.cs" />
+    <Compile Include="Data\IJobRepository.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Enumeration.cs" />
     <Compile Include="Domain\IEntity.cs" />

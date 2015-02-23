@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sharpsolutions.Edt.Data.Azure {
+namespace Sharpsolutions.Edt.System.Data {
     public interface IJobRepository {
         void Add(Job job);
         Job Get(Guid commandId);

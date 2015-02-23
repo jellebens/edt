@@ -15,9 +15,12 @@ using Sharpsolutions.Edt.System.Serialization.Json;
 
 namespace Sharpsolutions.Edt.Api.App.Client {
     public class Bus : IBus {
-        private readonly ILogger _Logger;
-        public Bus(ILoggerFactory loggerFactory) {
+		private IJobService _JobService;
+		private readonly ILogger _Logger;
+        public Bus(IJobService jobservice,  ILoggerFactory loggerFactory) {
             _Logger = loggerFactory.Create(Loggers.Commanding.Producer);
+
+			_JobService = jobservice;
         }
 
         public void Publish<TCommand>(TCommand command) where TCommand : ICommand {
@@ -42,6 +45,7 @@ namespace Sharpsolutions.Edt.Api.App.Client {
             BrokeredMessage message = new BrokeredMessage(command, serializer) { MessageId = command.Id.ToString()};
 
             _Logger.DebugFormat("Dispatching message with id {0}", message.MessageId);
+			_JobService.New(command);
 
             Client.SendAsync(message);
         }

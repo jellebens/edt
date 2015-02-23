@@ -92,7 +92,7 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
 
             _Bus.Publish(command);
 
-            return Ok();
+            return Ok(command.Id);
         }
     }
 }

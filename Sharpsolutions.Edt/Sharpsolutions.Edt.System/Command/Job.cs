@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.System.Command {
     public class Job: IEntity {
-        public Guid CommandId { get; protected set; }
+        public virtual Guid CommandId { get; protected set; }
         
-        public JobStatus Status { get; protected set; }
+        public virtual JobStatus Status { get; protected set; }
 
         public static Job Create(Guid commandId) {
             Job j = new Job();
@@ -27,8 +27,12 @@ namespace Sharpsolutions.Edt.System.Command {
             return j;
         }
 
-        public void Complete() {
-            throw new NotImplementedException();
+        public virtual void Complete() {
+            this.Status = JobStatus.Done;
+        }
+
+        public virtual void Start() {
+            this.Status = JobStatus.InProgress;
         }
     }
 

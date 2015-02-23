@@ -1,8 +1,14 @@
 ﻿<div class="middle-box text-center animated fadeInDown">
-   <div>
-       <div>
-           <h3>We are processing your request</h3>
-           <p><i class="fa fa-2x fa-circle-o-notch fa-spin"></i></p>
-       </div>
-   </div>
+	<div>
+		<div ng-hide="showError">
+			<h3>We are processing your request</h3>
+			<p><i class="fa fa-2x fa-circle-o-notch fa-spin"></i></p>
+		</div>
+	</div>
+	<div ng-show="showError">
+		<div class="alert alert-danger">
+			<h3>An error occured whilst processing your request</h3>
+		</div>
+	</div>
 </div>
+

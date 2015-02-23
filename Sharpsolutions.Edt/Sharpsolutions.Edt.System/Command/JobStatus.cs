@@ -6,8 +6,8 @@ namespace Sharpsolutions.Edt.System.Command {
     public class JobStatus : Enumeration {
         public static JobStatus New = new JobStatus(1, "New");
         public static JobStatus InProgress = new JobStatus(2, "In Progress");
-        public static JobStatus Done = new JobStatus(2, "Done");
-        public static JobStatus Error = new JobStatus(2, "Error");
+        public static JobStatus Done = new JobStatus(3, "Done");
+        public static JobStatus Error = new JobStatus(4, "Error");
 
         protected JobStatus() {
         }

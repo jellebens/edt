@@ -21,18 +21,16 @@ using Sharpsolutions.Edt.Handler.Command.Castle.Installer;
 using System.Runtime.Serialization;
 using Sharpsolutions.Edt.Data.Castle.Installers;
 using Sharpsolutions.Edt.Data.Azure;
+using Sharpsolutions.Edt.System.Data;
 
 namespace Sharpsolutions.Edt.Worker.Command {
     
     public class CommandWorkerRole : RoleEntryPoint {
-        // The name of your queue
         private const string QueueName = Settings.Bus.Queue.SendCommand;
         private IWindsorContainer _Container;
         private ILogger _Logger = NullLogger.Instance;
-        private IJobRepository _JobRepository;
 
-        // QueueClient is thread-safe. Recommended that you cache 
-        // rather than recreating it on every request
+		private IJobService _jobservice;
         private QueueClient _Client;
         private ManualResetEvent _CompletedEvent = new ManualResetEvent(false);
 
@@ -45,23 +43,20 @@ namespace Sharpsolutions.Edt.Worker.Command {
 
         private void HandleMessage(BrokeredMessage receivedMessage) {
             try {
-                _Logger.InfoFormat("Processing message: {0}. DeliveryCount: {1}", receivedMessage.MessageId,
+				_Logger.InfoFormat("Processing message: {0}. DeliveryCount: {1}", receivedMessage.MessageId,
                     receivedMessage.DeliveryCount);
 
                 DataContractJsonSerializer serializer = JsonSerializerFactory.Create<RegisterUser>();
                 dynamic command = receivedMessage.GetBody<ICommand>(serializer);
 
                 ICommandProcessor processor = _Container.Resolve<ICommandProcessor>();
-                Job job = Job.Create(command.Id);
+				_jobservice.Start(command);
                 try {
-                    _JobRepository.Add(job);
-                    
                     processor.Execute(command);
 
                     _Logger.InfoFormat("Handled message {0}", receivedMessage.MessageId);
                     receivedMessage.Complete();
-                    job.Complete();
-                    _JobRepository.Add(job);
+					_jobservice.Complete(command);
                 } finally {
                     _Container.Release(processor);
                 }
@@ -96,8 +91,8 @@ namespace Sharpsolutions.Edt.Worker.Command {
 
             ILoggerFactory factory = _Container.Resolve<ILoggerFactory>();
             _Logger = factory.Create(Loggers.Commanding.Worker);
-            _JobRepository = _Container.Resolve<IJobRepository>();
-        }
+			_jobservice = _Container.Resolve<IJobService>();
+		}
 
         private void ConfigureWorker() {
             // Set the maximum number of concurrent connections 

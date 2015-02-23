@@ -218,6 +218,7 @@
     </Compile>
     <Compile Include="App_Start\OAuthConfig.cs" />
     <Compile Include="Models\Account\CreateModel.cs" />
+    <Compile Include="Models\Core\JobResult.cs" />
     <Compile Include="Models\Trade\StarportListModel.cs" />
     <Compile Include="Models\Trade\StarportDetailModel.cs" />
     <Compile Include="Models\Trade\StarportModel.cs" />

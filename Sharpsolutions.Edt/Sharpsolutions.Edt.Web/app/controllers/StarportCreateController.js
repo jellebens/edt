@@ -20,9 +20,10 @@ angular.module('EdtApp').controller('starPortCreateController', ['$scope', '$sta
 
     var _Create = function () {
         $scope.saving = true;
-        starportService.Create($scope.starport).then(function (response) {
+        starportService.Create($scope.starport).then(function(response) {
             $scope.savedSuccessfully = true;
-            $state.go("processing", { commandId: response, destination : "trade.starport.update", params : "trade.starport.update"});
+            
+            $state.go("processing", { commandId: response, destination: "trade.starport.update", params: { starport: $scope.starport.name } });
         }, function (err) {
             $scope.savedSuccessfully = false;
             $scope.message = "Failed to register starport due to:";

@@ -12,6 +12,7 @@ using System.Web;
 using Sharpsolutions.Edt.Data.Azure;
 
 namespace Sharpsolutions.Edt.Api.Security {
+    //Install-Package Microsoft.Owin.Security.OAuth
     public class EdtAuthorizationServerProvider : OAuthAuthorizationServerProvider {
         private readonly IUserRepository _UserRepository;
         private readonly ILogger _Logger;

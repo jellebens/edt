@@ -82,7 +82,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Azure\HelperExtensions.cs" />
-    <Compile Include="Azure\IJobRepository.cs" />
     <Compile Include="Azure\IUserRepository.cs" />
     <Compile Include="Azure\JobRepository.cs" />
     <Compile Include="Azure\TableKey.cs" />
@@ -117,6 +116,10 @@
     <Compile Include="Migrations\201412261959492_AddIsInRangeProperty.cs" />
     <Compile Include="Migrations\201412261959492_AddIsInRangeProperty.Designer.cs">
       <DependentUpon>201412261959492_AddIsInRangeProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502231520536_AddUniqueConstraintsOnStarPort.cs" />
+    <Compile Include="Migrations\201502231520536_AddUniqueConstraintsOnStarPort.Designer.cs">
+      <DependentUpon>201502231520536_AddUniqueConstraintsOnStarPort.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -172,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412261959492_AddIsInRangeProperty.resx">
       <DependentUpon>201412261959492_AddIsInRangeProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502231520536_AddUniqueConstraintsOnStarPort.resx">
+      <DependentUpon>201502231520536_AddUniqueConstraintsOnStarPort.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

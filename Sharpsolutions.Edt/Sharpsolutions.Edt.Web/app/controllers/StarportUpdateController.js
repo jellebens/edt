@@ -44,6 +44,8 @@ angular.module('EdtApp').controller('starPortUpdateController', ['$scope', '$sta
                     $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
                 }
             });
+        }, function (err) {
+            console.error(err);
         });
     }
 
