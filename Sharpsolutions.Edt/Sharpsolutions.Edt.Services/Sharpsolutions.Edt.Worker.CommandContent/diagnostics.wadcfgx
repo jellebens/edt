@@ -32,10 +32,10 @@
         <Logs scheduledTransferPeriod="PT1M" scheduledTransferLogLevelFilter="Verbose" />
       </DiagnosticMonitorConfiguration>
     </WadCfg>
-    <StorageAccount>edtservices</StorageAccount>
+    <StorageAccount>edtcloudservices</StorageAccount>
   </PublicConfig>
   <PrivateConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
-    <StorageAccount name="edtservices" endpoint="https://core.windows.net/" />
+    <StorageAccount name="edtcloudservices" endpoint="https://core.windows.net/" />
   </PrivateConfig>
   <IsEnabled>true</IsEnabled>
 </DiagnosticsConfiguration>

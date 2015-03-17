@@ -265,8 +265,6 @@
     <Content Include="Scripts\angular-sanitize.min.js.map" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="Content\ng-table.less" />
-    <None Include="Properties\PublishProfiles\edt - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\edt - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\edt.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
