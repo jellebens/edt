@@ -3,14 +3,14 @@
   <Role name="Sharpsolutions.Edt.Worker.Command">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Edt.ServiceBus.ConnectionString" value="Endpoint=sb://edt-bus.servicebus.windows.net/;SharedAccessKeyName=DefaultPolicy;SharedAccessKey=HNffOK4x8ZvBdECUpxYhYHvFbsOOcxEJvfTfs5xNIH4=" />
-      <Setting name="Edt.Storage.TableStore" value="DefaultEndpointsProtocol=https;AccountName=edtdata;AccountKey=fBqjSduygZQEivOoA2rroX5E3KQisnhIGmaRDEzUitrK7+SQlyYgGSTQQFGzXvo76ITSrYAHmjt3YNjCx/6zOw==" />
+      <Setting name="Edt.ServiceBus.ConnectionString" value="Endpoint=sb://edt-prod.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=1W640Mn0xSb1ob/OZDwtQKwO7cuDSmTEIB7HTlP5qzk=" />
+      <Setting name="Edt.Storage.TableStore" value="DefaultEndpointsProtocol=https;AccountName=edt;AccountKey=aOqoUVHjsp1lOuSuO0D98r+UGwHzrKPtdoqcZPONHXg50y1kW72S14Dy5AYnd45c/xzFpgs7nxPCR/Yx9Y8rZQ==" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="admin" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEB1M5qQ9niq7T3r0ehk3bCEwDQYJKoZIhvcNAQEBBQAEggEAI1YdhMu9sCtJK9nMEA/HHlQd6/nocmjLhqjmmQBjDGHnw9hp86+BDauubbUZvgxN/cqxzc1rP6ZFrkh/quyq6JFFzkU6Q8MuDFNmXfKyMwM9ocl+DDZiC3DECyTlyDSLA0Hcr0L8qLkcK1ADZ9AM47tyPbkHovH77UE73rpU7VBhx3zDE1fCuhtvAr+MQPXh65/HfAp/R4rTxdgs+IqqgXXzgFXcpJx5829WX9/HIkx8ebh+vSb6dOQhWEk+XtPfgZcvB7X4fv9uFCu0dOlZ2nwO6iTBP0VjE0Ai12YMOjkiNmKFeBjBCV+wqouz8wuUawDXzEeKdV2agM6yfPDouDAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECCb9N+ulwaJzgBBZ9S1leCOWeJkkancGy+13" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2015-12-03T23:59:59.0000000+01:00" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
-      <Setting name="default" value="Server=tcp:n686bnyhk4.database.windows.net,1433;Database=Edt;User ID=jellebens@n686bnyhk4;Password=Gojo5194;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" />
+      <Setting name="default" value="Server=tcp:w85aalv7ul.database.secure.windows.net,1433;Database=edt;User ID=edtadmin@w85aalv7ul;Password=Gojo5194;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" />
     </ConfigurationSettings>
     <Certificates>
       <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="7FC12898703356F20E0A5CBE0A5E74A319A90EB6" thumbprintAlgorithm="sha1" />
