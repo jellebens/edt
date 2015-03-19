@@ -44,6 +44,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".deployment", ".deployment"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91EC3754-0C20-4E9B-934A-A461C324F297}"
 	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
 		ServiceBusConfig.ps1 = ServiceBusConfig.ps1
 	EndProjectSection
 EndProject
@@ -54,6 +55,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Handler.Command.Tests", "Sharpsolutions.Edt.Handler.Command.Tests\Sharpsolutions.Edt.Handler.Command.Tests.csproj", "{2AB8CFAB-9C35-4B16-94C8-F83CEDBD8B73}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Console.Simulator", "Sharpsolutions.Edt.Console.Simulator\Sharpsolutions.Edt.Console.Simulator.csproj", "{3E1B2F46-566D-4C5C-8DB4-67887C901420}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Api.Tests", "Sharpsolutions.Edt.Api.Tests\Sharpsolutions.Edt.Api.Tests.csproj", "{7049E284-B20A-4306-9B94-D4C789DFA3BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +124,10 @@ Global
 		{3E1B2F46-566D-4C5C-8DB4-67887C901420}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E1B2F46-566D-4C5C-8DB4-67887C901420}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E1B2F46-566D-4C5C-8DB4-67887C901420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7049E284-B20A-4306-9B94-D4C789DFA3BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7049E284-B20A-4306-9B94-D4C789DFA3BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7049E284-B20A-4306-9B94-D4C789DFA3BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7049E284-B20A-4306-9B94-D4C789DFA3BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,5 +150,6 @@ Global
 		{903C9A2E-7641-4665-8F79-545271C0A0D9} = {9B2F1CB4-D886-4159-BC79-3BA970C59B5E}
 		{2AB8CFAB-9C35-4B16-94C8-F83CEDBD8B73} = {9B2F1CB4-D886-4159-BC79-3BA970C59B5E}
 		{3E1B2F46-566D-4C5C-8DB4-67887C901420} = {3E94A56E-8795-4BAA-B5AA-39EF77D8729C}
+		{7049E284-B20A-4306-9B94-D4C789DFA3BA} = {3E94A56E-8795-4BAA-B5AA-39EF77D8729C}
 	EndGlobalSection
 EndGlobal
