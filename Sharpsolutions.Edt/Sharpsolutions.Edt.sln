@@ -45,7 +45,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91EC3754-0C20-4E9B-934A-A461C324F297}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
-		ServiceBusConfig.ps1 = ServiceBusConfig.ps1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Data.Tests", "Sharpsolutions.Edt.Data.Tests\Sharpsolutions.Edt.Data.Tests.csproj", "{31E0FCF0-98AF-44C7-A42C-7597130EB26F}"
