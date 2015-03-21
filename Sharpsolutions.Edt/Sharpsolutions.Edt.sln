@@ -55,6 +55,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Handler.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Api.Tests", "Sharpsolutions.Edt.Api.Tests\Sharpsolutions.Edt.Api.Tests.csproj", "{7049E284-B20A-4306-9B94-D4C789DFA3BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Monitor", "Sharpsolutions.Edt.Monitor\Sharpsolutions.Edt.Monitor.csproj", "{0A9FD01B-E1F9-4D7A-83E4-D043C450C9E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Monitor.Tests", "Sharpsolutions.Edt.Monitor.Tests\Sharpsolutions.Edt.Monitor.Tests.csproj", "{1102ABEA-343C-4FF5-B6D1-1865711E21E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +125,14 @@ Global
 		{7049E284-B20A-4306-9B94-D4C789DFA3BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7049E284-B20A-4306-9B94-D4C789DFA3BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7049E284-B20A-4306-9B94-D4C789DFA3BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9FD01B-E1F9-4D7A-83E4-D043C450C9E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9FD01B-E1F9-4D7A-83E4-D043C450C9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9FD01B-E1F9-4D7A-83E4-D043C450C9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9FD01B-E1F9-4D7A-83E4-D043C450C9E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1102ABEA-343C-4FF5-B6D1-1865711E21E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1102ABEA-343C-4FF5-B6D1-1865711E21E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1102ABEA-343C-4FF5-B6D1-1865711E21E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1102ABEA-343C-4FF5-B6D1-1865711E21E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,5 +155,7 @@ Global
 		{903C9A2E-7641-4665-8F79-545271C0A0D9} = {9B2F1CB4-D886-4159-BC79-3BA970C59B5E}
 		{2AB8CFAB-9C35-4B16-94C8-F83CEDBD8B73} = {9B2F1CB4-D886-4159-BC79-3BA970C59B5E}
 		{7049E284-B20A-4306-9B94-D4C789DFA3BA} = {3E94A56E-8795-4BAA-B5AA-39EF77D8729C}
+		{0A9FD01B-E1F9-4D7A-83E4-D043C450C9E8} = {3E94A56E-8795-4BAA-B5AA-39EF77D8729C}
+		{1102ABEA-343C-4FF5-B6D1-1865711E21E2} = {3E94A56E-8795-4BAA-B5AA-39EF77D8729C}
 	EndGlobalSection
 EndGlobal

@@ -13,6 +13,11 @@ namespace Sharpsolutions.Edt.System.Logging {
             public const string Sql = Base + "SQL";
         }
 
+        public static class Monitor
+        {
+            public const string Parse = Base + "Monitor";
+        }
+
         public static class Security { 
             public const string Sec = Base + "Security";
             public const string Authentication = Sec + "Authentication";
