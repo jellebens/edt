@@ -12,7 +12,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Account {
         [Test]
         public void VerifyHavingCorrectPasswordShouldReturnTrue() {
             string pass = "P@ssw0rd";
-            User u = User.Create("John doe", pass);
+            UUser u = Setup(pass);
 
             Console.WriteLine(u.Password);
 
@@ -22,13 +22,40 @@ namespace Sharpsolutions.Edt.Domain.Tests.Account {
 
         [Test]
         public void VerifyHavingIncorrectPasswordShouldReturnFalse() {
-            string pass = "P@ssw0rd";
-            User u = User.Create("John doe", pass);
-
-            
+            UUser u = Setup();
 
             bool isValid = u.Verify("HEllo");
             Assert.IsFalse(isValid);
+            Assert.AreEqual(1, u.InvalidAttempts);
+        }
+
+        [Test]
+        public void VerifyHavingIncorrectPasswordTiceShouldIncrement() {
+            UUser u = Setup();
+
+            u.Verify("Hello");
+            u.Verify("Hello");
+
+            Assert.AreEqual(2, u.InvalidAttempts);
+        }
+
+        private static UUser Setup() {
+            string pass = "P@ssw0rd";
+            return Setup(pass);
+        }
+
+        private static UUser Setup(string pass)
+        {
+            UUser u = UUser.Create("John doe", pass);
+            return u;
+        }
+
+        [Test]
+        public void CreateNewShouldCreateANewUserAndVersionShouldBeOne()
+        {
+            UUser u = Setup();
+
+            Assert.AreEqual(1, u.Version);
         }
     }
 }

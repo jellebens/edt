@@ -70,12 +70,15 @@
     <Compile Include="Command\JobStatus.cs" />
     <Compile Include="Data\IJobRepository.cs" />
     <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Domain\AgregateRootBase.cs" />
+    <Compile Include="Domain\EventBase.cs" />
     <Compile Include="Enumeration.cs" />
     <Compile Include="Domain\IEntity.cs" />
     <Compile Include="Domain\IRoot.cs" />
     <Compile Include="Logging\Azure\TraceAppender.cs" />
     <Compile Include="Logging\Castle\LoggingInstaller.cs" />
     <Compile Include="Logging\Loggers.cs" />
+    <Compile Include="PrivateReflectionDynamicObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialization\Json\JsonSerializerFactory.cs" />
     <Compile Include="Settings.cs" />
