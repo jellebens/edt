@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Sharpsolutions.Edt.Data.Tests.Azure {
     [TestFixture]
     public class UserRepositoryTests {
-        UserRepository _Repository = new UserRepository();
+        readonly UserRepository _repository = new UserRepository();
 
         [TestFixtureSetUp]
         public void FixtureSetup() {
@@ -36,14 +36,14 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
         public void AddHavingAUserShouldNotThrow() {
             User u = User.Create(Guid.NewGuid().ToString(), "P@ssw0rd");
 
-            _Repository.Add(u);
+            _repository.Add(u);
         }
 
         [Test]
         public void RetrievingUserShouldNotThrow() {
-            Setup(_Repository);
+            Setup(_repository);
 
-            User expected = _Repository.Get("admin");
+            User expected = _repository.Get("admin");
 
             Assert.NotNull(expected);
             Assert.IsTrue(expected.Verify("P@ssw0rd"));
