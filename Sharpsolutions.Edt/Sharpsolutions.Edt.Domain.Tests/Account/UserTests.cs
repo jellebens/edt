@@ -37,6 +37,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Account {
             u.Verify("Hello");
 
             Assert.AreEqual(2, u.InvalidAttempts);
+            Assert.AreEqual(3, u.Version);
         }
 
         private static UUser Setup() {

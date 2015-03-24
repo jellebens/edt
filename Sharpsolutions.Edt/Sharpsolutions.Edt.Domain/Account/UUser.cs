@@ -11,21 +11,26 @@ namespace Sharpsolutions.Edt.Domain.Account {
 
         private UUser()
         {
+            
         }
 
-        
-        
+        protected override void RegisterHandlers()
+        {
+            Register<UserCreated>(OnUserCreated);
+            Register<InvalidPasswordSupplied>(OnInvalidPasswordSupplied);
+        }
+
 
         public static UUser Create(string username, string password)
         {
             UUser user = new UUser();
 
-            user.Register(new UserCreated(username, Password.New(password)));
+            user.Apply((EventBase) new UserCreated(username, Password.New(password)));
 
             return user;
         }
 
-        private void Apply(UserCreated userCreated)
+        private void OnUserCreated(UserCreated userCreated)
         {
             Id = Guid.NewGuid();
             Username = userCreated.Username;
@@ -33,7 +38,7 @@ namespace Sharpsolutions.Edt.Domain.Account {
             Version = 1;
         }
 
-        private void Apply(InvalidPasswordSupplied @event)
+        private void OnInvalidPasswordSupplied(InvalidPasswordSupplied @event)
         {
             this.InvalidAttempts++;
         }
@@ -49,7 +54,7 @@ namespace Sharpsolutions.Edt.Domain.Account {
 
             if (!result)
             {
-                this.Register(new InvalidPasswordSupplied());
+                base.Apply(new InvalidPasswordSupplied());
             }
 
             return result;

@@ -78,7 +78,6 @@
     <Compile Include="Logging\Azure\TraceAppender.cs" />
     <Compile Include="Logging\Castle\LoggingInstaller.cs" />
     <Compile Include="Logging\Loggers.cs" />
-    <Compile Include="PrivateReflectionDynamicObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialization\Json\JsonSerializerFactory.cs" />
     <Compile Include="Settings.cs" />
