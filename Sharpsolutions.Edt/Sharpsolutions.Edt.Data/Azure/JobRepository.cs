@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Azure {
-    public class JobRepository: TableStorageBase<Job>, IJobRepository {
+    public class JobRepository: TableStorageBase, IJobRepository {
         protected override string Table {
             get {
                 return "jobs";

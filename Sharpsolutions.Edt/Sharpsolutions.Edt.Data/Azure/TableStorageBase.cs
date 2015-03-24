@@ -11,8 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Azure {
-    public abstract class TableStorageBase<TEntity>
-        where TEntity : IEntity
+    public abstract class TableStorageBase
     {
         protected abstract string Table { get; }
         

@@ -7,60 +7,87 @@ using Sharpsolutions.Edt.System.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Sharpsolutions.Edt.System.Domain;
 
 namespace Sharpsolutions.Edt.Data.Azure {
-    public class UserRepository : TableStorageBase<User>, IUserRepository
-    {
-        protected override string Table {
-            get { return "users"; }
-        }
+    public class UserRepository : IUserRepository {
+        public void CommitChanges(User user) {
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+                                                                     CloudConfigurationManager.GetSetting(Settings.Storage.Table.ConfigKey));
 
-        public void Add(User user) {
+            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-            CloudTable table = Build();
+            CloudTable table = tableClient.GetTableReference("users");
 
+            string partionKey = user.Username;
+            string rowKey = user.Version.ToString("D20");
 
-            DynamicTableEntity entity = new DynamicTableEntity();
-
-            entity.PartitionKey = user.Name;
-            entity.RowKey = user.Name;
-            entity.Properties.Add("Name", new EntityProperty(user.Name));
-            entity.Properties.Add("Password", new EntityProperty(user.Password.ToString()));
+            table.CreateIfNotExists();
 
 
-            TableOperation insertOperation = TableOperation.Insert(entity);
+            TableBatchOperation batchOperation = new TableBatchOperation();
+            if (user.PendingChanges.Any())
+            {
+                foreach (EventBase change in user.PendingChanges) {
 
-            table.Execute(insertOperation);
+                    EventEntity eventRecored = new EventEntity(partionKey, rowKey)
+                    {
+                        Payload = JsonConvert.SerializeObject(change, new JsonSerializerSettings()
+                        {
+                            TypeNameHandling = TypeNameHandling.All
+                        })
+                    };
+
+                    batchOperation.Insert(eventRecored);
+                }
+
+                table.ExecuteBatch(batchOperation);
+            }
+            
+            
+
+
         }
 
         public User Get(string id) {
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+                                                                    CloudConfigurationManager.GetSetting(Settings.Storage.Table.ConfigKey));
 
-            CloudTable table = Build();
+            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-            TableOperation retrieveOperation = TableOperation.Retrieve(id, id);
+            CloudTable table = tableClient.GetTableReference("users");
 
-            TableResult retrievedResult = table.Execute(retrieveOperation);
+            TableQuery<EventEntity> query = new TableQuery<EventEntity>()
+                .Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, id));
 
-            DynamicTableEntity x = retrievedResult.Result as DynamicTableEntity;
+            List<EventBase> events = new List<EventBase>();
+            foreach (EventEntity entity in table.ExecuteQuery(query)) {
+                EventBase @event = JsonConvert.DeserializeObject(entity.Payload, new JsonSerializerSettings()
+                {
+                    TypeNameHandling = TypeNameHandling.All
+                }) as EventBase;
 
-            if (x == null) {
+                events.Add(@event);
+            }
+
+            if (!events.Any()) {
                 return null;
             }
 
-            var u = Map(x);
+            ConstructorInfo c = typeof(User).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, Type.EmptyTypes, null);
 
-            return u;
+            User u = (User)c.Invoke(null);
 
-        }
-
-        private User Map(DynamicTableEntity x)
-        {
-            Password p = new Password(x.Properties["Password"].StringValue);
-            User u = new User(x.Properties["Name"].StringValue, p);
+            ((IEventSourced)u).Load(events);
             return u;
         }
+
+
 
     }
 }

@@ -8,12 +8,12 @@ using Sharpsolutions.Edt.System.Domain;
 namespace Sharpsolutions.Edt.Domain.Account.Events {
     public class UserCreated : EventBase {
         public string Username { get; private set; }
-        public Password Password { get; private set; }
+        public string PasswordHash { get; private set; }
         public DateTime Timestamp { get; set; }
 
-        public UserCreated(string username, Password password) {
+        public UserCreated(string username, string passwordHash) {
             Username = username;
-            Password = password;
+            PasswordHash = passwordHash;
             Timestamp = DateTime.UtcNow;
         }
     }

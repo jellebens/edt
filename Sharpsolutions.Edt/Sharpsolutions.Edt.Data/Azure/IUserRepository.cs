@@ -4,7 +4,7 @@ namespace Sharpsolutions.Edt.Data.Azure
 {
     public interface IUserRepository
     {
-        void Add(User user);
+        void CommitChanges(User user);
         User Get(string id);
     }
 }

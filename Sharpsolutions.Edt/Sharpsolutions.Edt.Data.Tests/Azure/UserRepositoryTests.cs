@@ -34,9 +34,9 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
 
         [Test]
         public void AddHavingAUserShouldNotThrow() {
-            User u = User.Create(Guid.NewGuid().ToString(), "P@ssw0rd");
+            User u = User.Create("admin", "P@ssw0rd");
 
-            _repository.Add(u);
+            _repository.CommitChanges(u);
         }
 
         [Test]
@@ -47,7 +47,7 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
 
             Assert.NotNull(expected);
             Assert.IsTrue(expected.Verify("P@ssw0rd"));
-
+            _repository.CommitChanges(expected);
         }
 
         private void Setup(UserRepository repository) {
@@ -55,7 +55,7 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
 
             if (x == null) {
                 User u = User.Create("admin", "P@ssw0rd");
-                repository.Add(u);
+                repository.CommitChanges(u);
             }
         }
     }

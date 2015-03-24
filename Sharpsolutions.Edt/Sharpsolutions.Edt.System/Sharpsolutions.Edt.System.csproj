@@ -72,6 +72,7 @@
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Domain\AgregateRootBase.cs" />
     <Compile Include="Domain\EventBase.cs" />
+    <Compile Include="Domain\IEventSourced.cs" />
     <Compile Include="Enumeration.cs" />
     <Compile Include="Domain\IEntity.cs" />
     <Compile Include="Domain\IRoot.cs" />

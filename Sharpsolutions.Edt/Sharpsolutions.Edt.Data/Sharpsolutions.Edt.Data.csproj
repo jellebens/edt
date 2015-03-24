@@ -81,10 +81,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Azure\HelperExtensions.cs" />
+    <Compile Include="Azure\AggregateRootExtensions.cs" />
+    <Compile Include="Azure\EventEntity.cs" />
     <Compile Include="Azure\IUserRepository.cs" />
     <Compile Include="Azure\JobRepository.cs" />
-    <Compile Include="Azure\TableKey.cs" />
     <Compile Include="Azure\TableStorageBase.cs" />
     <Compile Include="Azure\UserRepository.cs" />
     <Compile Include="Castle\ContainerExtensions.cs" />

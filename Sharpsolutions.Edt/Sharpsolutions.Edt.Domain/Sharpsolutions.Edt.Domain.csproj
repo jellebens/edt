@@ -43,7 +43,6 @@
     <Compile Include="Account\Events\UserCreated.cs" />
     <Compile Include="Account\Password.cs" />
     <Compile Include="Account\User.cs" />
-    <Compile Include="Account\UUser.cs" />
     <Compile Include="Trade\AgricultureBuilder.cs" />
     <Compile Include="Trade\Category.cs" />
     <Compile Include="Trade\Commodity.cs" />

@@ -9,7 +9,7 @@ namespace Sharpsolutions.Edt.Domain.Account {
     public class Password: IEquatable<string> {
         private const string _val = "CEAB5083-D28A-417E-A49F-C7B01E691119";
         private string _Hash;
-        private Password() {
+        public Password() {
 
         }
 
@@ -19,6 +19,10 @@ namespace Sharpsolutions.Edt.Domain.Account {
             }
 
             _Hash = hash;
+        }
+
+        public string Hash {
+            get { return _Hash; }
         }
 
         public static Password New(string pwd) {

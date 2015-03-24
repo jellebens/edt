@@ -21,7 +21,7 @@ namespace Sharpsolutions.Edt.Handler.Command.Account
         public override void Execute(RegisterUser command) {
             User user = User.Create(command.Username, command.Password);
 
-            _Repository.Add(user);
+            _Repository.CommitChanges(user);
         }
     }
 }
