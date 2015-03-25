@@ -3,7 +3,7 @@
   <Role name="Sharpsolutions.Edt.Worker.Command">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Edt.ServiceBus.ConnectionString" value="Endpoint=sb://sharpsolutions.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=KW+vgQ4U/xtTOcm20xH5hG0bxGctJTU/9kKRr0U5I3w=" />
+      <Setting name="Edt.ServiceBus.ConnectionString" value="Endpoint=sb://edt-tst.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=bQC1gv7DMmiG5uPpwKaB+bO4DnNOpSMbehLPhGi/6Zg=" />
       <Setting name="Edt.Storage.TableStore" value="UseDevelopmentStorage=true;" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="admin" />

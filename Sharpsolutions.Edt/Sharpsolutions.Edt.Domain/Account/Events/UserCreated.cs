@@ -9,8 +9,7 @@ namespace Sharpsolutions.Edt.Domain.Account.Events {
     public class UserCreated : EventBase {
         public string Username { get; private set; }
         public string PasswordHash { get; private set; }
-        public DateTime Timestamp { get; set; }
-
+        
         public UserCreated(string username, string passwordHash) {
             Username = username;
             PasswordHash = passwordHash;
