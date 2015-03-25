@@ -84,6 +84,8 @@ namespace Sharpsolutions.Edt.Data.Azure {
             User u = (User)c.Invoke(null);
 
             ((IEventSourced)u).Load(events);
+
+           
             return u;
         }
 

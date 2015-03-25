@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Account\Events\InvalidPasswordSupplied.cs" />
     <Compile Include="Account\Events\UserCreated.cs" />
+    <Compile Include="Account\Events\UserLoggedIn.cs" />
     <Compile Include="Account\Password.cs" />
     <Compile Include="Account\User.cs" />
     <Compile Include="Trade\AgricultureBuilder.cs" />

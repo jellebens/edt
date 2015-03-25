@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using Sharpsolutions.Edt.Domain.Account.Events;
 using Sharpsolutions.Edt.System.Domain;
 
 namespace Sharpsolutions.Edt.Domain.Account {
-    public class User : AgregateRootBase, IEventSourced {
+    public class User : AgregateRootBase {
 
         protected User()
         {
@@ -19,6 +20,7 @@ namespace Sharpsolutions.Edt.Domain.Account {
         {
             Register<UserCreated>(OnUserCreated);
             Register<InvalidPasswordSupplied>(OnInvalidPasswordSupplied);
+            Register<UserLoggedIn>(OnUserLoggedIn);
         }
 
 
@@ -36,7 +38,6 @@ namespace Sharpsolutions.Edt.Domain.Account {
             Id = Guid.NewGuid();
             Username = userCreated.Username;
             Password = new Password(userCreated.PasswordHash);
-            Version = 1;
         }
 
         private void OnInvalidPasswordSupplied(InvalidPasswordSupplied @event)
@@ -44,30 +45,27 @@ namespace Sharpsolutions.Edt.Domain.Account {
             this.InvalidAttempts++;
         }
 
+        private void OnUserLoggedIn(UserLoggedIn userLogged) {
+            
+        }
+
         public string Username { get; private set; }
 
         public Password Password { get; private set; }
         public int InvalidAttempts { get; private set; }
         
-        public bool Verify(string password)
-        {
+        public bool TryLogin(string password) {
             bool result = this.Password.Equals(password);
 
-            if (!result)
-            {
+            if (!result) {
                 base.Apply(new InvalidPasswordSupplied());
+            }
+            else
+            {
+                Apply(new UserLoggedIn());
             }
 
             return result;
-        }
-        
-
-        void IEventSourced.ClearPendingChanges() {
-            throw new NotImplementedException();
-        }
-
-        void IEventSourced.Load<TEvent>(IEnumerable<TEvent> events) {
-            this.ApplyHistory(events.ToArray());
         }
     }
 }

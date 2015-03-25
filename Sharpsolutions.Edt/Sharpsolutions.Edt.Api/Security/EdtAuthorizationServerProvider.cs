@@ -33,8 +33,8 @@ namespace Sharpsolutions.Edt.Api.Security {
 
                 User u = _UserRepository.Get(context.UserName);
 
-                if (u == null || !u.Verify(context.Password)) {
-                    _Logger.InfoFormat("Failed to authenticate: {0}. User {1}. Password verification {2}", context.UserName, u == null ? "not found" : "found", (u != null && u.Verify(context.Password)) ? "succeeded" : "failed");
+                if (u == null || !u.TryLogin(context.Password)) {
+                    _Logger.InfoFormat("Failed to authenticate: {0}. User {1}. Password verification {2}", context.UserName, u == null ? "not found" : "found", (u != null && u.TryLogin(context.Password)) ? "succeeded" : "failed");
                     context.SetError("invalid_grant", "The user name or password is incorrect.");
                     return;
                 }
@@ -45,6 +45,8 @@ namespace Sharpsolutions.Edt.Api.Security {
                 identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
 
                 context.Validated(identity);
+                
+                _UserRepository.CommitChanges(u);
             });
         }
     }

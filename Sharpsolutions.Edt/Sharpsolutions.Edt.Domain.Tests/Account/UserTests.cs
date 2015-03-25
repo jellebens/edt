@@ -25,7 +25,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Account {
 
             Console.WriteLine(u.Password);
 
-            bool isValid = u.Verify(pass);
+            bool isValid = u.TryLogin(pass);
             Assert.IsTrue(isValid);
         }
 
@@ -33,17 +33,18 @@ namespace Sharpsolutions.Edt.Domain.Tests.Account {
         public void VerifyHavingIncorrectPasswordShouldReturnFalse() {
             User u = Setup();
 
-            bool isValid = u.Verify("HEllo");
+            bool isValid = u.TryLogin("HEllo");
             Assert.IsFalse(isValid);
             Assert.AreEqual(1, u.InvalidAttempts);
         }
+        
 
         [Test]
-        public void VerifyHavingIncorrectPasswordTiceShouldIncrement() {
+        public void VerifyHavingIncorrectPasswordTwiceShouldIncrement() {
             User u = Setup();
 
-            u.Verify("Hello");
-            u.Verify("Hello");
+            u.TryLogin("Hello");
+            u.TryLogin("Hello");
 
             Assert.AreEqual(2, u.InvalidAttempts);
             Assert.AreEqual(3, u.Version);

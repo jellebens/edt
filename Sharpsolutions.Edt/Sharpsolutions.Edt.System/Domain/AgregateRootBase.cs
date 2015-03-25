@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.System.Domain {
-    public abstract class AgregateRootBase
+    public abstract class AgregateRootBase : IEventSourced
     {
-        private readonly List<EventBase> _pendingChanges = new List<EventBase>();
+        protected readonly List<EventBase> _pendingChanges = new List<EventBase>();
         private readonly Dictionary<Type, Action<EventBase>> _handlers = new Dictionary<Type, Action<EventBase>>();
 
         protected AgregateRootBase()
         {
-            this.Version = -1;
+            this.Version = 0;
             RegisterHandlers();
         }
 
@@ -51,6 +51,14 @@ namespace Sharpsolutions.Edt.System.Domain {
                 _handlers[@event.GetType()](@event);
                 this.Version = @event.Version;
             }
+        }
+
+        void IEventSourced.ClearPendingChanges() {
+            PendingChanges.Clear();
+        }
+
+        void IEventSourced.Load<TEvent>(IEnumerable<TEvent> events) {
+            this.ApplyHistory(events.ToArray());
         }
     }
     
