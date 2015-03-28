@@ -40,11 +40,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Data", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Domain", "Sharpsolutions.Edt.Domain\Sharpsolutions.Edt.Domain.csproj", "{49E863B6-99B3-4E83-97DC-35241DC1B924}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".deployment", ".deployment", "{CE09850B-72FF-4D38-A45E-DC09F4A0A9E0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91EC3754-0C20-4E9B-934A-A461C324F297}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
+		Performance1.psess = Performance1.psess
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Data.Tests", "Sharpsolutions.Edt.Data.Tests\Sharpsolutions.Edt.Data.Tests.csproj", "{31E0FCF0-98AF-44C7-A42C-7597130EB26F}"
@@ -58,6 +57,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Monitor", "Sharpsolutions.Edt.Monitor\Sharpsolutions.Edt.Monitor.csproj", "{0A9FD01B-E1F9-4D7A-83E4-D043C450C9E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Monitor.Tests", "Sharpsolutions.Edt.Monitor.Tests\Sharpsolutions.Edt.Monitor.Tests.csproj", "{1102ABEA-343C-4FF5-B6D1-1865711E21E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.System.WebTest", "Sharpsolutions.Edt.System.WebTest\Sharpsolutions.Edt.System.WebTest.csproj", "{A0E49F39-0F56-4A4A-8000-35D31074FEDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".deployment", ".deployment", "{CCB81B2A-37A6-43E1-85BC-84BA7A26FECD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "local", "local", "{4D3C4815-AF8A-4073-81EF-E73E0252BF9F}"
+	ProjectSection(SolutionItems) = preProject
+		.deployment\local\create-dev-env.ps1 = .deployment\local\create-dev-env.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +141,10 @@ Global
 		{1102ABEA-343C-4FF5-B6D1-1865711E21E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1102ABEA-343C-4FF5-B6D1-1865711E21E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1102ABEA-343C-4FF5-B6D1-1865711E21E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0E49F39-0F56-4A4A-8000-35D31074FEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0E49F39-0F56-4A4A-8000-35D31074FEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0E49F39-0F56-4A4A-8000-35D31074FEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0E49F39-0F56-4A4A-8000-35D31074FEDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -157,5 +169,8 @@ Global
 		{7049E284-B20A-4306-9B94-D4C789DFA3BA} = {3E94A56E-8795-4BAA-B5AA-39EF77D8729C}
 		{0A9FD01B-E1F9-4D7A-83E4-D043C450C9E8} = {3E94A56E-8795-4BAA-B5AA-39EF77D8729C}
 		{1102ABEA-343C-4FF5-B6D1-1865711E21E2} = {3E94A56E-8795-4BAA-B5AA-39EF77D8729C}
+		{A0E49F39-0F56-4A4A-8000-35D31074FEDD} = {32943498-926D-4E60-894B-C6FBF8B0C85B}
+		{CCB81B2A-37A6-43E1-85BC-84BA7A26FECD} = {91EC3754-0C20-4E9B-934A-A461C324F297}
+		{4D3C4815-AF8A-4073-81EF-E73E0252BF9F} = {CCB81B2A-37A6-43E1-85BC-84BA7A26FECD}
 	EndGlobalSection
 EndGlobal

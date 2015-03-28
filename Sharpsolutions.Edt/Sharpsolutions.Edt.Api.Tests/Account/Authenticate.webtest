@@ -5,11 +5,21 @@
       <Headers>
         <Header Name="Content-Type" Value="application/x-www-form-urlencoded" />
       </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Sharpsolutions.Edt.System.WebTest.ExtractionRules.ExtractBearerToken, Sharpsolutions.Edt.System.WebTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" VariableName="BearerToken" DisplayName="Extract Bearer Token" Description="" />
+      </ExtractionRules>
       <FormPostHttpBody>
         <FormPostParameter Name="grant_type" Value="password" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
-        <FormPostParameter Name="username" Value="admin" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
-        <FormPostParameter Name="password" Value="P@ssw0rd" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="username" Value="{{dsExistingUsers.TestUser#csv.ï»¿UserName}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="password" Value="{{dsExistingUsers.TestUser#csv.Password}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
   </Items>
+  <DataSources>
+    <DataSource Name="dsExistingUsers" Provider="Microsoft.VisualStudio.TestTools.DataSource.CSV" Connection="|DataDirectory|\..\Data\TestUser.csv">
+      <Tables>
+        <DataSourceTable Name="TestUser#csv" SelectColumns="SelectOnlyBoundColumns" AccessMethod="Sequential" />
+      </Tables>
+    </DataSource>
+  </DataSources>
 </WebTest>
