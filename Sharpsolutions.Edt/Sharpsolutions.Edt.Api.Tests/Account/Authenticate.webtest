@@ -6,7 +6,11 @@
         <Header Name="Content-Type" Value="application/x-www-form-urlencoded" />
       </Headers>
       <ExtractionRules>
-        <ExtractionRule Classname="Sharpsolutions.Edt.System.WebTest.ExtractionRules.ExtractBearerToken, Sharpsolutions.Edt.System.WebTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" VariableName="BearerToken" DisplayName="Extract Bearer Token" Description="" />
+        <ExtractionRule Classname="Sharpsolutions.Edt.System.WebTest.ExtractionRules.ExtractBearerToken, Sharpsolutions.Edt.System.WebTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" VariableName="BearerToken" DisplayName="Extract Bearer Token" Description="">
+          <RuleParameters>
+            <RuleParameter Name="AsHeaderValue" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
       </ExtractionRules>
       <FormPostHttpBody>
         <FormPostParameter Name="grant_type" Value="password" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
