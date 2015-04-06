@@ -62,7 +62,10 @@
     </None>
     <None Include="Data\TestUser.csv" />
     <None Include="packages.config" />
-    <None Include="Trade\starport.webtest">
+    <None Include="Trade\Starport\List.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Trade\Starport\Detail.webtest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

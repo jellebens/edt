@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="Detail" Id="96716239-73ae-471c-93ba-7eb3b31eba5e" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="" ResultsLocale="">
+  <Items>
+    <IncludedWebTest Name="Authenticate" Path="..\..\account\authenticate.webtest" Id="64fe7220-b3b9-4b6b-a5b0-7f11926a0b8c" IsCodedWebTest="False" InheritWebTestSettings="False" />
+    <Request Method="GET" Guid="51cdf3d6-7ba5-4969-8d7b-0263c6f3ceba" Version="1.1" Url="https://localhost:44301/starport/detail" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Authorization" Value="{{BearerToken}}" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="name" Value="Fulton Landing" RecordedValue="" CorrelationBinding="" UrlEncode="True" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+  </Items>
+  <ContextParameters>
+    <ContextParameter Name="BearerToken" Value="" />
+  </ContextParameters>
+</WebTest>
