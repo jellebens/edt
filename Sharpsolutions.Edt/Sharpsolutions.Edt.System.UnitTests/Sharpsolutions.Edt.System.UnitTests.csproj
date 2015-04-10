@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{903C9A2E-7641-4665-8F79-545271C0A0D9}</ProjectGuid>
+    <ProjectGuid>{6C5F6697-7E9B-4428-B415-84735A8A5414}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sharpsolutions.Edt.Domain.Tests</RootNamespace>
-    <AssemblyName>Sharpsolutions.Edt.Domain.Tests</AssemblyName>
+    <RootNamespace>Sharpsolutions.Edt.System.UnitTests</RootNamespace>
+    <AssemblyName>Sharpsolutions.Edt.System.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,34 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\PasswordTests.cs" />
-    <Compile Include="Account\UserTests.cs" />
-    <Compile Include="Commodities\CategoryTests.cs" />
-    <Compile Include="Commodities\CommodityTests.cs" />
+    <Compile Include="NUnit\IntegrationTest.cs" />
+    <Compile Include="NUnit\UnitTestAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Trade\FakeCommodities.cs" />
-    <Compile Include="Trade\FakeStarportBuilder.cs" />
-    <Compile Include="Trade\StarportInventoryTests.cs" />
-    <Compile Include="Trade\StarportTests.cs" />
-    <Compile Include="Trade\Stations.cs" />
-    <Compile Include="Trade\TradeRouteCalculatorTests.cs" />
-    <Compile Include="Trade\TradeRouteFinderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Sharpsolutions.Edt.Domain\Sharpsolutions.Edt.Domain.csproj">
-      <Project>{49e863b6-99b3-4e83-97dc-35241dc1b924}</Project>
-      <Name>Sharpsolutions.Edt.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sharpsolutions.Edt.System\Sharpsolutions.Edt.System.csproj">
-      <Project>{36b606df-ad7b-4f76-ad1a-b803c7f500c9}</Project>
-      <Name>Sharpsolutions.Edt.System</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

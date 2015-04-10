@@ -67,6 +67,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "local", "local", "{4D3C4815
 		.deployment\local\create-dev-env.ps1 = .deployment\local\create-dev-env.ps1
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.System.UnitTests", "Sharpsolutions.Edt.System.UnitTests\Sharpsolutions.Edt.System.UnitTests.csproj", "{6C5F6697-7E9B-4428-B415-84735A8A5414}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,10 @@ Global
 		{A0E49F39-0F56-4A4A-8000-35D31074FEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0E49F39-0F56-4A4A-8000-35D31074FEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0E49F39-0F56-4A4A-8000-35D31074FEDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5F6697-7E9B-4428-B415-84735A8A5414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5F6697-7E9B-4428-B415-84735A8A5414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5F6697-7E9B-4428-B415-84735A8A5414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5F6697-7E9B-4428-B415-84735A8A5414}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -172,5 +178,6 @@ Global
 		{A0E49F39-0F56-4A4A-8000-35D31074FEDD} = {32943498-926D-4E60-894B-C6FBF8B0C85B}
 		{CCB81B2A-37A6-43E1-85BC-84BA7A26FECD} = {91EC3754-0C20-4E9B-934A-A461C324F297}
 		{4D3C4815-AF8A-4073-81EF-E73E0252BF9F} = {CCB81B2A-37A6-43E1-85BC-84BA7A26FECD}
+		{6C5F6697-7E9B-4428-B415-84735A8A5414} = {32943498-926D-4E60-894B-C6FBF8B0C85B}
 	EndGlobalSection
 EndGlobal

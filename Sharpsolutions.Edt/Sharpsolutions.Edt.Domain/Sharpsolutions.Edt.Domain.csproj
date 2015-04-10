@@ -44,6 +44,10 @@
     <Compile Include="Account\Events\UserLoggedIn.cs" />
     <Compile Include="Account\Password.cs" />
     <Compile Include="Account\User.cs" />
+    <Compile Include="Core\Distance.cs" />
+    <Compile Include="Core\Facility.cs" />
+    <Compile Include="Core\Length.cs" />
+    <Compile Include="Core\Size.cs" />
     <Compile Include="Trade\AgricultureBuilder.cs" />
     <Compile Include="Trade\Category.cs" />
     <Compile Include="Trade\Commodity.cs" />
@@ -54,11 +58,14 @@
     <Compile Include="Trade\IndustrialBuilder.cs" />
     <Compile Include="Trade\IStarportBuilder.cs" />
     <Compile Include="Trade\Level.cs" />
+    <Compile Include="Trade\Listing.cs" />
     <Compile Include="Trade\RefineryBuilder.cs" />
     <Compile Include="Trade\SolarSystem.cs" />
     <Compile Include="Trade\Starport.cs" />
     <Compile Include="Trade\StarportBuilder.cs" />
     <Compile Include="Trade\StarportBuilderBase.cs" />
+    <Compile Include="Trade\Station.cs" />
+    <Compile Include="Trade\StationBuilder.cs" />
     <Compile Include="Trade\StockItem.cs" />
     <Compile Include="Trade\TradeCommodity.cs" />
     <Compile Include="Trade\TradeRoute.cs" />
@@ -70,9 +77,7 @@
       <Name>Sharpsolutions.Edt.System</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
