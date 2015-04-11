@@ -47,15 +47,13 @@
     <Compile Include="Commodities\CategoryTests.cs" />
     <Compile Include="Commodities\CommodityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Fakes\Starports.cs" />
     <Compile Include="Trade\FakeCommodities.cs" />
-    <Compile Include="Trade\FakeStarportBuilder.cs" />
-    <Compile Include="Trade\StarportInventoryTests.cs" />
-    <Compile Include="Trade\StarportTests.cs" />
-    <Compile Include="Trade\Stations.cs" />
     <Compile Include="Trade\TradeRouteCalculatorTests.cs" />
     <Compile Include="Trade\TradeRouteFinderTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Fakes\commodities.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

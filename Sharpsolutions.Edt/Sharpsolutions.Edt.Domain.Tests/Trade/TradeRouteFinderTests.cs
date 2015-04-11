@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using Sharpsolutions.Edt.Domain.Trade;
+using Sharpsolutions.Edt.Domain.Tests.Trade.Fakes;
 
 namespace Sharpsolutions.Edt.Domain.Tests.Trade {
     [TestFixture]
@@ -14,11 +15,11 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
         [Test]
         public void FindHAvingOnlyOneOtherStarportShouldCalculateProfit()
         {
-            Starport origin = FakeStarportBuilder.HuiMines();
+            Starport origin = Starports.HuiMines();
             Starport[] destinations = new[]
             {
-                FakeStarportBuilder.Kaku(),
-                FakeStarportBuilder.HuiMines()
+                Starports.Kaku(),
+                Starports.HuiMines()
             };
 
             TradeRouteCalculator finder = new TradeRouteCalculator(destinations);
@@ -28,7 +29,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
             Assert.AreEqual(5133, route.Buy);
             Assert.AreEqual(5818, route.Sell);
             Assert.AreEqual(685, route.Profit);
-            Assert.AreNotEqual(FakeStarportBuilder.HuiMines(), route.Destination);
+            Assert.AreNotEqual(Starports.HuiMines(), route.Destination);
             
         }
     }

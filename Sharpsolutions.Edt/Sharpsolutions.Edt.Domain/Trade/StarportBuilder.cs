@@ -22,19 +22,13 @@ namespace Sharpsolutions.Edt.Domain.Trade {
             _Economy = economy;
             _Commodities = commodities;
 
-            _builders.Add(Economy.Extraction, new ExtractionBuilder());
-            _builders.Add(Economy.Refinery, new RefineryBuilder());
-            _builders.Add(Economy.Agriculture, new AgricultureBuilder());
-            _builders.Add(Economy.Industrial, new IndustrialBuilder());
-            _builders.Add(Economy.HighTech, new HighTechBuilder());
+            
 
         }
 
         public Starport Build()
         {
-            IStarportBuilder builder = _builders[_Economy];
-
-            return builder.Build(_Name, _SolarSystemName,_Economy, _Commodities);
+            throw new NotImplementedException();
         }
     }
 }
