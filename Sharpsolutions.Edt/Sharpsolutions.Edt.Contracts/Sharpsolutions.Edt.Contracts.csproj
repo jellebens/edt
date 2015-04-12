@@ -46,7 +46,7 @@
     <Compile Include="Command\Trade\UpdateInventoryCommand.cs" />
     <Compile Include="Data\Eddb\Listing.cs" />
     <Compile Include="Data\Eddb\Station.cs" />
-    <Compile Include="Data\Eddb\SolarSystem.cs" />
+    <Compile Include="Data\Eddb\SolarSystemDto.cs" />
     <Compile Include="Data\InventoryItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
