@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Sharpsolutions.Edt.Contracts.Data.Eddb;
 
 namespace Sharpsolutions.Edt.Data.Eddb
 {

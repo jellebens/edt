@@ -1,12 +1,6 @@
-﻿using Castle.Windsor;
+﻿using System.Diagnostics;
 using Castle.Windsor.Installer;
 using Sharpsolutions.Edt.Data.Castle.Installers;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Castle.Windsor {
     public static class ContainerExtensions {

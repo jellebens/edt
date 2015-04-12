@@ -1,16 +1,10 @@
-﻿using Microsoft.WindowsAzure;
+﻿using System.Linq;
+using Microsoft.Azure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
-using Sharpsolutions.Edt.System;
-using Sharpsolutions.Edt.System.Data;
-using Sharpsolutions.Edt.System.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Castle.MicroKernel.ModelBuilder.Descriptors;
 using Newtonsoft.Json;
+using Sharpsolutions.Edt.System;
+using Sharpsolutions.Edt.System.Domain;
 
 namespace Sharpsolutions.Edt.Data.Azure {
     public abstract class TableStorageBase<TRoot> where TRoot : AgregateRootBase

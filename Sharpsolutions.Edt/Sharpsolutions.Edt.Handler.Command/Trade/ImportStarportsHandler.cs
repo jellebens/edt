@@ -21,7 +21,6 @@ namespace Sharpsolutions.Edt.Handler.Command.Trade {
         private readonly IWebImport<Station> _source;
         private readonly IWebImport<SolarSystemDto> _solarsystems;
         private readonly IRepository<Starport> _destination;
-        private readonly IJobRepository _jobRepository;
         private readonly ILogger _logger;
 
         public ImportStarportsHandler(IWebImport<Station> stations, IWebImport<SolarSystemDto> solarsystems, IRepository<Starport> destination,ILoggerFactory loggerFactory) {

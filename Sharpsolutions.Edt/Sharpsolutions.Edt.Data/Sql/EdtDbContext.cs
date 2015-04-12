@@ -1,6 +1,5 @@
 ﻿using System.Data.Entity;
-using Microsoft.WindowsAzure;
-using Sharpsolutions.Edt.Data.Migrations;
+using Microsoft.Azure;
 
 namespace Sharpsolutions.Edt.Data.Sql {
     public class EdtDbContext: DbContext {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sharpsolutions.Edt.System.Domain;
+﻿using Sharpsolutions.Edt.System.Domain;
 
 namespace Sharpsolutions.Edt.Data.Azure {
     public static class AggregateRootExtensions {

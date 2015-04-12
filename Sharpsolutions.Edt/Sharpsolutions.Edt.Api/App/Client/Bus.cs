@@ -11,6 +11,7 @@ using System.Web;
 using System.IO;
 using Sharpsolutions.Edt.System.Logging;
 using System.Runtime.Serialization.Json;
+using Microsoft.Azure;
 using Sharpsolutions.Edt.System.Serialization.Json;
 
 namespace Sharpsolutions.Edt.Api.App.Client {

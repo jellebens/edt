@@ -1,17 +1,10 @@
-﻿using Microsoft.WindowsAzure;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Table;
-using Sharpsolutions.Edt.Domain.Account;
-using Sharpsolutions.Edt.System;
-using Sharpsolutions.Edt.System.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+using Microsoft.WindowsAzure.Storage.Table;
 using Newtonsoft.Json;
+using Sharpsolutions.Edt.Domain.Account;
 using Sharpsolutions.Edt.System.Domain;
 
 namespace Sharpsolutions.Edt.Data.Azure {

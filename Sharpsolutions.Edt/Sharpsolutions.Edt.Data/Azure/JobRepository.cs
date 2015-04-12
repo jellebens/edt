@@ -1,11 +1,7 @@
-﻿using Microsoft.WindowsAzure.Storage.Table;
+﻿using System;
+using Microsoft.WindowsAzure.Storage.Table;
 using Sharpsolutions.Edt.System.Command;
 using Sharpsolutions.Edt.System.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Azure {
     public class JobRepository: TableStorageBase<Job>, IJobRepository {
