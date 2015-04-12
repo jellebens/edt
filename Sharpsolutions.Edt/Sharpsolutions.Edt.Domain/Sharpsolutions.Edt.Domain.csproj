@@ -44,6 +44,8 @@
     <Compile Include="Account\Events\UserLoggedIn.cs" />
     <Compile Include="Account\Password.cs" />
     <Compile Include="Account\User.cs" />
+    <Compile Include="Core\ComponentMissingException.cs" />
+    <Compile Include="Core\Coordinate.cs" />
     <Compile Include="Core\Distance.cs" />
     <Compile Include="Core\Facility.cs" />
     <Compile Include="Core\Length.cs" />
@@ -52,14 +54,13 @@
     <Compile Include="Trade\Commodity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trade\Economy.cs" />
+    <Compile Include="Trade\Events\StarportCreated.cs" />
     <Compile Include="Trade\IStarportBuilder.cs" />
     <Compile Include="Trade\Level.cs" />
     <Compile Include="Trade\Listing.cs" />
     <Compile Include="Trade\SolarSystem.cs" />
     <Compile Include="Trade\Starport.cs" />
     <Compile Include="Trade\StarportBuilder.cs" />
-    <Compile Include="Trade\StarportBuilderBase.cs" />
-    <Compile Include="Trade\Station.cs" />
     <Compile Include="Trade\StockItem.cs" />
     <Compile Include="Trade\TradeCommodity.cs" />
     <Compile Include="Trade\TradeRoute.cs" />

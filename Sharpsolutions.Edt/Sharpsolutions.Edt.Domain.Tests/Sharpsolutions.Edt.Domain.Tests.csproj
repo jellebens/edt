@@ -46,9 +46,11 @@
     <Compile Include="Account\UserTests.cs" />
     <Compile Include="Commodities\CategoryTests.cs" />
     <Compile Include="Commodities\CommodityTests.cs" />
+    <Compile Include="Fakes\SolarSystems.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Fakes\Starports.cs" />
     <Compile Include="Trade\FakeCommodities.cs" />
+    <Compile Include="Trade\StarportBuilderTests.cs" />
     <Compile Include="Trade\TradeRouteCalculatorTests.cs" />
     <Compile Include="Trade\TradeRouteFinderTests.cs" />
   </ItemGroup>

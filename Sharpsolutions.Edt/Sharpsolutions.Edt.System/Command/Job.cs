@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.System.Command {
-    public class Job: IEntity {
+    public class Job: AgregateRootBase {
         public virtual Guid CommandId { get; protected set; }
         
         public virtual JobStatus Status { get; protected set; }
@@ -33,6 +33,11 @@ namespace Sharpsolutions.Edt.System.Command {
 
         public virtual void Start() {
             this.Status = JobStatus.InProgress;
+        }
+
+        protected override void RegisterHandlers()
+        {
+            
         }
     }
 

@@ -6,11 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using Sharpsolutions.Edt.System.Domain;
+using Sharpsolutions.Edt.Domain.Core;
+using Sharpsolutions.Edt.Domain.Trade.Events;
 
 namespace Sharpsolutions.Edt.Domain.Trade
 {
-    public class Starport : IEntity
-    {
+    public class Starport : AgregateRootBase, IEntity {
         public virtual string Name { get; protected set; }
         public virtual SolarSystem System { get; protected set; }
 
@@ -19,10 +20,23 @@ namespace Sharpsolutions.Edt.Domain.Trade
         public virtual ICollection<StockItem> Goods { get; protected set; }
         public virtual Guid Id { get; protected set; }
 
+
+        protected override void RegisterHandlers() {
+            Register<StarportCreated>(OnStarportCreated);
+        }
+
+        private void OnStarportCreated(StarportCreated evnt) {
+            Id = Guid.NewGuid();
+            this.Name = evnt.Name;
+            this.System = evnt.System;
+        }
+
         public bool Sells(Commodity commodity)
         {
             return Goods.Where(g => g.Commodity.Equals(commodity) && g.Buy.HasValue).Any();
         }
+
+
 
         public bool Buys(Commodity commodity)
         {
@@ -35,7 +49,7 @@ namespace Sharpsolutions.Edt.Domain.Trade
             {
                 Economy = Economy.Parse(economy),
                 Name = name,
-                System = new SolarSystem(system),
+                System = new SolarSystem(system, new Coordinate(0,0,0)),
                 Goods = new List<StockItem>()
             };
 
@@ -76,16 +90,10 @@ namespace Sharpsolutions.Edt.Domain.Trade
             return nameSame && economySame && systemSame;
         }
 
-        public static Starport Create(string name, SolarSystem solarSystemy, Trade.Economy economy)
+        public static Starport Create(string name, SolarSystem solarSystem)
         {
-            Starport starport = new Starport
-            {
-                Economy = economy,
-                Name = name,
-                System = solarSystemy,
-                IsInRange = true,
-                Goods = new List<StockItem>()
-            };
+            Starport starport = new Starport();
+            starport.Apply(new StarportCreated(name, solarSystem));
 
             return starport;
         }

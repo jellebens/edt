@@ -17,7 +17,8 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
 
         [TestFixtureSetUp]
         public void FixtureSetup() {
-
+            new Emulator();
+            _repository.Init();
         }
 
         [Test]
@@ -29,7 +30,7 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
 
         [SetUp]
         public void SetUp() {
-            new Emulator();
+            
         }
 
         [Test]

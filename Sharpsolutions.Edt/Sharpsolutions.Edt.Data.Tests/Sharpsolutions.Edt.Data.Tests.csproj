@@ -83,13 +83,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Azure\Emulator.cs" />
+    <Compile Include="Azure\StarportRepositoryTests.cs" />
     <Compile Include="Azure\UserRepositoryTests.cs" />
     <Compile Include="Eddb\ImportStationtFromEddbTests.cs" />
     <Compile Include="Eddb\Models\Listing.cs" />
     <Compile Include="Eddb\Models\Station.cs" />
     <Compile Include="Eddb\Models\System.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sql\CommodityRepositoryTests.cs" />
     <Compile Include="Sql\StarportRepositoryTests.cs" />
     <Compile Include="Sql\UnitTestDbConfiguration.cs" />
   </ItemGroup>
@@ -101,6 +101,10 @@
     <ProjectReference Include="..\Sharpsolutions.Edt.Data\Sharpsolutions.Edt.Data.csproj">
       <Project>{3dae64af-32f0-4bf4-8281-4a5a9bad6ca5}</Project>
       <Name>Sharpsolutions.Edt.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sharpsolutions.Edt.Domain.Tests\Sharpsolutions.Edt.Domain.Tests.csproj">
+      <Project>{903c9a2e-7641-4665-8f79-545271c0a0d9}</Project>
+      <Name>Sharpsolutions.Edt.Domain.Tests</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sharpsolutions.Edt.Domain\Sharpsolutions.Edt.Domain.csproj">
       <Project>{49e863b6-99b3-4e83-97dc-35241dc1b924}</Project>

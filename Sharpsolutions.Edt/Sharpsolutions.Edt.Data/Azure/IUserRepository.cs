@@ -2,9 +2,8 @@ using Sharpsolutions.Edt.Domain.Account;
 
 namespace Sharpsolutions.Edt.Data.Azure
 {
-    public interface IUserRepository
+    public interface IUserRepository : IRepository<User>
     {
-        void CommitChanges(User user);
-        User Get(string id);
+        
     }
 }

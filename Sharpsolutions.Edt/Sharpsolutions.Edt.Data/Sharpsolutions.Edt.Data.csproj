@@ -83,59 +83,19 @@
   <ItemGroup>
     <Compile Include="Azure\AggregateRootExtensions.cs" />
     <Compile Include="Azure\EventEntity.cs" />
+    <Compile Include="Azure\IRepository.cs" />
     <Compile Include="Azure\IUserRepository.cs" />
     <Compile Include="Azure\JobRepository.cs" />
+    <Compile Include="Azure\StarportRepository.cs" />
     <Compile Include="Azure\TableStorageBase.cs" />
     <Compile Include="Azure\UserRepository.cs" />
     <Compile Include="Castle\ContainerExtensions.cs" />
     <Compile Include="Castle\Installers\DataInstaller.cs" />
-    <Compile Include="Migrations\201412110838587_Initial.cs" />
-    <Compile Include="Migrations\201412110838587_Initial.Designer.cs">
-      <DependentUpon>201412110838587_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412110841405_AddUniqueConstraints.cs" />
-    <Compile Include="Migrations\201412110841405_AddUniqueConstraints.Designer.cs">
-      <DependentUpon>201412110841405_AddUniqueConstraints.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412121940270_AddStarports.cs" />
-    <Compile Include="Migrations\201412121940270_AddStarports.Designer.cs">
-      <DependentUpon>201412121940270_AddStarports.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412121958358_InsertDefaultCommodities.cs" />
-    <Compile Include="Migrations\201412121958358_InsertDefaultCommodities.Designer.cs">
-      <DependentUpon>201412121958358_InsertDefaultCommodities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412171338374_AddBuySellPrices.cs" />
-    <Compile Include="Migrations\201412171338374_AddBuySellPrices.Designer.cs">
-      <DependentUpon>201412171338374_AddBuySellPrices.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412191202185_RemoveImportAndExportFromGoods.cs" />
-    <Compile Include="Migrations\201412191202185_RemoveImportAndExportFromGoods.Designer.cs">
-      <DependentUpon>201412191202185_RemoveImportAndExportFromGoods.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412261959492_AddIsInRangeProperty.cs" />
-    <Compile Include="Migrations\201412261959492_AddIsInRangeProperty.Designer.cs">
-      <DependentUpon>201412261959492_AddIsInRangeProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502231520536_AddUniqueConstraintsOnStarPort.cs" />
-    <Compile Include="Migrations\201502231520536_AddUniqueConstraintsOnStarPort.Designer.cs">
-      <DependentUpon>201502231520536_AddUniqueConstraintsOnStarPort.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Sql\Mapping.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sql\CommodityRepository.cs" />
     <Compile Include="Sql\EdtConfiguration.cs" />
-    <Compile Include="Sql\Mappings\CategoryMap.cs" />
-    <Compile Include="Sql\Mappings\CommodityMap.cs" />
-    <Compile Include="Sql\Mappings\EconomyMap.cs" />
-    <Compile Include="Sql\Mappings\Mapping.cs" />
     <Compile Include="Sql\EdtDbContext.cs" />
-    <Compile Include="Sql\Mappings\MigrationsBuilders.cs" />
-    <Compile Include="Sql\Mappings\SolarSystemMap.cs" />
-    <Compile Include="Sql\Mappings\StarportMap.cs" />
-    <Compile Include="Sql\Mappings\StockItemMap.cs" />
-    <Compile Include="Sql\RepositoryBase.cs" />
-    <Compile Include="Sql\StarportRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -153,32 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Migrations\commands.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201412110838587_Initial.resx">
-      <DependentUpon>201412110838587_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412110841405_AddUniqueConstraints.resx">
-      <DependentUpon>201412110841405_AddUniqueConstraints.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412121940270_AddStarports.resx">
-      <DependentUpon>201412121940270_AddStarports.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412121958358_InsertDefaultCommodities.resx">
-      <DependentUpon>201412121958358_InsertDefaultCommodities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412171338374_AddBuySellPrices.resx">
-      <DependentUpon>201412171338374_AddBuySellPrices.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412191202185_RemoveImportAndExportFromGoods.resx">
-      <DependentUpon>201412191202185_RemoveImportAndExportFromGoods.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412261959492_AddIsInRangeProperty.resx">
-      <DependentUpon>201412261959492_AddIsInRangeProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502231520536_AddUniqueConstraintsOnStarPort.resx">
-      <DependentUpon>201502231520536_AddUniqueConstraintsOnStarPort.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Eddb\" />

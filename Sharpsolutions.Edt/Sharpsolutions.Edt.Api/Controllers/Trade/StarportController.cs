@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Http;
 using Sharpsolutions.Edt.Api.Models.Trade;
 using Sharpsolutions.Edt.Contracts.Command.Trade;
+using Sharpsolutions.Edt.Data.Azure;
 using Sharpsolutions.Edt.System.Command;
 using Sharpsolutions.Edt.System.Data;
 using Sharpsolutions.Edt.Domain.Trade;
@@ -22,41 +23,16 @@ namespace Sharpsolutions.Edt.Api.Controllers.Trade {
         [Route("")]
         [Authorize]
         [HttpGet]
-        public StarportListModel[] List() {
-            IEnumerable<Starport> starports = _repository.Query();
-
-            StarportListModel[] result = starports.OrderBy(s => s.Name).Select(s => new StarportListModel() {
-                Economy = s.Economy.DisplayName,
-                Name = s.Name,
-                System = s.System.Name
-            }).ToArray();
-
-            return result;
+        public IHttpActionResult List() {
+            return BadRequest("Not implemented yet");
         }
 
         [Route("detail")]
         [Authorize]
         [HttpGet]
-        public StarportDetailModel Detail(string name) {
-            Starport starport = _repository.Query()
-                .Include(x => x.Goods.Select(g => g.Commodity.Category))
-                .Single(x => x.Name == name);
-
-            StarportDetailModel result = new StarportDetailModel();
-            result.Economy = starport.Economy.DisplayName;
-            result.Name = starport.Name;
-            result.System = starport.System.Name;
-
-            result.Goods = starport.Goods.Select(g => new StockItemModel() {
-                Name = g.Commodity.Name,
-                Category = g.Commodity.Category.Name,
-                Sell = g.Sell,
-                Buy =  g.Buy
-
-
-            }).OrderBy(x => x.Category).ToArray();
-
-            return result;
+        public IHttpActionResult Detail(string name)
+        {
+            return BadRequest("Not implemented yet");
         }
 
         [Route("create")]

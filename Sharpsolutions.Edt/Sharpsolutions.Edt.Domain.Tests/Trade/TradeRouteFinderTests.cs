@@ -15,11 +15,11 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
         [Test]
         public void FindHAvingOnlyOneOtherStarportShouldCalculateProfit()
         {
-            Starport origin = Starports.HuiMines();
+            Starport origin = Starports.DrzewieckiGateway();
             Starport[] destinations = new[]
             {
-                Starports.Kaku(),
-                Starports.HuiMines()
+                Starports.McKayPort(),
+                Starports.DrzewieckiGateway()
             };
 
             TradeRouteCalculator finder = new TradeRouteCalculator(destinations);
@@ -29,7 +29,7 @@ namespace Sharpsolutions.Edt.Domain.Tests.Trade {
             Assert.AreEqual(5133, route.Buy);
             Assert.AreEqual(5818, route.Sell);
             Assert.AreEqual(685, route.Profit);
-            Assert.AreNotEqual(Starports.HuiMines(), route.Destination);
+            Assert.AreNotEqual(Starports.DrzewieckiGateway(), route.Destination);
             
         }
     }

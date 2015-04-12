@@ -15,52 +15,18 @@ using Newtonsoft.Json;
 using Sharpsolutions.Edt.System.Domain;
 
 namespace Sharpsolutions.Edt.Data.Azure {
-    public class UserRepository : IUserRepository {
-        public void CommitChanges(User user) {
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-                                                                     CloudConfigurationManager.GetSetting(Settings.Storage.Table.ConfigKey));
-
-            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
-
-            CloudTable table = tableClient.GetTableReference("users");
-
-            string partionKey = user.Username;
-            string rowKey = user.Version.ToString("D20");
-
-            table.CreateIfNotExists();
+    public class UserRepository : TableStorageBase<User>, IUserRepository {
 
 
-            TableBatchOperation batchOperation = new TableBatchOperation();
-            if (user.PendingChanges.Any())
-            {
-                foreach (EventBase change in user.PendingChanges) {
-
-                    EventEntity eventRecored = new EventEntity(partionKey, rowKey)
-                    {
-                        Payload = JsonConvert.SerializeObject(change, new JsonSerializerSettings()
-                        {
-                            TypeNameHandling = TypeNameHandling.All
-                        })
-                    };
-
-                    batchOperation.Insert(eventRecored);
-                }
-
-                table.ExecuteBatch(batchOperation);
-            }
-            
-            
-
-
+        protected override string Table { get { return "users"; } }
+        protected override string GetPartitionKey(User root)
+        {
+            return root.Username;
         }
-
-        public User Get(string id) {
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-                                                                    CloudConfigurationManager.GetSetting(Settings.Storage.Table.ConfigKey));
-
-            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
-
-            CloudTable table = tableClient.GetTableReference("users");
+        
+        public User Get(string id)
+        {
+            CloudTable table = Build();
 
             TableQuery<EventEntity> query = new TableQuery<EventEntity>()
                 .Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, id));
@@ -88,8 +54,6 @@ namespace Sharpsolutions.Edt.Data.Azure {
            
             return u;
         }
-
-
-
+        
     }
 }

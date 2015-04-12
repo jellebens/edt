@@ -11,38 +11,23 @@ using Castle.Core.Internal;
 using Castle.Core.Logging;
 using Sharpsolutions.Edt.Contracts.Command.Trade;
 using Sharpsolutions.Edt.Contracts.Data;
+using Sharpsolutions.Edt.Data.Azure;
 using Sharpsolutions.Edt.Data.Sql;
 using Sharpsolutions.Edt.Domain.Trade;
 
 namespace Sharpsolutions.Edt.Handler.Command.Trade {
     public class UpdateInventoryCommandHandler : CommandHandlerBase<UpdateInventoryCommand>
     {
-        private readonly DbContext _dbContext;
-        private readonly RepositoryBase<Starport> _starportRepository;
+    
 
-
-        public UpdateInventoryCommandHandler(DbContext dbContext, ILoggerFactory loggerFactory)
+        public UpdateInventoryCommandHandler(ILoggerFactory loggerFactory)
         {
-            _dbContext = dbContext;
-            _starportRepository = new StarportRepository(dbContext, loggerFactory);
+    
         }
 
         public override void Execute(UpdateInventoryCommand command)
         {
-            IQueryable<Commodity> commodities =  _dbContext.Set<Commodity>()
-                                                    .Include(c => c.Category);
-            
-            Starport starport = _starportRepository.Query().Single(s => s.Name == command.Starport && s.System.Name == command.System);
-
-            foreach (InventoryItem item in command.Goods)
-            {
-                Commodity commodity =
-                    commodities.Single(c => c.Name == item.Commodity && c.Category.Name == item.Category);
-
-                starport.Update(commodity, item.Sell, item.Buy);
-            }
-
-            _starportRepository.Commit();
+            throw new NotImplementedException();
         }
     }
 }

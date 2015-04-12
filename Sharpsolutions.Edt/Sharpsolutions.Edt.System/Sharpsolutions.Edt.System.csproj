@@ -69,7 +69,6 @@
     <Compile Include="Command\JobService.cs" />
     <Compile Include="Command\JobStatus.cs" />
     <Compile Include="Data\IJobRepository.cs" />
-    <Compile Include="Data\IRepository.cs" />
     <Compile Include="Domain\AgregateRootBase.cs" />
     <Compile Include="Domain\EventBase.cs" />
     <Compile Include="Domain\IEventSourced.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sharpsolutions.Edt.Domain.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.AccessControl;
@@ -12,13 +13,17 @@ namespace Sharpsolutions.Edt.Domain.Trade {
 
         }
 
-        public SolarSystem(string name)
+        public SolarSystem(string name, Coordinate position)
         {
             this.Name = name;
+            this.Position = position;
         }
 
+        public Coordinate Position { get; private set; }
         public string Name { get; private set; }
         public Guid Id { get; set; }
+
+
 
         public static bool operator ==(SolarSystem left, SolarSystem right) {
             if (object.ReferenceEquals(left, null)) {

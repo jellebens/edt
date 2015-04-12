@@ -8,11 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Data.Azure {
-    public class JobRepository: TableStorageBase, IJobRepository {
-        protected override string Table {
-            get {
-                return "jobs";
-            }
+    public class JobRepository: TableStorageBase<Job>, IJobRepository {
+        protected override string Table => "jobs";
+
+        protected override string GetPartitionKey(Job entity)
+        {
+            return entity.CommandId.ToString();
         }
 
         public void Add(Job job) {
@@ -21,7 +22,7 @@ namespace Sharpsolutions.Edt.Data.Azure {
 
             DynamicTableEntity entity = new DynamicTableEntity();
 
-            entity.PartitionKey = job.CommandId.ToString();
+            entity.PartitionKey = GetPartitionKey(job);
             entity.RowKey = job.CommandId.ToString();
             entity.Properties.Add("Status", new EntityProperty(job.Status.Value));
             entity.Properties.Add("CommandId", new EntityProperty(job.CommandId));
