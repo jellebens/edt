@@ -70,6 +70,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Spatial, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\System.Spatial.5.6.3\lib\net40\System.Spatial.dll</HintPath>
@@ -91,6 +92,9 @@
     <Compile Include="Azure\UserRepository.cs" />
     <Compile Include="Castle\ContainerExtensions.cs" />
     <Compile Include="Castle\Installers\DataInstaller.cs" />
+    <Compile Include="Eddb\IWebImport.cs" />
+    <Compile Include="Eddb\StationWebImport.cs" />
+    <Compile Include="Eddb\WebImportBase.cs" />
     <Compile Include="Sql\Mapping.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +106,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Sharpsolutions.Edt.Contracts\Sharpsolutions.Edt.Contracts.csproj">
+      <Project>{6BE8E39D-18C7-49AC-84BC-0F8E66A7C9FA}</Project>
+      <Name>Sharpsolutions.Edt.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sharpsolutions.Edt.Domain\Sharpsolutions.Edt.Domain.csproj">
       <Project>{49e863b6-99b3-4e83-97dc-35241dc1b924}</Project>
       <Name>Sharpsolutions.Edt.Domain</Name>
@@ -114,9 +122,7 @@
   <ItemGroup>
     <Content Include="Migrations\commands.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Eddb\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

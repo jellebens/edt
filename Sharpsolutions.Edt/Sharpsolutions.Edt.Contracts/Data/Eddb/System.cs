@@ -1,4 +1,4 @@
-﻿namespace Sharpsolutions.Edt.Data.Tests.Eddb.Models
+﻿namespace Sharpsolutions.Edt.Contracts.Data.Eddb
 {
     public class System
     {

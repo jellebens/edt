@@ -7,7 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using NUnit.Framework;
-using Sharpsolutions.Edt.Data.Tests.Eddb.Models;
+using Sharpsolutions.Edt.Contracts.Data.Eddb;
+using Sharpsolutions.Edt.Data.Eddb;
 using Sharpsolutions.Edt.System.UnitTests.NUnit;
 
 namespace Sharpsolutions.Edt.Data.Tests.Eddb {
@@ -15,24 +16,11 @@ namespace Sharpsolutions.Edt.Data.Tests.Eddb {
     public class ImportStationtFromEddbTests {
         [Test, IntegrationTest]
         public void ImportShouldLoadStarports() {
-            using (WebClient client = new WebClient()) {
-                client.BaseAddress = "http://eddb.io/";
+            StationWebImport import = new StationWebImport();
 
-                byte[] data = client.DownloadData("archive/v3/stations.json");
-                using (MemoryStream ms = new MemoryStream(data)) {
+            IList<Station> stations = import.Load();
 
-                    using (StreamReader sr = new StreamReader(ms)) {
-                        using (JsonReader reader = new JsonTextReader(sr)) {
-                            JsonSerializer serializer = new JsonSerializer();
-
-                            List<Station> stations = serializer.Deserialize<List<Station>>(reader);
-                            Console.WriteLine("Found {0} stations" , stations.Count);
-                            Assert.AreNotEqual(0, stations.Count);
-                        }
-                    }
-                }
-
-            }
+            Assert.IsNotNull(stations);
         }
     }
 }
