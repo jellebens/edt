@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sharpsolutions.Edt.System.UnitTests.Azure;
 
 namespace Sharpsolutions.Edt.Data.Tests.Azure {
     [TestFixture]

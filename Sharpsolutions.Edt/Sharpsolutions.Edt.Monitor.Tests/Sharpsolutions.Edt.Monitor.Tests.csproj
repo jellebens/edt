@@ -92,6 +92,7 @@
     <Content Include="Input\netLog.1411151638.01.log">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

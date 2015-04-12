@@ -8,6 +8,7 @@ using Sharpsolutions.Edt.Data.Azure;
 using Sharpsolutions.Edt.Domain.Tests.Fakes;
 using Sharpsolutions.Edt.Domain.Tests.Trade.Fakes;
 using Sharpsolutions.Edt.Domain.Trade;
+using Sharpsolutions.Edt.System.UnitTests.Azure;
 
 namespace Sharpsolutions.Edt.Data.Tests.Azure {
     [TestFixture]
@@ -16,7 +17,7 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
 
         [TestFixtureSetUp]
         public void FixtureSetup() {
-            new Emulator();
+            Emulator.Start();
             _repository.Init();
         }
 

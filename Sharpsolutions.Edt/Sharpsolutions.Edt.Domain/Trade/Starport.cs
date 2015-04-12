@@ -18,9 +18,7 @@ namespace Sharpsolutions.Edt.Domain.Trade
         public virtual Economy Economy { get; protected set; }
 
         public virtual ICollection<StockItem> Goods { get; protected set; }
-        public virtual Guid Id { get; protected set; }
-
-
+        
         protected override void RegisterHandlers() {
             Register<StarportCreated>(OnStarportCreated);
         }

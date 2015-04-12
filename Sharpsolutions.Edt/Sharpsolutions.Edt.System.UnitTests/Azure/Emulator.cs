@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Sharpsolutions.Edt.Data.Tests.Azure {
+namespace Sharpsolutions.Edt.System.UnitTests.Azure {
 
     public class Emulator : IDisposable {
         private const string ProcessName = "WAStorageEmulator.exe";
@@ -44,6 +41,11 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
         }
 
         public bool IsRunning { get; private set; }
+
+        public static Emulator Start()
+        {
+            return new Emulator();
+        }
     }
 }
 

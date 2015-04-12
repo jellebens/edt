@@ -13,6 +13,11 @@ namespace Sharpsolutions.Edt.System.Logging {
             public const string Sql = Base + "SQL";
         }
 
+        public static class Import
+        {
+            public const string Eddb = Base + "Eddb";
+        }
+
         public static class Monitor
         {
             public const string Parse = Base + "Monitor";

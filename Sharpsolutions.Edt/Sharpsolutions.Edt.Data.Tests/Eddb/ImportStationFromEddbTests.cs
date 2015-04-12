@@ -13,7 +13,7 @@ using Sharpsolutions.Edt.System.UnitTests.NUnit;
 
 namespace Sharpsolutions.Edt.Data.Tests.Eddb {
     [TestFixture]
-    public class ImportStationtFromEddbTests {
+    public class ImportStationFromEddbTests {
         [Test, IntegrationTest]
         public void ImportShouldLoadStarports() {
             StationWebImport import = new StationWebImport();

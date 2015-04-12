@@ -19,6 +19,7 @@ using Sharpsolutions.Edt.System.Serialization.Json;
 using Sharpsolutions.Edt.Contracts.Command.Account;
 using Sharpsolutions.Edt.Handler.Command.Castle.Installer;
 using System.Runtime.Serialization;
+using Microsoft.Azure;
 using Sharpsolutions.Edt.Data.Castle.Installers;
 using Sharpsolutions.Edt.Data.Azure;
 using Sharpsolutions.Edt.System.Data;

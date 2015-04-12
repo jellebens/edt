@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sharpsolutions.Edt.Domain.Core {
-    public struct Coordinate {
+    public struct Coordinate
+    {
+        public static Coordinate None = new Coordinate(0,0,0);
         private double _x;
         private double _y;
         private double _z;

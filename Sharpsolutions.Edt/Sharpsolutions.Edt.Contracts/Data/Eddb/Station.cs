@@ -1,31 +1,33 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Sharpsolutions.Edt.Contracts.Data.Eddb
 {
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class Station
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int SystemId { get; set; }
-        public string MaxLandingPadSize { get; set; }
-        public int? DistanceToStar { get; set; }
-        public string Faction { get; set; }
-        public object Government { get; set; }
-        public object Allegiance { get; set; }
-        public object State { get; set; }
-        public string Type { get; set; }
-        public object HasBlackmarket { get; set; }
-        public int? HasCommodities { get; set; }
-        public int? HasRefuel { get; set; }
-        public int? HasRepair { get; set; }
-        public int? HasRearm { get; set; }
-        public int? HasOutfitting { get; set; }
-        public int? HasShipyard { get; set; }
-        public List<string> ImportCommodities { get; set; }
-        public List<string> ExportCommodities { get; set; }
-        public List<string> ProhibitedCommodities { get; set; }
-        public List<string> Economies { get; set; }
-        public int UpdatedAt { get; set; }
-        public List<Listing> Listings { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public int system_id { get; set; }
+        public string max_landing_pad_size { get; set; }
+        public int? distance_to_star { get; set; }
+        public string faction { get; set; }
+        public object government { get; set; }
+        public object allegiance { get; set; }
+        public object state { get; set; }
+        public string type { get; set; }
+        public object has_blackmarket { get; set; }
+        public int? has_commodities { get; set; }
+        public int? has_refuel { get; set; }
+        public int? has_repair { get; set; }
+        public int? has_rearm { get; set; }
+        public int? has_outfitting { get; set; }
+        public int? has_shipyard { get; set; }
+        public List<string> import_commodities { get; set; }
+        public List<string> export_commodities { get; set; }
+        public List<string> prohibited_commodities { get; set; }
+        public List<string> economies { get; set; }
+        public int updated_at { get; set; }
+        public List<Listing> listings { get; set; }
     }
 }
