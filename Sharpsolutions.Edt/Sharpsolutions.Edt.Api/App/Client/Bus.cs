@@ -1,6 +1,4 @@
 ﻿using Castle.Core.Logging;
-using Microsoft.ServiceBus;
-using Microsoft.ServiceBus.Messaging;
 using Microsoft.WindowsAzure;
 using Sharpsolutions.Edt.System;
 using Sharpsolutions.Edt.System.Command;
@@ -13,6 +11,8 @@ using Sharpsolutions.Edt.System.Logging;
 using System.Runtime.Serialization.Json;
 using Microsoft.Azure;
 using Sharpsolutions.Edt.System.Serialization.Json;
+using Microsoft.ServiceBus.Messaging;
+using Microsoft.ServiceBus;
 
 namespace Sharpsolutions.Edt.Api.App.Client {
     public class Bus : IBus {
