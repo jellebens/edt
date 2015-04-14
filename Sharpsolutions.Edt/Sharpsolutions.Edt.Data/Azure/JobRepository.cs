@@ -5,7 +5,7 @@ using Sharpsolutions.Edt.System.Data;
 
 namespace Sharpsolutions.Edt.Data.Azure {
     public class JobRepository: TableStorageBase<Job>, IJobRepository {
-        protected override string Table => "jobs";
+        protected override string Table { get { return "jobs"; } }
 
         protected override string GetPartitionKey(Job entity)
         {
