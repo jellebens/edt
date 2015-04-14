@@ -15,6 +15,7 @@ before_build:
 build:
   project: Sharpsolutions.Edt\Sharpsolutions.Edt.sln
   verbosity: normal
+os: Visual Studio 2015 CTP 6
 test:
   categories:
     except:
