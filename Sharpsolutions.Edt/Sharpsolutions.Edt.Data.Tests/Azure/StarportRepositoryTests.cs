@@ -31,6 +31,7 @@ namespace Sharpsolutions.Edt.Data.Tests.Azure {
         }
 
         [Test]
+        [Ignore("Ignored due to refactoring in progress")]
         public void GetShouldGet()
         {
             Assert.Fail();
