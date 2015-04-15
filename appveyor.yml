@@ -17,7 +17,7 @@ build:
   verbosity: normal
 os: Visual Studio 2015 CTP 6
 cache:
-  - C:\Users\appveyor\AppData\Local\NuGet\Cache
+  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset 
 test:
   categories:
     except:
