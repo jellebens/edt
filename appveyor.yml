@@ -21,4 +21,4 @@ cache:
 test:
   categories:
     except:
-    - Integration Test
+    - "Integration Test"
