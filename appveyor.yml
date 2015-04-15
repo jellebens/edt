@@ -16,6 +16,8 @@ build:
   project: Sharpsolutions.Edt\Sharpsolutions.Edt.sln
   verbosity: normal
 os: Visual Studio 2015 CTP 6
+cache:
+  - C:\Users\appveyor\AppData\Local\NuGet\Cache
 test:
   categories:
     except:
