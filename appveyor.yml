@@ -12,7 +12,7 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 before_build:
-- nuget restore Sharpsolutions.Edt\Sharpsolutions.Edt.sln
+- nuget restore
 build:
   project: Sharpsolutions.Edt\Sharpsolutions.Edt.sln
   verbosity: normal
