@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ServiceDefinition name="Sharpsolutions.Edt.Services" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
+<ServiceDefinition name="Sharpsolutions.Edt.Services" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2015-04.2.6">
   <WorkerRole name="Sharpsolutions.Edt.Worker.Command" vmsize="ExtraSmall">
     <ConfigurationSettings>
       <Setting name="Edt.ServiceBus.ConnectionString" />

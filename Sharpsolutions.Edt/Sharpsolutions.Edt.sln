@@ -1,18 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.22609.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Web", "Sharpsolutions.Edt.Web\Sharpsolutions.Edt.Web.csproj", "{0E15E272-09DC-4BFF-8C07-3F4B73B00051}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Api", "Sharpsolutions.Edt.Api\Sharpsolutions.Edt.Api.csproj", "{CCBFE7DB-BEEA-4EB8-B2FD-44732E4FAE15}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Contracts", "Sharpsolutions.Edt.Contracts\Sharpsolutions.Edt.Contracts.csproj", "{6BE8E39D-18C7-49AC-84BC-0F8E66A7C9FA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.System", "Sharpsolutions.Edt.System\Sharpsolutions.Edt.System.csproj", "{36B606DF-AD7B-4F76-AD1A-B803C7F500C9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.System.Web", "Sharpsolutions.Edt.System.web\Sharpsolutions.Edt.System.Web.csproj", "{934CFAD4-3919-4F62-8514-8883697AACB5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{647A3D64-91D1-499C-9C3D-BAE07C5C7941}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{3E94A56E-8795-4BAA-B5AA-39EF77D8729C}"
@@ -23,6 +13,34 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "System", "System", "{329434
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{9B2F1CB4-D886-4159-BC79-3BA970C59B5E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{38D2C50D-3A0F-47D6-9D19-F40E97F828FC}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91EC3754-0C20-4E9B-934A-A461C324F297}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Performance1.psess = Performance1.psess
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".deployment", ".deployment", "{CCB81B2A-37A6-43E1-85BC-84BA7A26FECD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "local", "local", "{4D3C4815-AF8A-4073-81EF-E73E0252BF9F}"
+	ProjectSection(SolutionItems) = preProject
+		.deployment\local\create-dev-env.ps1 = .deployment\local\create-dev-env.ps1
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Web", "Sharpsolutions.Edt.Web\Sharpsolutions.Edt.Web.csproj", "{0E15E272-09DC-4BFF-8C07-3F4B73B00051}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Api", "Sharpsolutions.Edt.Api\Sharpsolutions.Edt.Api.csproj", "{CCBFE7DB-BEEA-4EB8-B2FD-44732E4FAE15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Contracts", "Sharpsolutions.Edt.Contracts\Sharpsolutions.Edt.Contracts.csproj", "{6BE8E39D-18C7-49AC-84BC-0F8E66A7C9FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.System", "Sharpsolutions.Edt.System\Sharpsolutions.Edt.System.csproj", "{36B606DF-AD7B-4F76-AD1A-B803C7F500C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.System.Web", "Sharpsolutions.Edt.System.web\Sharpsolutions.Edt.System.Web.csproj", "{934CFAD4-3919-4F62-8514-8883697AACB5}"
+EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Sharpsolutions.Edt.Services", "Sharpsolutions.Edt.Services\Sharpsolutions.Edt.Services.ccproj", "{6B565D53-0066-44B4-8353-73D944A2F58A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Worker.Command", "Sharpsolutions.Edt.Worker.Command\Sharpsolutions.Edt.Worker.Command.csproj", "{9F258E6D-F347-4D43-A432-A03157BBA4FC}"
@@ -31,20 +49,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Handler.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.System.Tests", "Sharpsolutions.Edt.System.Tests\Sharpsolutions.Edt.System.Tests.csproj", "{B470C5E0-4C23-4516-AFF1-30826BEB7BB4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{38D2C50D-3A0F-47D6-9D19-F40E97F828FC}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Data", "Sharpsolutions.Edt.Data\Sharpsolutions.Edt.Data.csproj", "{3DAE64AF-32F0-4BF4-8281-4A5A9BAD6CA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Domain", "Sharpsolutions.Edt.Domain\Sharpsolutions.Edt.Domain.csproj", "{49E863B6-99B3-4E83-97DC-35241DC1B924}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91EC3754-0C20-4E9B-934A-A461C324F297}"
-	ProjectSection(SolutionItems) = preProject
-		Local.testsettings = Local.testsettings
-		Performance1.psess = Performance1.psess
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Data.Tests", "Sharpsolutions.Edt.Data.Tests\Sharpsolutions.Edt.Data.Tests.csproj", "{31E0FCF0-98AF-44C7-A42C-7597130EB26F}"
 EndProject
@@ -55,13 +62,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.Api.Tests", "Sharpsolutions.Edt.Api.Tests\Sharpsolutions.Edt.Api.Tests.csproj", "{7049E284-B20A-4306-9B94-D4C789DFA3BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.System.WebTest", "Sharpsolutions.Edt.System.WebTest\Sharpsolutions.Edt.System.WebTest.csproj", "{A0E49F39-0F56-4A4A-8000-35D31074FEDD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".deployment", ".deployment", "{CCB81B2A-37A6-43E1-85BC-84BA7A26FECD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "local", "local", "{4D3C4815-AF8A-4073-81EF-E73E0252BF9F}"
-	ProjectSection(SolutionItems) = preProject
-		.deployment\local\create-dev-env.ps1 = .deployment\local\create-dev-env.ps1
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpsolutions.Edt.System.UnitTests", "Sharpsolutions.Edt.System.UnitTests\Sharpsolutions.Edt.System.UnitTests.csproj", "{6C5F6697-7E9B-4428-B415-84735A8A5414}"
 EndProject
@@ -144,13 +144,15 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{484B67D4-9267-4C06-A7FD-7127A1F92710} = {647A3D64-91D1-499C-9C3D-BAE07C5C7941}
+		{9B2F1CB4-D886-4159-BC79-3BA970C59B5E} = {647A3D64-91D1-499C-9C3D-BAE07C5C7941}
+		{CCB81B2A-37A6-43E1-85BC-84BA7A26FECD} = {91EC3754-0C20-4E9B-934A-A461C324F297}
+		{4D3C4815-AF8A-4073-81EF-E73E0252BF9F} = {CCB81B2A-37A6-43E1-85BC-84BA7A26FECD}
 		{0E15E272-09DC-4BFF-8C07-3F4B73B00051} = {3E94A56E-8795-4BAA-B5AA-39EF77D8729C}
 		{CCBFE7DB-BEEA-4EB8-B2FD-44732E4FAE15} = {3E94A56E-8795-4BAA-B5AA-39EF77D8729C}
 		{6BE8E39D-18C7-49AC-84BC-0F8E66A7C9FA} = {32943498-926D-4E60-894B-C6FBF8B0C85B}
 		{36B606DF-AD7B-4F76-AD1A-B803C7F500C9} = {32943498-926D-4E60-894B-C6FBF8B0C85B}
 		{934CFAD4-3919-4F62-8514-8883697AACB5} = {32943498-926D-4E60-894B-C6FBF8B0C85B}
-		{484B67D4-9267-4C06-A7FD-7127A1F92710} = {647A3D64-91D1-499C-9C3D-BAE07C5C7941}
-		{9B2F1CB4-D886-4159-BC79-3BA970C59B5E} = {647A3D64-91D1-499C-9C3D-BAE07C5C7941}
 		{6B565D53-0066-44B4-8353-73D944A2F58A} = {484B67D4-9267-4C06-A7FD-7127A1F92710}
 		{9F258E6D-F347-4D43-A432-A03157BBA4FC} = {484B67D4-9267-4C06-A7FD-7127A1F92710}
 		{683601FC-9DFB-47D9-9D45-258255C242F6} = {9B2F1CB4-D886-4159-BC79-3BA970C59B5E}
@@ -162,8 +164,6 @@ Global
 		{2AB8CFAB-9C35-4B16-94C8-F83CEDBD8B73} = {9B2F1CB4-D886-4159-BC79-3BA970C59B5E}
 		{7049E284-B20A-4306-9B94-D4C789DFA3BA} = {3E94A56E-8795-4BAA-B5AA-39EF77D8729C}
 		{A0E49F39-0F56-4A4A-8000-35D31074FEDD} = {32943498-926D-4E60-894B-C6FBF8B0C85B}
-		{CCB81B2A-37A6-43E1-85BC-84BA7A26FECD} = {91EC3754-0C20-4E9B-934A-A461C324F297}
-		{4D3C4815-AF8A-4073-81EF-E73E0252BF9F} = {CCB81B2A-37A6-43E1-85BC-84BA7A26FECD}
 		{6C5F6697-7E9B-4428-B415-84735A8A5414} = {32943498-926D-4E60-894B-C6FBF8B0C85B}
 	EndGlobalSection
 EndGlobal
