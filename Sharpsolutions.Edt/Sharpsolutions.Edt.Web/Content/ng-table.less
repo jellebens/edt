@@ -14,7 +14,7 @@
         &.sortable {
             cursor: pointer;
 
-            div {
+            .sort-indicator {
                 padding-right: 18px;
                 position: relative;
 
@@ -24,7 +24,7 @@
                     border-style: solid;
                     border-color: #000 transparent;
                     visibility: visible;
-                    right: 8px;
+                    right: 5px;
                     top: 50%;
                     position: absolute;
                     opacity: .3;
@@ -39,7 +39,7 @@
                 }
             }
 
-            div:hover:after, div:hover:before {
+            .sort-indicator:hover:after, .sort-indicator:hover:before {
                 opacity: 1;
                 visibility: visible;
             }
@@ -47,21 +47,21 @@
                 background-color: rgba(141, 192, 219, 0.25);
                 text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 
-                div:after {
+                .sort-indicator:after {
                     margin-top: -2px;
                 }
-                div:before {
+                .sort-indicator:before {
                     visibility: hidden;
                 }
             }
-            &.sort-asc div:after, &.sort-asc div:hover:after {
+            &.sort-asc .sort-indicator:after, &.sort-asc .sort-indicator:hover:after {
                 visibility: visible;
                 filter: alpha(opacity=60);
                 -khtml-opacity: 0.6;
                 -moz-opacity: 0.6;
                 opacity: 0.6;
             }
-            &.sort-desc div:after {
+            &.sort-desc .sort-indicator:after {
                 border-bottom: none;
                 border-left: 4px solid transparent;
                 border-right: 4px solid transparent;
@@ -89,8 +89,19 @@
         }
     }
 
-    & + .pagination {
-        margin-top: 0;
+    .ng-table-group-header {
+        th {
+            text-align: left;
+        }
+    }
+    .ng-table-group-selector {
+        display: block;
+    }
+    .ng-table-group-close, .ng-table-group-toggle {
+        float: right;
+    }
+    .ng-table-group-toggle {
+        margin-right: 5px;
     }
 }
 
@@ -146,6 +157,86 @@
     }
 
     .ng-table-pager {}
-    .ng-table-pagination {}
     .ng-table-counts {}
+}
+
+.ng-table-pagination {
+    margin-top: 0;
+}
+
+.ng-table-group-selector:before,
+.ng-table-group-selector:after,
+.filter:before,
+.filter:after {
+    display: table;
+    content: " ";
+}
+.ng-table-group-selector:after,
+.filter:after {
+    clear: both;
+}
+
+.filter > .filter-cell {
+    float: left;
+    box-sizing: border-box;
+}
+
+.filter-horizontal > .filter-cell {
+    padding: 0 2px;
+}
+
+.filter-horizontal > .filter-cell:first-child {
+    padding-left: 0;
+}
+
+.filter-horizontal > .filter-cell {
+    &:last-child, &.last {
+        padding-right: 0;
+    }
+}
+
+.s12 {
+    width: 100%;
+}
+.s11 {
+    width: 91.66666666666666%;
+}
+.s10 {
+    width: 83.33333333333334%;
+}
+.s9 {
+    width: 75%;
+}
+.s8 {
+    width: 66.66666666666666%;
+}
+.s7 {
+    width: 58.333333333333336%;
+}
+.s6 {
+    width: 50%;
+}
+.s5 {
+    width: 41.66666666666667%;
+}
+.s4 {
+    width: 33.33333333333333%;
+}
+.s3 {
+    width: 25%;
+}
+.s2 {
+    width: 16.666666666666664%;
+}
+.s1 {
+    width: 8.333333333333332%;
+}
+
+@media all and (max-width: 468px) {
+    .s12,.s11,.s10,.s9,.s8,.s7,.s6,.s5,.s4,.s3,.s2,.s1 {
+        width: 100%;
+    }
+    .filter > .filter-cell {
+        padding: 0px;
+    }
 }

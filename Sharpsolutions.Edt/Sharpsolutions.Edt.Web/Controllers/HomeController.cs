@@ -5,8 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using Sharpsolutions.Edt.Web.Models;
 using System.Configuration;
-using Microsoft.WindowsAzure;
+
 using Sharpsolutions.Edt.System;
+using Microsoft.Azure;
 
 namespace Sharpsolutions.Edt.Web.Controllers
 {
